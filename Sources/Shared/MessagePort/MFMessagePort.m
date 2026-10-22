@@ -37,17 +37,8 @@
 #import "Logging.h"
 #import "Threads.h"
 
-#if IS_MAIN_APP
-#import "Mac_Mouse_Fix-Swift.h"
-#import "KeyCaptureView.h"
-#import "Alerts.h"
-#endif
-
-#if IS_HELPER
-#import "Mac_Mouse_Fix_Helper-Swift.h"
-#import "AccessibilityCheck.h"
-#import "KeyCaptureMode.h"
-#endif
+/// [Oct 2026] This file used to import App/Helper headers and the target's `-Swift.h` header, and had mainApp-only / Helper-only `#if` blocks.
+///     Now, the target-specific parts live in `App/MessagePort/MFMessagePort+App.m` and `Helper/MessagePort/MFMessagePort+Helper.m` and are plugged in through the `Per-target hooks` (See MFMessagePort.h)
 
 /// This class is used to communicate between the MainApp and the Helper.
 ///     More or less works like a function call across processes.
@@ -58,7 +49,7 @@
 /// Discussion / confusion:
 ///     We used to do use `load` instead of `initialize` but that lead to issues when restarting the app if it's translocated:
 ///     If the app detects that it is translocated, it will restart itself at the untranslocated location,  after removing the quarantine flags from itself. It starts a copy of itself while it's still running, and only then does it terminate itself. If the message port is already 'claimed' by the translocated instances when it starts the     untranslocated copy, then the untranslocated copy can't 'claim' the message port for itself, which leads to things like the accessiblity screen not working.
-///     I hope that moving using `initialize` instead of `load` if `IS_MAIN_APP` should fix this and work just fine for everything else. I don't know why we used load to begin with.
+///     I hope that moving using `initialize` instead of `load` in the mainApp should fix this and work just fine for everything else. I don't know why we used load to begin with.
 ///     Edit: I don't remember why we moved to `load_Manual` now, but it works fine
 ///
 /// Event older Notes:
@@ -72,14 +63,27 @@
 ///         I think the reason for this message is that the existing instance would already 'occupy' the kMFBundleIDHelper name.
 ///         Checking if `localPort != nil` should detect this case
 
-#define IS_THIRD (!IS_HELPER && !IS_MAIN_APP) /** LocalizationScreenshotTaker [Sep 2026] */
-
-#define messagePortRunLoop() threads_stateRunLoop() /// mainApp: mainThread, Helper: IOThread [Oct 2026] (Only used by `load_Manual` – the LocalizationScreenshotTaker doesn't compile that, so it doesn't need to define the hook.)
+#define messagePortRunLoop() threads_stateRunLoop() /// mainApp: mainThread, Helper: IOThread [Oct 2026]
 
 
 @implementation MFMessagePort
 
-#if !IS_THIRD
+#pragma mark - Per-target hooks
+
+static NSString *_processName = nil;
+static NSString *_localPortName = nil;
+static NSString *_remotePortName = nil;
+static BOOL _crashIfLocalPortFails = NO;
+static MFMessagePortHandler _messageHandler = nil;
+
++ (void)installHooksWithProcessName:(NSString *)processName localPortName:(NSString *)localPortName remotePortName:(NSString *)remotePortName crashIfLocalPortFails:(BOOL)crashIfLocalPortFails messageHandler:(MFMessagePortHandler)messageHandler {
+    _processName = processName;
+    _localPortName = localPortName;
+    _remotePortName = remotePortName;
+    _crashIfLocalPortFails = crashIfLocalPortFails;
+    _messageHandler = [messageHandler copy];
+}
+
 + (void)load_Manual {
     
     #pragma mark - Init
@@ -90,11 +94,7 @@
     DDLogInfo("Initializing MessagePort...");
     
     /// Create port
-    #if IS_HELPER
-        CFStringRef messagePortName = (__bridge void *)kMFBundleIDHelper;
-    #else
-        CFStringRef messagePortName = (__bridge void *)kMFBundleIDApp;
-    #endif
+    CFStringRef messagePortName = (__bridge void *)_localPortName; /// mainApp: `kMFBundleIDApp`, Helper: `kMFBundleIDHelper` [Oct 2026]
     CFMessagePortRef localPort = CFMessagePortCreateLocal(kCFAllocatorDefault, messagePortName, didReceiveMessage, NULL, NULL);
 
     /// Log
@@ -103,12 +103,12 @@
     /// Validate
     if (localPort == NULL) {
         
-        #if IS_MAIN_APP
+        if (!_crashIfLocalPortFails) { /// mainApp [Oct 2026]
             DDLogInfo("Failed to create a local message port. It will probably work anyway for some reason");
-        #elif IS_HELPER
+        } else { /// Helper
             DDLogError("Failed to create a local message port. This might be because there is another instance of %@ already running. Crashing the app.", kMFHelperName);
             @throw [NSException exceptionWithName:@"NoMessagePortException" reason:@"Couldn't create a local CFMessagePort. Can't function properly without local CFMessagePort" userInfo:nil];
-        #endif
+        }
 
         return;
     }
@@ -118,7 +118,6 @@
     CFRunLoopAddSource(messagePortRunLoop(), runLoopSource, kCFRunLoopCommonModes);
     CFRelease(runLoopSource);
 }
-#endif
 
 NSString *CFMessagePortSendRequest_ErrorCode_ToString(SInt32 errorCode) {
     
@@ -134,7 +133,6 @@ NSString *CFMessagePortSendRequest_ErrorCode_ToString(SInt32 errorCode) {
     return map[@(errorCode)] ?: stringf(@"(%d)", errorCode);
 }
 
-#if !IS_THIRD
 static CFDataRef _Nullable didReceiveMessage(CFMessagePortRef port, SInt32 messageID, CFDataRef data, void *info) {
     
     #pragma mark Receive messages
@@ -166,130 +164,14 @@ static CFDataRef _Nullable didReceiveMessage(CFMessagePortRef port, SInt32 messa
         response = @([[NSAppearance.currentAppearance bestMatchFromAppearancesWithNames: @[NSAppearanceNameAqua, NSAppearanceNameDarkAqua]] isEqual: NSAppearanceNameDarkAqua]);
     }
     
-    #if IS_MAIN_APP
-        
-        xxx(@"addModeFeedback") {
-            [MainAppState.shared.buttonTabController handleAddModeFeedbackWithPayload:(NSDictionary *)payload];
-        }
-        xxx(@"keyCaptureModeFeedback") {
-            [KeyCaptureView handleKeyCaptureModeFeedbackWithPayload:(NSDictionary *)payload isSystemDefinedEvent:NO];
-        }
-        xxx(@"keyCaptureModeFeedbackWithSystemEvent") {
-            [KeyCaptureView handleKeyCaptureModeFeedbackWithPayload:(NSDictionary *)payload isSystemDefinedEvent:YES];
-
-        }
-        xxx(@"helperEnabledWithNoAccessibility") {
-            /// Notes:
-            ///     - [Sep 2025] What is the logic for when we call checkHelperStrangenessReactWithPayload:?
-            ///         When the mainApp is started while the helper is already running, it checks if the helper is enabled by sending it "getBundleVersion" -> Maybe we should call `checkHelperStrangenessReactWithPayload:` there as well?
-            BOOL isStrange = [MessagePortUtility.shared checkHelperStrangenessReactWithPayload: payload];
-            if (!isStrange) {
-                [AuthorizeAccessibilityView add];
-            }
-        }
-        
-        xxx(@"helperEnabled") {
-
-            BOOL isStrange = [MessagePortUtility.shared checkHelperStrangenessReactWithPayload: payload];
-            if (!isStrange) { /// Helper matches mainApp instance.
-                
-                /// Bring mainApp for foreground
-                /// Notes:
-                /// - In some places like when the accessibilitySheet is dismissed, we have other methods for bringing mainApp to the foreground that might be unnecessary now that we're doing this. Edit: We stopped the accessibility enabling code from activating the app.
-                /// - (September 2024) activateIgnoringOtherApps: is deprecated under macOS 15.0 Sequoia. (But it still seems to work based on my superficial testing before 3.0.3 release.) TODO: Use new cooperative activation APIs instead. (Article: https://developer.apple.com/documentation/appkit/nsapplication/passing_control_from_one_app_to_another_with_cooperative_activation?language=objc)
-                
-                [NSApp activateIgnoringOtherApps:YES];
-                
-                /// Dismiss accessibilitySheet
-                ///     This is unnecessary under Ventura since `activateIgnoringOtherApps` will trigger `ResizingTabWindowController.windowDidBecomeMain()` which will also call `[AuthorizeAccessibilityView remove]`. But it's better to be safe and explicit about this.
-                [AuthorizeAccessibilityView remove];
-                
-                /// Notify rest of the app
-                [EnabledState.shared reactToDidBecomeEnabled];
-            }
-            
-        }
-        xxx(@"helperDisabled") {
-            [EnabledState.shared reactToDidBecomeDisabled];
-        }
-        xxx(@"configFileChanged") {
-            [Config loadFileAndUpdateStates];
-        }
-        xxx(@"showNextToastOrSheetWithSection") {
-            BOOL moreToastsToGo = [ToastAndSheetTests showNextTestWithSection:(id)payload]; /// If this is true, we haven't ran out of test-toasts for this section, yet.
-            response = @(moreToastsToGo);
-        }
-        xxx(@"didShowAllToastsAndSheets") {
-            BOOL didShowAll = [ToastAndSheetTests didShowAllToastsAndSheets];
-            response = @(didShowAll);
-        }
-        xxx(@"showCaptureToast") {
-            NSSet<NSNumber *> *before = ((NSDictionary *)payload)[@"before"];
-            NSSet<NSNumber *> *after  = ((NSDictionary *)payload)[@"after"];
-            [ToastAndSheetTests showCaptureToastBefore: before after: after];
-        }
-        else {
-            DDLogInfo("Unknown message received: %@", message);
-        }
-
-    #elif IS_HELPER
-        
-        if ((0)) ;
-        xxx(@"configFileChanged") {
-            [Config loadFileAndUpdateStates];
-        }
-        xxx(@"terminate") {
-            mfrun(CFRunLoopGetMain(), ^{
-                [NSApp terminate: NULL];
-                //[NSApp.delegate applicationWillTerminate:[[NSNotification alloc] init]]; /// This creates an infinite loop or something? The statement below is never executed.
-            });
-
-        }
-        xxx(@"checkAccessibility") {
-            BOOL isTrusted = [AccessibilityCheck checkAccessibilityAndUpdateSystemSettings];
-            response = @(isTrusted);
-        }
-        xxx(@"enableAddMode") {
-            BOOL success = [Remap enableAddMode];
-            response = @(success);
-        }
-        xxx(@"disableAddMode") {
-            BOOL success = [Remap disableAddMode];
-            response = @(success);
-        }
-        xxx(@"enableKeyCaptureMode") {
-            [KeyCaptureMode enable];
-        }
-        xxx(@"disableKeyCaptureMode") {
-            [KeyCaptureMode disable];
-        }
-        xxx(@"getActiveDeviceInfo") {
-            
-            Device *dev = HelperState.shared.activeDevice;
-            if (dev != NULL) {
-                
-                response = @{
-                    @"name": dev.name == nil ? @"" : dev.name,
-                    @"manufacturer": dev.manufacturer == nil ? @"" : dev.manufacturer,
-                    @"nOfButtons": @(dev.nOfButtons),
-                };
-            }
-        }
-        xxx(@"updateActiveDeviceWithEventSenderID") {
-            /// We can't just pass over the CGEvent from the mainApp because the senderID isn't stored when serializing CGEvents
-            uint64_t senderID = [(NSNumber *)payload unsignedIntegerValue];
-            [HelperState.shared updateActiveDeviceWithEventSenderID:senderID];
-        }
-        xxx(@"getBundleVersion") {
-            response = @(Locator.bundleVersion);
-        }
-        else {
-            DDLogInfo("Unknown message received: %@", message);
-        }
-        
-    #else
-        abort();
-    #endif
+    
+    /// Handle target-specific commands
+    ///     [Oct 2026] Those used to be mainApp-only / Helper-only `#if` blocks right here. Now they're in `MFMessagePort+App.m` / `MFMessagePort+Helper.m`.
+    ///         Note: The handler is called for *every* message (even the ones handled above) – that's how the Helper's `#if` block used to work. (The mainApp's handler skips the ones handled above, which is how the mainApp's `#if` block used to work.)
+    if (_messageHandler) {
+        NSObject *targetResponse = _messageHandler(message, payload);
+        if (targetResponse != nil) response = targetResponse;
+    }
     
     #undef xxx
     
@@ -300,15 +182,10 @@ static CFDataRef _Nullable didReceiveMessage(CFMessagePortRef port, SInt32 messa
         return NULL;
     }
 }
-#endif
 
 static void invalidationCallback(CFMessagePortRef ms, void *info) { /// Helper for `sendMessage:` [Oct 2026]
     /// Log state
-    #if IS_HELPER
-        NSString *name = @"Helper";
-    #else
-        NSString *name = @"MainApp";
-    #endif
+    NSString *name = _processName ?: @"MainApp"; /// [Oct 2026] mainApp: @"MainApp", Helper: @"Helper". (The LocalizationScreenshotTaker doesn't install hooks – it used to fall into the `#else` (MainApp) branch here, too.)
     DDLogInfo("Remote MessagePort invalidated in %@", name);
 }
 
@@ -383,18 +260,13 @@ static void invalidationCallback(CFMessagePortRef ms, void *info) { /// Helper f
 ///
 /// Helper stuff
 ///
-#if !IS_THIRD
 + (NSObject *_Nullable)sendMessage:(NSString *)message withPayload:(NSObject<NSCoding> *)payload waitForReply:(BOOL)replyExpected {
         
     /// Convenience wrapper
     ///     Automatically sends the message to the helper if the mainApp is the sender, and sends to the mainApp if the helper is the sender.
     
     /// Get remote port name
-    #if IS_MAIN_APP
-        NSString *remotePortName = kMFBundleIDHelper;
-    #else
-        NSString *remotePortName = kMFBundleIDApp;
-    #endif
+    NSString *remotePortName = _remotePortName; /// mainApp: `kMFBundleIDHelper`, Helper: `kMFBundleIDApp` [Oct 2026]
 
     /// Call core
     NSObject *response = [self sendMessage:message withPayload:payload toRemotePort:remotePortName waitForReply:replyExpected];
@@ -402,6 +274,5 @@ static void invalidationCallback(CFMessagePortRef ms, void *info) { /// Helper f
     /// Return
     return response;
 }
-#endif
 
 @end

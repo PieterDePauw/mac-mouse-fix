@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12E851237D6E67B32CF12F9C /* Threads_ScreenshotTaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 409CD0EEDCCF1E526E4D1A3F /* Threads_ScreenshotTaker.m */; };
+		A658F974B823939FA546D255 /* MFMessagePort+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = A4669FA084C3F42075CE3AF1 /* MFMessagePort+Helper.m */; };
+		63AF78928C6B1EB48D52170D /* MFMessagePort+App.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E952F98DD7CF997F178460B /* MFMessagePort+App.m */; };
 		BE56A428A540538B7532FE9A /* Config+App.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F5C93D204AC92B579B3696 /* Config+App.m */; };
 		88016ABB4BD8B7A2C7937B08 /* Config+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D977DE6A5638C497D960E7 /* Config+Helper.m */; };
 		F0568B9C621DC5AB4C942FC1 /* DisableSwiftBridging+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A60E67AFD5FB4CEDC7550 /* DisableSwiftBridging+Localization.swift */; };
@@ -615,6 +618,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		409CD0EEDCCF1E526E4D1A3F /* Threads_ScreenshotTaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Threads_ScreenshotTaker.m; sourceTree = "<group>"; };
+		A4669FA084C3F42075CE3AF1 /* MFMessagePort+Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MFMessagePort+Helper.m"; sourceTree = "<group>"; };
+		0F60BA91BA6B3F556CD3027C /* MFMessagePort+Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MFMessagePort+Helper.h"; sourceTree = "<group>"; };
+		5E952F98DD7CF997F178460B /* MFMessagePort+App.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MFMessagePort+App.m"; sourceTree = "<group>"; };
+		DB38CC25396685D71EE45ACB /* MFMessagePort+App.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MFMessagePort+App.h"; sourceTree = "<group>"; };
 		F2F5C93D204AC92B579B3696 /* Config+App.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Config+App.m"; sourceTree = "<group>"; };
 		7B3C29E23DABB61F2E8F5874 /* Config+App.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Config+App.h"; sourceTree = "<group>"; };
 		E3D977DE6A5638C497D960E7 /* Config+Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Config+Helper.m"; sourceTree = "<group>"; };
@@ -1283,10 +1291,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65BF5BA03B533414E2F2DCFC /* MessagePort */ = {
+			isa = PBXGroup;
+			children = (
+				0F60BA91BA6B3F556CD3027C /* MFMessagePort+Helper.h */,
+				A4669FA084C3F42075CE3AF1 /* MFMessagePort+Helper.m */,
+			);
+			path = MessagePort;
+			sourceTree = "<group>";
+		};
 		D9E1246D0EA7B7EA478DD4C4 /* MessagePort */ = {
 			isa = PBXGroup;
 			children = (
 				4F2F0B2A28E6258B00246D59 /* MessagePortUtility.swift */,
+				DB38CC25396685D71EE45ACB /* MFMessagePort+App.h */,
+				5E952F98DD7CF997F178460B /* MFMessagePort+App.m */,
 			);
 			path = MessagePort;
 			sourceTree = "<group>";
@@ -1955,6 +1974,7 @@
 				4F0028012C58303B00CDB9D0 /* LocalizationScreenshotTakerTestPlan.xctestplan */,
 				4F0C003D2C52BBA600C5D843 /* LocalizationScreenshotTaker.entitlements */,
 				4FE78C382C4FFB0E00C54103 /* LocalizationScreenshotTaker-Bridging-Header.h */,
+				409CD0EEDCCF1E526E4D1A3F /* Threads_ScreenshotTaker.m */,
 			);
 			path = LocalizationScreenshotTaker;
 			sourceTree = "<group>";
@@ -2591,6 +2611,7 @@
 				4FF6667925F2C93A00689B77 /* Devices */,
 				097ED07D7A67ECF96FAC7672 /* IOKit */,
 				BDE51699562236BD06D61C34 /* Math */,
+				65BF5BA03B533414E2F2DCFC /* MessagePort */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -3458,6 +3479,7 @@
 				4FA356BE2EE7839F00CAB015 /* XCUITest_Utils.m in Sources */,
 				4FE78C472C50371200C54103 /* NSString+Additions.m in Sources */,
 				F0568B9C621DC5AB4C942FC1 /* DisableSwiftBridging+Localization.swift in Sources */,
+				12E851237D6E67B32CF12F9C /* Threads_ScreenshotTaker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3636,6 +3658,7 @@
 				4FA40CFE28A0CCCB00499E53 /* HybridCurves.swift in Sources */,
 				F5C774FB74C11DDB16559164 /* DisableSwiftBridging+Localization.swift in Sources */,
 				BE56A428A540538B7532FE9A /* Config+App.m in Sources */,
+				63AF78928C6B1EB48D52170D /* MFMessagePort+App.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3817,6 +3840,7 @@
 				5B1D4F71A0EE9701C711BC73 /* NSScreen+Helper.m in Sources */,
 				C7E821955594FD34C1ADCF12 /* DisableSwiftBridging+Helper.swift in Sources */,
 				88016ABB4BD8B7A2C7937B08 /* Config+Helper.m in Sources */,
+				A658F974B823939FA546D255 /* MFMessagePort+Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -27,6 +27,7 @@
 #import "LocalizedStringAnnotation.h"
 #import "CoolSFSymbolsFont.h"
 #import "Config+App.h"
+#import "MFMessagePort+App.h"
 
 
 @interface AppDelegate ()
@@ -148,6 +149,7 @@ static NSDictionary *sideButtonActions;
     /// Install the mainApp's hooks into the Shared modules [Oct 2026]
     ///     Doing this first, so they're in place before anything could touch those modules. (See `Per-target hooks` in Config.h)
     [Config installAppHooks];
+    [MFMessagePort installAppHooks];
     
     /// Install font
     ///     Reason for doing this in `load`: We can install/uninstall the font while running the app and it works just fine, but we want this available early for validation: While the nib loads it uses the characters in this font, and it wants to validate that the characters are actually available.

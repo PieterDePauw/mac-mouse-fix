@@ -11,6 +11,7 @@
 
 #import <AppKit/AppKit.h>
 #import "MFMessagePort.h"
+#import "MFMessagePort+Helper.h"
 #import "DeviceManager.h"
 #import "Config.h"
 #import "Config+Helper.h"
@@ -43,6 +44,7 @@
     /// Install the Helper's hooks into the Shared modules [Oct 2026]
     ///     Doing this first, so they're in place before anything could touch those modules. (See `Per-target hooks` in Config.h)
     [Config installHelperHooks];
+    [MFMessagePort installHelperHooks];
     
     ///
     /// Check command line args.

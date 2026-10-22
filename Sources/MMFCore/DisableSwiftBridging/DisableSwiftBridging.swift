@@ -28,16 +28,16 @@ extension NSString {
     func substring(withRegex regex: NSString) -> NSString? {
         return __substring(withRegex: regex) as! NSString?
     }
-    func attributed() -> NSAttributedString {
+    public func attributed() -> NSAttributedString {
         return __attributed() as! NSAttributedString
     }
     func firstCaptialized() -> NSString {
         return __firstCapitalized() as! NSString
     }
-    func stringByRemovingAllWhiteSpace() -> NSString {
+    public func stringByRemovingAllWhiteSpace() -> NSString {
         return __stringByRemovingAllWhiteSpace() as! NSString
     }
-    func stringByTrimmingWhiteSpace() -> NSString {
+    public func stringByTrimmingWhiteSpace() -> NSString {
         return __stringByTrimmingWhiteSpace() as! NSString
     }
     func string(byAddingIndent indent: NSInteger) -> NSString {

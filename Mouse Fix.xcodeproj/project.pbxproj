@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1C0DE010000000000000146 /* NSString+Additions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FE78C422C502A5F00C54103 /* NSString+Additions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1C0DE010000000000000145 /* DisableSwiftBridging.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FE78C3F2C5022C600C54103 /* DisableSwiftBridging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1C0DE010000000000000144 /* DisableSwiftBridging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE78C392C50177800C54103 /* DisableSwiftBridging.swift */; };
+		A1C0DE010000000000000143 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE78C432C502A5F00C54103 /* NSString+Additions.m */; };
 		A1C0DE010000000000000142 /* MFCoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F428D002CD80462006322AB /* MFCoding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A1C0DE010000000000000141 /* VectorSubPixelator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6664125F2C93A00689B77 /* VectorSubPixelator.m */; };
 		A1C0DE010000000000000140 /* SubPixelator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6664025F2C93A00689B77 /* SubPixelator.m */; };
@@ -310,10 +314,6 @@
 		4FE78C342C4FFA2F00C54103 /* TreeNode.h in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C73F62C4FB4C2001D97C3 /* TreeNode.h */; };
 		4FE78C352C4FFA2F00C54103 /* TreeNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C73F72C4FB4C2001D97C3 /* TreeNode.m */; };
 		4FE78C362C4FFA7A00C54103 /* NSString+Steganography.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C737C2C4FB06E001D97C3 /* NSString+Steganography.m */; };
-		4FE78C3A2C50177800C54103 /* DisableSwiftBridging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE78C392C50177800C54103 /* DisableSwiftBridging.swift */; };
-		4FE78C3B2C50177800C54103 /* DisableSwiftBridging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE78C392C50177800C54103 /* DisableSwiftBridging.swift */; };
-		4FE78C442C502A5F00C54103 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE78C432C502A5F00C54103 /* NSString+Additions.m */; };
-		4FE78C452C502A5F00C54103 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE78C432C502A5F00C54103 /* NSString+Additions.m */; };
 		4FE78C462C50362800C54103 /* DisableSwiftBridging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE78C392C50177800C54103 /* DisableSwiftBridging.swift */; };
 		4FE78C472C50371200C54103 /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE78C432C502A5F00C54103 /* NSString+Additions.m */; };
 		4FEAA9B23055D9C000455F82 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEAA9813055D99300455F82 /* ReactiveCocoa.framework */; };
@@ -1904,6 +1904,8 @@
 				4F909D4328A0C4C2009349A2 /* NSArray+Extensions.swift */,
 				4F909D4428A0C4C2009349A2 /* Collection+Extensions.swift */,
 				4F85C04F28BBDBDC00E96E9C /* NSImageView+Extensions.swift */,
+				4FE78C422C502A5F00C54103 /* NSString+Additions.h */,
+				4FE78C432C502A5F00C54103 /* NSString+Additions.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2180,6 +2182,7 @@
 				4F25079130693260007B537E /* Threads.m */,
 				4F25078D30658CF2007B537E /* Threads.swift */,
 				4FF6653625F2C7B000689B77 /* Utility */,
+				4FE78C412C5027A800C54103 /* DisableSwiftBridging */,
 			);
 			path = MMFCore;
 			sourceTree = "<group>";
@@ -2452,7 +2455,6 @@
 		4FF6652B25F2C7B000689B77 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				4FE78C412C5027A800C54103 /* DisableSwiftBridging */,
 				4F44FF012606D6FD00926A5E /* MessagePort */,
 				4FF6652C25F2C7B000689B77 /* HelperServices */,
 				4FDE757C28B0E35E00662314 /* License */,
@@ -2934,8 +2936,6 @@
 		4FFA4E3928B79D8D0062A1FE /* Strings */ = {
 			isa = PBXGroup;
 			children = (
-				4FE78C422C502A5F00C54103 /* NSString+Additions.h */,
-				4FE78C432C502A5F00C54103 /* NSString+Additions.m */,
 				4F79A8292605074000076A7E /* NSAttributedString+Additions.h */,
 				4F79A82A2605074000076A7E /* NSAttributedString+Additions.m */,
 				4FDE75A628B25FB300662314 /* NSAttributedString+Extensions.swift */,
@@ -3119,6 +3119,8 @@
 				A1C0DE010000000000000121 /* PolynomialRegression.h in Headers */,
 				A1C0DE010000000000000122 /* DoublesMatrix.h in Headers */,
 				A1C0DE010000000000000142 /* MFCoding.h in Headers */,
+				A1C0DE010000000000000145 /* DisableSwiftBridging.h in Headers */,
+				A1C0DE010000000000000146 /* NSString+Additions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3547,7 +3549,6 @@
 				4F4C73FE2C4FB5D2001D97C3 /* AnnotationUtility.m in Sources */,
 				4F39BC4A263B179200FDF692 /* AppState.m in Sources */,
 				4F909D3B28A0C3D2009349A2 /* ModCaptureDeleteButton.swift in Sources */,
-				4FE78C3A2C50177800C54103 /* DisableSwiftBridging.swift in Sources */,
 				4FF6654625F2C7B000689B77 /* Locator.m in Sources */,
 				4F909D2A28A0C3D2009349A2 /* ResizingTabWindowController.swift in Sources */,
 				4F909D2228A0C3D2009349A2 /* ScrollTabController.swift in Sources */,
@@ -3580,7 +3581,6 @@
 				4FE03A602BFF5F0600708454 /* CoolSUComparator.m in Sources */,
 				4FCC354D2C6296FF009E1908 /* CoolSFSymbolsFont.m in Sources */,
 				4F7F47CB28A5A03100290BBD /* ReactiveConfig.swift in Sources */,
-				4FE78C452C502A5F00C54103 /* NSString+Additions.m in Sources */,
 				4F909D3C28A0C3D2009349A2 /* ModCaptureFieldEditor.swift in Sources */,
 				4FC4A24E2EA457EC003566D8 /* Localization.m in Sources */,
 				4FFA4E3528B795F30062A1FE /* LicenseUtility.swift in Sources */,
@@ -3734,7 +3734,6 @@
 				4FC4A2522EA4587F003566D8 /* Localization.swift in Sources */,
 				4FF6668125F2C93A00689B77 /* FileMonitor.m in Sources */,
 				4FF6669125F2C93A00689B77 /* ScrollUtility.m in Sources */,
-				4FE78C442C502A5F00C54103 /* NSString+Additions.m in Sources */,
 				4F58FE142C57BAFA00926A00 /* NSTextField+Extentions.swift in Sources */,
 				4FB8B29B2CCEBAEB00A5A580 /* GetLicenseConfig.swift in Sources */,
 				4FF666A825F2C93A00689B77 /* DeviceManager.m in Sources */,
@@ -3773,7 +3772,6 @@
 				4F7F47C528A5A01600290BBD /* ReactiveConfig.swift in Sources */,
 				4FF8C89A28955491007EC31F /* ClickCycle.swift in Sources */,
 				4FA83A2E268288D900F3A31B /* PointerConfig.swift in Sources */,
-				4FE78C3B2C50177800C54103 /* DisableSwiftBridging.swift in Sources */,
 				4F8A8DBD287F203D00786BCC /* IOHIDAccelerationTable.cpp in Sources */,
 				4F5F3EF32756F1DB00C350C0 /* ScrollModifiers.swift in Sources */,
 				174A54825D2DC470C348D207 /* IOThread.m in Sources */,
@@ -3856,6 +3854,8 @@
 				A1C0DE01000000000000013F /* PrivateFunctions.m in Sources */,
 				A1C0DE010000000000000140 /* SubPixelator.m in Sources */,
 				A1C0DE010000000000000141 /* VectorSubPixelator.m in Sources */,
+				A1C0DE010000000000000143 /* NSString+Additions.m in Sources */,
+				A1C0DE010000000000000144 /* DisableSwiftBridging.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,3 +22,5 @@
 #import <MMFCore/AnimatorDeclarations.h>
 #import <MMFCore/PolynomialRegression.h>
 #import <MMFCore/MFCoding.h>
+#import <MMFCore/DisableSwiftBridging.h>
+#import <MMFCore/NSString+Additions.h>

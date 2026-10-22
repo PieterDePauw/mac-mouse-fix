@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F0568B9C621DC5AB4C942FC1 /* DisableSwiftBridging+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A60E67AFD5FB4CEDC7550 /* DisableSwiftBridging+Localization.swift */; };
+		F5C774FB74C11DDB16559164 /* DisableSwiftBridging+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A60E67AFD5FB4CEDC7550 /* DisableSwiftBridging+Localization.swift */; };
+		C7E821955594FD34C1ADCF12 /* DisableSwiftBridging+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B70968DC0B2F547E5A19A74 /* DisableSwiftBridging+Helper.swift */; };
 		5B1D4F71A0EE9701C711BC73 /* NSScreen+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE507E74B91819CD3CD56BA /* NSScreen+Helper.m */; };
 		174A54825D2DC470C348D207 /* IOThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7AADB13128534BA5B83597 /* IOThread.m */; };
 		4F09283F28B8101600BDC2FF /* TrialSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F09283E28B8101600BDC2FF /* TrialSection.swift */; };
@@ -610,6 +613,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FD8A60E67AFD5FB4CEDC7550 /* DisableSwiftBridging+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DisableSwiftBridging+Localization.swift"; sourceTree = "<group>"; };
+		2B70968DC0B2F547E5A19A74 /* DisableSwiftBridging+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DisableSwiftBridging+Helper.swift"; sourceTree = "<group>"; };
 		0EE507E74B91819CD3CD56BA /* NSScreen+Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSScreen+Helper.m"; sourceTree = "<group>"; };
 		79C853DF8C7C6161E3352C0C /* NSScreen+Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSScreen+Helper.h"; sourceTree = "<group>"; };
 		5E7AADB13128534BA5B83597 /* IOThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOThread.m; sourceTree = "<group>"; };
@@ -1561,6 +1566,7 @@
 				4F4C737C2C4FB06E001D97C3 /* NSString+Steganography.m */,
 				4F4C73FC2C4FB5D2001D97C3 /* AnnotationUtility.h */,
 				4F4C73FD2C4FB5D2001D97C3 /* AnnotationUtility.m */,
+				FD8A60E67AFD5FB4CEDC7550 /* DisableSwiftBridging+Localization.swift */,
 			);
 			path = Screenshots;
 			sourceTree = "<group>";
@@ -2758,6 +2764,7 @@
 				5E7AADB13128534BA5B83597 /* IOThread.m */,
 				79C853DF8C7C6161E3352C0C /* NSScreen+Helper.h */,
 				0EE507E74B91819CD3CD56BA /* NSScreen+Helper.m */,
+				2B70968DC0B2F547E5A19A74 /* DisableSwiftBridging+Helper.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -3440,6 +3447,7 @@
 				4FE78C362C4FFA7A00C54103 /* NSString+Steganography.m in Sources */,
 				4FA356BE2EE7839F00CAB015 /* XCUITest_Utils.m in Sources */,
 				4FE78C472C50371200C54103 /* NSString+Additions.m in Sources */,
+				F0568B9C621DC5AB4C942FC1 /* DisableSwiftBridging+Localization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3616,6 +3624,7 @@
 				4F909D3528A0C3D2009349A2 /* Animate.swift in Sources */,
 				4FA40D0328A0D0BB00499E53 /* PolynomialRegression.m in Sources */,
 				4FA40CFE28A0CCCB00499E53 /* HybridCurves.swift in Sources */,
+				F5C774FB74C11DDB16559164 /* DisableSwiftBridging+Localization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3795,6 +3804,7 @@
 				4F5F3EF32756F1DB00C350C0 /* ScrollModifiers.swift in Sources */,
 				174A54825D2DC470C348D207 /* IOThread.m in Sources */,
 				5B1D4F71A0EE9701C711BC73 /* NSScreen+Helper.m in Sources */,
+				C7E821955594FD34C1ADCF12 /* DisableSwiftBridging+Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

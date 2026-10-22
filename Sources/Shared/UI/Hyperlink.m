@@ -8,8 +8,6 @@
 //
 
 #import "Hyperlink.h"
-#import "Utility_App.h"
-#import "AppDelegate.h"
 #import "SharedUtility.h"
 #import "Logging.h"
 

@@ -12,11 +12,6 @@
 #import "NSString+Additions.h"
 #import "MFLoop.h"
 
-#if IS_MAIN_APP
-#import "Mac_Mouse_Fix-Swift.h"
-#elif IS_HELPER
-#import "Mac_Mouse_Fix_Helper-Swift.h"
-#endif
 ///
 /// History: [Nov 2025]
 ///     - We first used a base-2 encoding,

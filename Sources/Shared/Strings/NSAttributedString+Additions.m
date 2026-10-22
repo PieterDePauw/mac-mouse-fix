@@ -12,15 +12,7 @@
 #import "MFLoop.h"
 #import "NSString+Steganography.h"
 #import "NSDictionary+Additions.h"
-
-
-#if IS_MAIN_APP
-#import "Mac_Mouse_Fix-Swift.h"
-#endif
-
-#if IS_HELPER
-#import "Mac_Mouse_Fix_Helper-Swift.h"
-#endif
+#import "NSString+Additions.h" /// [Oct 2026] Used to come in through the target's `-Swift.h` header
 
 @implementation NSAttributedString (Additions)
 

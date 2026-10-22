@@ -8,7 +8,6 @@
 //
 
 #import "MarkdownParser.h"
-#import "AppDelegate.h"
 #import <AppKit/AppKit.h>
 #import "cmark.h"
 #import "SharedUtility.h"

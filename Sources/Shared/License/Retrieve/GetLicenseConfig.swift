@@ -30,7 +30,7 @@
         return result
     }
 
-    #if IS_MAIN_APP
+    /// [Oct 2026] Only used by the mainApp (Used to be a mainApp-only `#if`)
     @objc static func get_Preliminary(_callingFunc: String = #function) -> MFLicenseConfig {
         assertRunLoop(licensingRunLoop())
 
@@ -40,7 +40,6 @@
         
         return result
     }
-    #endif
 
     /// Server/cache/fallback interfaces
 

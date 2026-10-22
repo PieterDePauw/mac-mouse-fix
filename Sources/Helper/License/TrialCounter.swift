@@ -33,7 +33,9 @@
 
 import Cocoa
 
-let kDaysOfUseFallback: Int = 0; /// Enable the trial for new users and during sporadic errors by using this for both `kSecureStorageReadError_DoesntExistYet` and `kSecureStorageReadError_UnexpectedError` [Oct 2026] (See 'Free days are over' bug notes)
+/// [Oct 2026] Moved here from `Shared/License/` – the whole class was Helper-only (`#if`), the mainApp only compiled an empty class.
+
+/// `kDaysOfUseFallback` moved to `Shared/License/Retrieve/GetTrialState.swift` [Oct 2026] (TrialCounter.swift moved to the Helper, but GetTrialState.swift (shared) uses it)
 
 
 fileprivate func _DDLogDebug(_ m: @autoclosure () -> String) { DDLogDebug("TrialCounter: \(m())") }
@@ -41,8 +43,6 @@ fileprivate func _DDLogInfo(_ m: @autoclosure () -> String)  { DDLogInfo("TrialC
 
 @objc class TrialCounter: NSObject {
     
-    #if IS_HELPER
-
     /// Singleton
     @objc static let shared = TrialCounter()
     
@@ -151,10 +151,8 @@ fileprivate func _DDLogInfo(_ m: @autoclosure () -> String)  { DDLogInfo("TrialC
             }
         })
     }
-    #endif
     
     /// Interface for Helper
-    #if IS_HELPER
     @objc func handleUse() {
         assertRunLoop(licensingRunLoop())
 
@@ -212,5 +210,4 @@ fileprivate func _DDLogInfo(_ m: @autoclosure () -> String)  { DDLogInfo("TrialC
         License.checkAndReact(triggeredByUser: false)
         
     }
-    #endif
 }

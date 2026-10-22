@@ -18,7 +18,7 @@ fileprivate func _DDLogError(_ m: @autoclosure () -> String) { DDLogError("GetLi
 
     /// -> This class retrieves instances of the `MFLicenseState` dataclass
 
-    #if IS_MAIN_APP
+    /// [Oct 2026] Only used by the mainApp (Used to be a mainApp-only `#if`)
     static func get_Preliminary(_callingFunc: String = #function) -> MFLicenseState {
 
         /// This is a quick, preliminary way to get the licenseState, that's intended to render the UI immediately upon app-startup with probably-correct data.
@@ -36,7 +36,6 @@ fileprivate func _DDLogError(_ m: @autoclosure () -> String) { DDLogError("GetLi
 
         return result
     }
-    #endif
 
     @LicensingActor public static func get(_callingFunc: String = #function) async -> MFLicenseState {
 

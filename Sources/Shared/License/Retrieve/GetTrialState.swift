@@ -7,6 +7,8 @@
 // --------------------------------------------------------------------------
 //
 
+let kDaysOfUseFallback: Int = 0; /// Enable the trial for new users and during sporadic errors by using this for both `kSecureStorageReadError_DoesntExistYet` and `kSecureStorageReadError_UnexpectedError` [Oct 2026] (See 'Free days are over' bug notes) (Moved here from TrialCounter.swift [Oct 2026])
+
 @objc class GetTrialState : NSObject {
     
     /// -> This class retrieves instances of the `MFTrialState` dataclass

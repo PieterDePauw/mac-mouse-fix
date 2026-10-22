@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D35D8D86B10EBA01BE3F8B7 /* License+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84D9EE079B366E04CEAD28 /* License+Helper.swift */; };
 		12E851237D6E67B32CF12F9C /* Threads_ScreenshotTaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 409CD0EEDCCF1E526E4D1A3F /* Threads_ScreenshotTaker.m */; };
 		A658F974B823939FA546D255 /* MFMessagePort+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = A4669FA084C3F42075CE3AF1 /* MFMessagePort+Helper.m */; };
 		63AF78928C6B1EB48D52170D /* MFMessagePort+App.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E952F98DD7CF997F178460B /* MFMessagePort+App.m */; };
@@ -310,7 +311,6 @@
 		4FDB943C2FE75270001E05CB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDB94342FE75270001E05CB /* main.m */; };
 		4FDE759A28B1401400662314 /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE759928B1401400662314 /* License.swift */; };
 		4FDE759B28B1401400662314 /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE759928B1401400662314 /* License.swift */; };
-		4FDE759E28B174E700662314 /* TrialCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE759D28B174E700662314 /* TrialCounter.swift */; };
 		4FDE759F28B174E700662314 /* TrialCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE759D28B174E700662314 /* TrialCounter.swift */; };
 		4FDE75A128B2397600662314 /* PayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE75A028B2397600662314 /* PayButton.swift */; };
 		4FDE75A228B2397600662314 /* PayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE75A028B2397600662314 /* PayButton.swift */; };
@@ -618,6 +618,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1A84D9EE079B366E04CEAD28 /* License+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "License+Helper.swift"; sourceTree = "<group>"; };
 		409CD0EEDCCF1E526E4D1A3F /* Threads_ScreenshotTaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Threads_ScreenshotTaker.m; sourceTree = "<group>"; };
 		A4669FA084C3F42075CE3AF1 /* MFMessagePort+Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MFMessagePort+Helper.m"; sourceTree = "<group>"; };
 		0F60BA91BA6B3F556CD3027C /* MFMessagePort+Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MFMessagePort+Helper.h"; sourceTree = "<group>"; };
@@ -1291,6 +1292,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B6D71BE0351679089F5F1C9 /* License */ = {
+			isa = PBXGroup;
+			children = (
+				4FDE759D28B174E700662314 /* TrialCounter.swift */,
+				1A84D9EE079B366E04CEAD28 /* License+Helper.swift */,
+			);
+			path = License;
+			sourceTree = "<group>";
+		};
 		65BF5BA03B533414E2F2DCFC /* MessagePort */ = {
 			isa = PBXGroup;
 			children = (
@@ -2304,7 +2314,6 @@
 				4FF1DC792CC1130700A839AB /* License.m */,
 				4FDE759928B1401400662314 /* License.swift */,
 				4FB8B2A02CCEBB9100A5A580 /* Retrieve */,
-				4FDE759D28B174E700662314 /* TrialCounter.swift */,
 				4FFA4E3428B795F30062A1FE /* LicenseUtility.swift */,
 				4F143E452B2D1F5600FE4092 /* fallback_licenseinfo_config.json */,
 				4F143E482B2D1FA500FE4092 /* License Readme.md */,
@@ -2612,6 +2621,7 @@
 				097ED07D7A67ECF96FAC7672 /* IOKit */,
 				BDE51699562236BD06D61C34 /* Math */,
 				65BF5BA03B533414E2F2DCFC /* MessagePort */,
+				3B6D71BE0351679089F5F1C9 /* License */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -3578,7 +3588,6 @@
 				4F909D2B28A0C3D2009349A2 /* NSPopUpButton+Extensions.swift in Sources */,
 				4F7F47D128A5B86900290BBD /* Config.m in Sources */,
 				4FF6655025F2C7B000689B77 /* NSArray+Additions.m in Sources */,
-				4FDE759E28B174E700662314 /* TrialCounter.swift in Sources */,
 				4F909D2328A0C3D2009349A2 /* PointerTabController.swift in Sources */,
 				4FDE75A128B2397600662314 /* PayButton.swift in Sources */,
 				4F262CF32C64B6E000773789 /* MarkdownParser.m in Sources */,
@@ -3841,6 +3850,7 @@
 				C7E821955594FD34C1ADCF12 /* DisableSwiftBridging+Helper.swift in Sources */,
 				88016ABB4BD8B7A2C7937B08 /* Config+Helper.m in Sources */,
 				A658F974B823939FA546D255 /* MFMessagePort+Helper.m in Sources */,
+				8D35D8D86B10EBA01BE3F8B7 /* License+Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

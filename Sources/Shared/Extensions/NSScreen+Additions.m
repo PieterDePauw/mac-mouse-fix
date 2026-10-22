@@ -16,7 +16,7 @@
 
 @implementation NSScreen (Additions)
 
-/// `+screenUnderMousePointerWithEvent:` moved to `Helper/Utility/NSScreen+Helper.m` [Oct 2026] (It was `#if IS_HELPER` and asserted false in the mainApp)
+/// `+screenUnderMousePointerWithEvent:` moved to `Helper/Utility/NSScreen+Helper.m` [Oct 2026] (It was Helper-only and asserted false in the mainApp)
 
 + (NSScreen * _Nullable)screenWithDisplayID:(CGDirectDisplayID)displayID {
 

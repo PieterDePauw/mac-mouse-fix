@@ -35,6 +35,7 @@
 #import "HelperServices.h"
 #import "Locator.h"
 #import "Logging.h"
+#import "Threads.h"
 
 #if IS_MAIN_APP
 #import "Mac_Mouse_Fix-Swift.h"
@@ -73,13 +74,7 @@
 
 #define IS_THIRD (!IS_HELPER && !IS_MAIN_APP) /** LocalizationScreenshotTaker [Sep 2026] */
 
-#if IS_HELPER
-    #define messagePortRunLoop() IOThread.runLoop
-#elif IS_MAIN_APP
-    #define messagePortRunLoop() CFRunLoopGetMain()
-#elif IS_THIRD
-    #define messagePortRunLoop() CFRunLoopGetMain()
-#endif
+#define messagePortRunLoop() threads_stateRunLoop() /// mainApp: mainThread, Helper: IOThread [Oct 2026] (Only used by `load_Manual` – the LocalizationScreenshotTaker doesn't compile that, so it doesn't need to define the hook.)
 
 
 @implementation MFMessagePort

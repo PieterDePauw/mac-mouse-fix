@@ -13,6 +13,7 @@
 #import "MFMessagePort.h"
 #import "Logging.h"
 #import "Threads.h"
+#import "IOThread.h"
 
 @implementation KeyCaptureMode
 

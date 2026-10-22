@@ -14,9 +14,7 @@
     + (instancetype) mf_scheduledTimerWithTimeInterval: (NSTimeInterval)timeInterval mode: (NSRunLoopMode)mode block: (void (^)(NSTimer *timer))block {
         /// See `Threads.m` > `Standard patterns` [Oct 2026]
         mfrequire( /// Any other contexts don't have runLoops that actually run, making this silently fail. Also see (now deleted) `CoolTimer.swift` [Oct 2026]
-            #if IS_HELPER
-            CFRunLoopGetCurrent() == IOThread.runLoop ||
-            #endif
+            CFRunLoopGetCurrent() == threads_stateRunLoop() || /// mainApp: mainThread, Helper: IOThread [Oct 2026]
             CFRunLoopGetCurrent() == CFRunLoopGetMain()
         );
         NSTimer *timer = [[NSTimer alloc] initWithFireDate: [NSDate dateWithTimeIntervalSinceNow: timeInterval] interval: DBL_MAX repeats: NO block: block];

@@ -8,7 +8,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ModificationUtility.h"
+#import "Constants.h" /// [Oct 2026] Was `ModificationUtility.h` (Helper) – we only need `MFDirection` from `Constants.h`. Keeps Shared from importing Helper headers.
 #import "Shorthands.h"
 
 NS_ASSUME_NONNULL_BEGIN

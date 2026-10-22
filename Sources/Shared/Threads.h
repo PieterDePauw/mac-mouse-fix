@@ -84,7 +84,13 @@
 #import "Logging.h"
 #import "pthread.h"
 
-extern int _enableRunLoopAsserts;
+/// Per-target hooks [Oct 2026]
+///     Shared code doesn't know which process it's compiled into, so each target (mainApp, Helper) *defines* these. (mainApp: `App/main.m`, Helper: `Helper/Utility/IOThread.m`)
+///     Defined at link-time instead of registered at runtime, so they're valid from the very first instruction, and launch-order can't change their values.
+///     (Used to be `#if IS_HELPER` / `#if IS_MAIN_APP` switches in Threads.m, Config.h, SecureStorage.m, MFMessagePort.m, License.swift and NSTimer+Additions.m)
+extern int _enableRunLoopAsserts;               /// mainApp: 1, Helper: 0 (The Helper enables it at the end of its startup sequence – see `AccessibilityCheck.m`)
+CFRunLoopRef threads_stateRunLoop(void) CF_RETURNS_NOT_RETAINED; /// The runLoop that owns the state of the shared modules (Config, SecureStorage, MFMessagePort, Licensing). mainApp: mainThread, Helper: IOThread. (See `MMF Concurrency Model` above)
+
 void set_thread_priority(int priority, bool round_robin);
 void threads_configureMainThread(void);
 
@@ -152,12 +158,4 @@ typedef struct { int readerCount; int writerCount; } MFReadWriteTracker;
     NS_SWIFT_UNAVAILABLE("")
     static inline void __decrementInt(int **someInt) { **someInt -= 1; }
 
-#if IS_HELPER
-@interface IOThread : NSObject
-
-    + (void) load_Manual;
-    + (void) start;
-    + (CFRunLoopRef)runLoop CF_RETURNS_NOT_RETAINED;
-
-@end
-#endif
+/// `IOThread` lives in `Helper/Utility/IOThread.h` [Oct 2026]

@@ -8,6 +8,7 @@
 //
 
 #import "ModifiedDragOutputTwoFingerSwipe.h"
+#import "IOThread.h"
 #import "Mac_Mouse_Fix_Helper-Swift.h"
 #import "ModificationUtility.h"
 #import "GestureScrollSimulator.h"

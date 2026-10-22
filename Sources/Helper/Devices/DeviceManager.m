@@ -31,6 +31,7 @@
 #import <IOKit/hidsystem/IOHIDEventSystemClient.h>
 
 #import "Threads.h"
+#import "IOThread.h"
 
 #import "SharedUtility.h"
 #import "Mac_Mouse_Fix_Helper-Swift.h"

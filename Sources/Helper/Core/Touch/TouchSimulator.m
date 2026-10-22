@@ -27,6 +27,7 @@
 #import "HelperUtility.h"
 #import "Logging.h"
 #import "Threads.h"
+#import "IOThread.h"
 #import "NSTimer+Additions.h"
 
 @implementation TouchSimulator

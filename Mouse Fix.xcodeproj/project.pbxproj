@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5B1D4F71A0EE9701C711BC73 /* NSScreen+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE507E74B91819CD3CD56BA /* NSScreen+Helper.m */; };
+		174A54825D2DC470C348D207 /* IOThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E7AADB13128534BA5B83597 /* IOThread.m */; };
 		4F09283F28B8101600BDC2FF /* TrialSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F09283E28B8101600BDC2FF /* TrialSection.swift */; };
 		4F09284028B8101600BDC2FF /* TrialSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F09283E28B8101600BDC2FF /* TrialSection.swift */; };
 		4F09284228B8C71C00BDC2FF /* Hyperlink.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF665E725F2C92700689B77 /* Hyperlink.m */; };
@@ -608,6 +610,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0EE507E74B91819CD3CD56BA /* NSScreen+Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSScreen+Helper.m"; sourceTree = "<group>"; };
+		79C853DF8C7C6161E3352C0C /* NSScreen+Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSScreen+Helper.h"; sourceTree = "<group>"; };
+		5E7AADB13128534BA5B83597 /* IOThread.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IOThread.m; sourceTree = "<group>"; };
+		37692F5776A42AF18CA800C4 /* IOThread.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOThread.h; sourceTree = "<group>"; };
 		4F0028012C58303B00CDB9D0 /* LocalizationScreenshotTakerTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = LocalizationScreenshotTakerTestPlan.xctestplan; path = Targets/LocalizationScreenshotTaker/LocalizationScreenshotTakerTestPlan.xctestplan; sourceTree = SOURCE_ROOT; };
 		4F02C71C2899448900ED0AA8 /* OutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputCoordinator.swift; sourceTree = "<group>"; };
 		4F02C7202899453200ED0AA8 /* OutputCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutputCoordinator.h; sourceTree = "<group>"; };
@@ -2748,6 +2754,10 @@
 				4FF6668025F2C93A00689B77 /* HelperUtility.m */,
 				4F626E97292A842D00E6FFD5 /* KeyCaptureMode.h */,
 				4F626E98292A842D00E6FFD5 /* KeyCaptureMode.m */,
+				37692F5776A42AF18CA800C4 /* IOThread.h */,
+				5E7AADB13128534BA5B83597 /* IOThread.m */,
+				79C853DF8C7C6161E3352C0C /* NSScreen+Helper.h */,
+				0EE507E74B91819CD3CD56BA /* NSScreen+Helper.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -3783,6 +3793,8 @@
 				4FE78C3B2C50177800C54103 /* DisableSwiftBridging.swift in Sources */,
 				4F8A8DBD287F203D00786BCC /* IOHIDAccelerationTable.cpp in Sources */,
 				4F5F3EF32756F1DB00C350C0 /* ScrollModifiers.swift in Sources */,
+				174A54825D2DC470C348D207 /* IOThread.m in Sources */,
+				5B1D4F71A0EE9701C711BC73 /* NSScreen+Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 //
 
 #import "GestureScrollSimulator.h"
+#import "IOThread.h"
 #import <QuartzCore/QuartzCore.h>
 #import <Cocoa/Cocoa.h>
 #import "TouchSimulator.h"

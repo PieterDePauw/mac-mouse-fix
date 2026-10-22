@@ -28,6 +28,7 @@
 #import "EventUtility.h"
 #import "MathObjc.h"
 #import "Threads.h"
+#import "IOThread.h"
 
 @import IOKit;
 #import "MFHIDEventImports.h"

@@ -5,6 +5,7 @@
 #import "Logging.h"
 #import "Constants.h"
 #import "VectorUtility.h"
+#import "ModificationUtility.h" /// [Oct 2026] Used to come in through `VectorUtility.h`
 #import "MathObjc.h"
 #import "DisplayLink.h"
 #import "AnimatorDeclarations.h"
@@ -51,6 +52,7 @@
 #import "NSTimer+Additions.h"
 #import "Localization.h"
 #import "Threads.h"
+#import "IOThread.h"
 #import "SecureStorage.h"
 
 #import "DevToggles.h" /// [May 2025] We don't need this in release builds

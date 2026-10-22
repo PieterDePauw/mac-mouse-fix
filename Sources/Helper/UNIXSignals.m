@@ -8,6 +8,7 @@
 //
 
 #import "UNIXSignals.h"
+#import "IOThread.h"
 //#import <signal.h>
 //#import "DeviceManager.h"
 

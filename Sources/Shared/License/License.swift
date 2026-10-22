@@ -43,11 +43,7 @@ import Cocoa
 ///         `priority:` param passed to Task.init() on this Actor is ignored - keeping the params in case we ever re-enable [Sep 2026]
 
 func licensingRunLoop() -> CFRunLoop {
-    #if IS_MAIN_APP
-        return CFRunLoopGetMain();
-    #elseif IS_HELPER
-        return IOThread.runLoop();
-    #endif
+    return threads_stateRunLoop(); /// mainApp: mainThread, Helper: IOThread [Oct 2026]
 }
 
 @globalActor actor LicensingActor {

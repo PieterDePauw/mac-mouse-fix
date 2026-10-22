@@ -68,6 +68,7 @@
 #import "ModifiedDragOutputAddMode.h"
 
 #import "Threads.h"
+#import "IOThread.h"
 #import "MathObjc.h"
 
 @implementation CoalescableEvent @end

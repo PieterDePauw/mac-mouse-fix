@@ -10,32 +10,13 @@
 #import "NSScreen+Additions.h"
 #import "SharedUtility.h"
 
-#if IS_HELPER
-#import "HelperUtility.h"
-#endif
-
 @interface NSScreen (PrivateStuffInDotMFile)
     - (NSString *)_UUIDString; /// Didn't test under which macOS versions this is available [Sep 2026]
 @end
 
 @implementation NSScreen (Additions)
 
-+ (NSScreen * _Nullable)screenUnderMousePointerWithEvent:(CGEventRef _Nullable)event {
-    
-    /// TODO: Simplify / optimize this: Use [NSScreen +_screenAtPoint:]
-    
-#if IS_HELPER
-    
-    CGDirectDisplayID displayID;
-    [HelperUtility displayUnderMousePointer:&displayID withEvent:event];
-    
-    return [NSScreen screenWithDisplayID:displayID];
-    
-#endif
-    
-    assert(false);
-    return nil;
-}
+/// `+screenUnderMousePointerWithEvent:` moved to `Helper/Utility/NSScreen+Helper.m` [Oct 2026] (It was `#if IS_HELPER` and asserted false in the mainApp)
 
 + (NSScreen * _Nullable)screenWithDisplayID:(CGDirectDisplayID)displayID {
 

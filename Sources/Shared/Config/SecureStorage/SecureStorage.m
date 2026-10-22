@@ -54,11 +54,7 @@
 #import "Threads.h"
 #import "Constants.h"
 
-#if IS_HELPER
-    #define secureStorageRunLoop() IOThread.runLoop
-#elif IS_MAIN_APP
-    #define secureStorageRunLoop() CFRunLoopGetMain()
-#endif
+#define secureStorageRunLoop() threads_stateRunLoop() /// mainApp: mainThread, Helper: IOThread [Oct 2026]
 
 #define baseQuery \
     (id)kSecAttrSynchronizable: @YES, \

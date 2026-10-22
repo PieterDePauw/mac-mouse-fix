@@ -8,6 +8,7 @@
 //
 
 #import "Constants.h"
+#import "IOThread.h"
 
 #import "Modifiers.h"
 #import "ButtonTriggerGenerator.h"

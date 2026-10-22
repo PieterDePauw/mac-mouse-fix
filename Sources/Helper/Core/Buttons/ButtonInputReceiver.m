@@ -8,6 +8,7 @@
 //
 
 #import "ButtonInputReceiver.h"
+#import "IOThread.h"
 #import "DeviceManager.h"
 #import <IOKit/hid/IOHIDManager.h>
 #import "ButtonTriggerGenerator.h"

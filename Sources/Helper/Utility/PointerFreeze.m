@@ -19,7 +19,9 @@
 #import "CGSConnection.h"
 #import "ModificationUtility.h"
 #import "Threads.h"
+#import "IOThread.h"
 #import "NSScreen+Additions.h"
+#import "NSScreen+Helper.h"
 @import CoreMedia;
 #import "MFGate.h"
 

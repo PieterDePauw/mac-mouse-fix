@@ -21,3 +21,4 @@
 #import <MMFCore/MathObjc.h>
 #import <MMFCore/AnimatorDeclarations.h>
 #import <MMFCore/PolynomialRegression.h>
+#import <MMFCore/MFCoding.h>

@@ -13,6 +13,7 @@
 #import "MFMessagePort.h"
 #import "DeviceManager.h"
 #import "Config.h"
+#import "Config+Helper.h"
 #import "Scroll.h"
 #import "ButtonInputReceiver.h"
 #import "Constants.h"
@@ -38,6 +39,10 @@
 + (void)load {
     
     /// This is the main entry point of the app
+    
+    /// Install the Helper's hooks into the Shared modules [Oct 2026]
+    ///     Doing this first, so they're in place before anything could touch those modules. (See `Per-target hooks` in Config.h)
+    [Config installHelperHooks];
     
     ///
     /// Check command line args.
@@ -197,6 +202,7 @@
             [Modifiers load_Manual];
             [ModifiedDrag load_Manual];
             [Config load_Manual];
+            [Config.shared setupFSEventStreamCallback]; /// [Oct 2026] Used to be called at the end of `[Config load_Manual]` (Helper-only `#if`)
 
             [SwitchMaster.shared load_Manual];
 

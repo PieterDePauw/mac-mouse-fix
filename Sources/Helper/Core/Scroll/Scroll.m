@@ -12,6 +12,7 @@
 #import "TouchSimulator.h"
 #import "ScrollModifiers.h"
 #import "Config.h"
+#import "Config+Helper.h"
 #import "ScrollUtility.h"
 #import "VectorUtility.h"
 #import "HelperUtility.h"

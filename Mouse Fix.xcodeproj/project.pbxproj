@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE56A428A540538B7532FE9A /* Config+App.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F5C93D204AC92B579B3696 /* Config+App.m */; };
+		88016ABB4BD8B7A2C7937B08 /* Config+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = E3D977DE6A5638C497D960E7 /* Config+Helper.m */; };
 		F0568B9C621DC5AB4C942FC1 /* DisableSwiftBridging+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A60E67AFD5FB4CEDC7550 /* DisableSwiftBridging+Localization.swift */; };
 		F5C774FB74C11DDB16559164 /* DisableSwiftBridging+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8A60E67AFD5FB4CEDC7550 /* DisableSwiftBridging+Localization.swift */; };
 		C7E821955594FD34C1ADCF12 /* DisableSwiftBridging+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B70968DC0B2F547E5A19A74 /* DisableSwiftBridging+Helper.swift */; };
@@ -613,6 +615,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F2F5C93D204AC92B579B3696 /* Config+App.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Config+App.m"; sourceTree = "<group>"; };
+		7B3C29E23DABB61F2E8F5874 /* Config+App.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Config+App.h"; sourceTree = "<group>"; };
+		E3D977DE6A5638C497D960E7 /* Config+Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "Config+Helper.m"; sourceTree = "<group>"; };
+		AA91CCAD2D3867D3FFE2EC16 /* Config+Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Config+Helper.h"; sourceTree = "<group>"; };
 		FD8A60E67AFD5FB4CEDC7550 /* DisableSwiftBridging+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DisableSwiftBridging+Localization.swift"; sourceTree = "<group>"; };
 		2B70968DC0B2F547E5A19A74 /* DisableSwiftBridging+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DisableSwiftBridging+Helper.swift"; sourceTree = "<group>"; };
 		0EE507E74B91819CD3CD56BA /* NSScreen+Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSScreen+Helper.m"; sourceTree = "<group>"; };
@@ -2560,6 +2566,8 @@
 			children = (
 				4FF665E925F2C92700689B77 /* Utility_App.h */,
 				4FF665E825F2C92700689B77 /* Utility_App.m */,
+				7B3C29E23DABB61F2E8F5874 /* Config+App.h */,
+				F2F5C93D204AC92B579B3696 /* Config+App.m */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -2610,6 +2618,8 @@
 				4FD860DA266EFD64004F76C8 /* ScrollConfigObjC.h */,
 				4F616D6027BDCD56004A6A72 /* ScrollConfigTesting.md */,
 				4FE7A0DE28677AD600C33B37 /* Gain Curve Math.tex */,
+				AA91CCAD2D3867D3FFE2EC16 /* Config+Helper.h */,
+				E3D977DE6A5638C497D960E7 /* Config+Helper.m */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -3625,6 +3635,7 @@
 				4FA40D0328A0D0BB00499E53 /* PolynomialRegression.m in Sources */,
 				4FA40CFE28A0CCCB00499E53 /* HybridCurves.swift in Sources */,
 				F5C774FB74C11DDB16559164 /* DisableSwiftBridging+Localization.swift in Sources */,
+				BE56A428A540538B7532FE9A /* Config+App.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3805,6 +3816,7 @@
 				174A54825D2DC470C348D207 /* IOThread.m in Sources */,
 				5B1D4F71A0EE9701C711BC73 /* NSScreen+Helper.m in Sources */,
 				C7E821955594FD34C1ADCF12 /* DisableSwiftBridging+Helper.swift in Sources */,
+				88016ABB4BD8B7A2C7937B08 /* Config+Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

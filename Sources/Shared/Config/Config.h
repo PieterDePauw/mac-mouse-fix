@@ -42,17 +42,17 @@ void commitConfig(void);
 + (void)loadFileAndUpdateStates;
 
 /// Repair
-#if IS_MAIN_APP
-    //- (void) repairIncompleteAppOverrideForBundleID: (NSString *)bundleID
-    //                               relevantKeyPaths: (NSArray <NSString *> *)keyPathsToDefaultValues;
-    - (void) cleanConfig;
-#endif
+//- (void) repairIncompleteAppOverrideForBundleID: (NSString *)bundleID
+//                               relevantKeyPaths: (NSArray <NSString *> *)keyPathsToDefaultValues;
+- (void) cleanConfig; /// [Oct 2026] Only used by the mainApp (Used to be a mainApp-only `#if`)
 
 /// Overrides
-#if IS_HELPER
-    - (BOOL)loadOverridesForAppUnderMousePointerWithEvent:(CGEventRef)event;
-    @property (strong, nonatomic, readonly) NSMutableDictionary *configWithAppOverridesApplied; /// [Aug 2025] This could just be an ivar
-#endif
+///     -> `loadOverridesForAppUnderMousePointerWithEvent:` and `configWithAppOverridesApplied` moved to `Helper/Core/Config/Config+Helper.h` [Oct 2026]
+
+/// Per-target hooks [Oct 2026]
+///     Config is shared between the mainApp and the Helper, but some of its behavior differs between them. Each target sets this up once at launch, before anything touches Config. (mainApp: `App/Utility/Config+App.m`, Helper: `Helper/Core/Config/Config+Helper.m`)
+///     (Used to be mainApp-only / Helper-only `#if` blocks inside Config.m)
+@property (class, nonatomic) BOOL repairsConfigOnLoad;                  /// mainApp: YES – `loadConfigFromFile` creates/upgrades/replaces the config file if necessary (`_loadAndRepair()`). Helper: NO – it just reads the file and crashes if that fails.
++ (void)registerDerivedStatesUpdater:(void (^)(void))updater;           /// `updater`s are called in registration order from `updateDerivedStates()` – whenever the config has been loaded from file or committed.
 
 @end
-

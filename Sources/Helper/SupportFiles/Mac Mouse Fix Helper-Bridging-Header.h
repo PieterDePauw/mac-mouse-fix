@@ -10,6 +10,7 @@
 #import "DisplayLink.h"
 #import "AnimatorDeclarations.h"
 #import "Config.h"
+#import "Config+Helper.h"
 #import "ScrollConfigObjC.h"
 #import "PointerConfigObjC.h"
 #import "SubPixelator.h"

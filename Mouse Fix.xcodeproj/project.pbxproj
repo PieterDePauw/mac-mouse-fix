@@ -624,8 +624,6 @@
 		4F0C003A2C525AC000C5D843 /* run */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = run; sourceTree = "<group>"; };
 		4F0C003C2C525F8500C5D843 /* Misappropriating XCStrings.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Misappropriating XCStrings.md"; sourceTree = "<group>"; };
 		4F0C003D2C52BBA600C5D843 /* LocalizationScreenshotTaker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LocalizationScreenshotTaker.entitlements; sourceTree = "<group>"; };
-		4F0C00402C53273200C5D843 /* BidirectionalMap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BidirectionalMap.h; sourceTree = "<group>"; };
-		4F0C00412C53273200C5D843 /* BidirectionalMap.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BidirectionalMap.m; sourceTree = "<group>"; };
 		4F0CFFE62C51878500C5D843 /* MFDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFDataClass.h; sourceTree = "<group>"; };
 		4F0CFFE72C51878500C5D843 /* MFDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFDataClass.m; sourceTree = "<group>"; };
 		4F0D906B2E89731C005859A0 /* TabControllerUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabControllerUtility.swift; sourceTree = "<group>"; };
@@ -747,9 +745,6 @@
 		4F52FAA42C775A57003C2821 /* Last State of Localization.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Last State of Localization.md"; sourceTree = "<group>"; };
 		4F56919C2E473DA2004C6CC3 /* Universal Back and Forward.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Universal Back and Forward.md"; sourceTree = "<group>"; };
 		4F58FDFF2C56DE9B00926A00 /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
-		4F58FE042C56EA1300926A00 /* TestLogging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestLogging.h; sourceTree = "<group>"; };
-		4F58FE052C56EA1300926A00 /* TestLogging.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestLogging.m; sourceTree = "<group>"; };
-		4F58FE092C56EA2F00926A00 /* TestLogging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLogging.swift; sourceTree = "<group>"; };
 		4F5971E42901763D00A32656 /* MathObjc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MathObjc.m; sourceTree = "<group>"; };
 		4F5C2F7F2885C5D0001B9B8A /* HelperState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperState.swift; sourceTree = "<group>"; };
 		4F5F3EED2756DB0A00C350C0 /* RemapsOverrider_old_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemapsOverrider_old_.swift; sourceTree = "<group>"; };
@@ -941,9 +936,6 @@
 		4FBC828C2DAE93AD00354981 /* DeallocTracker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeallocTracker.m; sourceTree = "<group>"; };
 		4FBC828E2DAE93AD00354981 /* MFObserverTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFObserverTests.h; sourceTree = "<group>"; };
 		4FBC828F2DAE93AD00354981 /* MFObserverTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFObserverTests.m; sourceTree = "<group>"; };
-		4FBC82902DAE93AD00354981 /* ObservationBenchmarks.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObservationBenchmarks.h; sourceTree = "<group>"; };
-		4FBC82912DAE93AD00354981 /* ObservationBenchmarks.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObservationBenchmarks.m; sourceTree = "<group>"; };
-		4FBC82922DAE93AD00354981 /* ObservationBenchmarks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservationBenchmarks.swift; sourceTree = "<group>"; };
 		4FBC82A12DAE93BD00354981 /* Xcode Nullability Settings.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Xcode Nullability Settings.md"; sourceTree = "<group>"; };
 		4FBC832C2DAFB28B00354981 /* PrivateFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrivateFunctions.h; sourceTree = "<group>"; };
 		4FBC832D2DAFB28B00354981 /* PrivateFunctions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PrivateFunctions.m; sourceTree = "<group>"; };
@@ -994,11 +986,6 @@
 		4FD82DD9260575B100664D6F /* NotificationLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationLabel.h; sourceTree = "<group>"; };
 		4FD82DDA260575B100664D6F /* NotificationLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NotificationLabel.m; sourceTree = "<group>"; };
 		4FD86058266DBF96004F76C8 /* AnimatorDeclarations.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimatorDeclarations.h; sourceTree = "<group>"; };
-		4FD8607B266E65E9004F76C8 /* DerivedValueGenerator.swift old */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DerivedValueGenerator.swift old"; sourceTree = "<group>"; };
-		4FD86081266E71A5004F76C8 /* DerivedValueGeneratorObjC.h old */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DerivedValueGeneratorObjC.h old"; sourceTree = "<group>"; };
-		4FD86082266E71A6004F76C8 /* DerivedValueGeneratorObjC.m old */ = {isa = PBXFileReference; lastKnownFileType = text; path = "DerivedValueGeneratorObjC.m old"; sourceTree = "<group>"; };
-		4FD86088266E819A004F76C8 /* Pointers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pointers.swift; sourceTree = "<group>"; };
-		4FD860A9266EC24E004F76C8 /* DerivedProperty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DerivedProperty.swift; sourceTree = "<group>"; };
 		4FD860CB266EF55A004F76C8 /* ScrollConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollConfig.swift; sourceTree = "<group>"; };
 		4FD860DA266EFD64004F76C8 /* ScrollConfigObjC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScrollConfigObjC.h; sourceTree = "<group>"; };
 		4FD98209292A8C1700645FE3 /* ReactiveDeviceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveDeviceManager.swift; sourceTree = "<group>"; };
@@ -1022,8 +1009,6 @@
 		4FDE75A828B269AE00662314 /* Randomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
 		4FDECCD728A3A37800DDEE91 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		4FDECCD828A3A37800DDEE91 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		4FDECCDC28A3E93100DDEE91 /* IsObjC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IsObjC.h; sourceTree = "<group>"; };
-		4FDECCDD28A3E93100DDEE91 /* IsObjC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IsObjC.m; sourceTree = "<group>"; };
 		4FE03A5C2BFF5F0500708454 /* CoolSUComparator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoolSUComparator.h; sourceTree = "<group>"; };
 		4FE03A5D2BFF5F0500708454 /* CoolSUComparator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoolSUComparator.m; sourceTree = "<group>"; };
 		4FE03A5E2BFF5F0500708454 /* CoolSUUpdater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoolSUUpdater.h; sourceTree = "<group>"; };
@@ -1549,16 +1534,6 @@
 			path = FromXcodeLocalizationScreenshotFix;
 			sourceTree = "<group>";
 		};
-		4F58FE0D2C56EA7E00926A00 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				4F58FE042C56EA1300926A00 /* TestLogging.h */,
-				4F58FE052C56EA1300926A00 /* TestLogging.m */,
-				4F58FE092C56EA2F00926A00 /* TestLogging.swift */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
 		4F6F67A128A8188000C6C40F /* ButtonTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -2022,9 +1997,6 @@
 			children = (
 				4FBC828E2DAE93AD00354981 /* MFObserverTests.h */,
 				4FBC828F2DAE93AD00354981 /* MFObserverTests.m */,
-				4FBC82902DAE93AD00354981 /* ObservationBenchmarks.h */,
-				4FBC82912DAE93AD00354981 /* ObservationBenchmarks.m */,
-				4FBC82922DAE93AD00354981 /* ObservationBenchmarks.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -2219,15 +2191,6 @@
 		4FD860C2266EEA94004F76C8 /* Unused */ = {
 			isa = PBXGroup;
 			children = (
-				4F0C00402C53273200C5D843 /* BidirectionalMap.h */,
-				4F0C00412C53273200C5D843 /* BidirectionalMap.m */,
-				4FD86088266E819A004F76C8 /* Pointers.swift */,
-				4FD860A9266EC24E004F76C8 /* DerivedProperty.swift */,
-				4FD8607B266E65E9004F76C8 /* DerivedValueGenerator.swift old */,
-				4FD86081266E71A5004F76C8 /* DerivedValueGeneratorObjC.h old */,
-				4FD86082266E71A6004F76C8 /* DerivedValueGeneratorObjC.m old */,
-				4FDECCDC28A3E93100DDEE91 /* IsObjC.h */,
-				4FDECCDD28A3E93100DDEE91 /* IsObjC.m */,
 				4F4C73F82C4FB4CA001D97C3 /* FromXcodeLocalizationScreenshotFix */,
 			);
 			path = Unused;
@@ -2900,7 +2863,6 @@
 				4FE1A1B72C56A50100CE3347 /* Logging.h */,
 				4FE1A1B82C56A50100CE3347 /* Logging.m */,
 				4F58FDFF2C56DE9B00926A00 /* Logging.swift */,
-				4F58FE0D2C56EA7E00926A00 /* Tests */,
 			);
 			path = Logging;
 			sourceTree = "<group>";

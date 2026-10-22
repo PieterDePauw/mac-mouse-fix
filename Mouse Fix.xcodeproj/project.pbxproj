@@ -129,8 +129,8 @@
 		4F319CBB26252A2D004E5F63 /* ButtonGroupRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F319CBA26252A2D004E5F63 /* ButtonGroupRowView.m */; };
 		4F33A5283055D6CC001F9EFE /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F33A5273055D6CC001F9EFE /* MainMenu.xib */; };
 		4F37FAD825FDFDC5004C34C4 /* MFScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F37FAD725FDFDC4004C34C4 /* MFScrollView.m */; };
-		4F39BC26263AC31600FDF692 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F39BC24263AC2E800FDF692 /* Sparkle.framework */; };
-		4F39BC27263AC31600FDF692 /* Sparkle.framework in Embed Frameworks (Redundant with Link Binary Phase?) */ = {isa = PBXBuildFile; fileRef = 4F39BC24263AC2E800FDF692 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4F39BC26263AC31600FDF692 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FDECCD728A3A37800DDEE91 /* Sparkle.framework */; };
+		4F39BC27263AC31600FDF692 /* Sparkle.framework in Embed Frameworks (Redundant with Link Binary Phase?) */ = {isa = PBXBuildFile; fileRef = 4FDECCD728A3A37800DDEE91 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F39BC3B263AF2B000FDF692 /* SparkleUpdaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F39BC3A263AF2B000FDF692 /* SparkleUpdaterController.m */; };
 		4F39BC4A263B179200FDF692 /* AppState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F39BC49263B179200FDF692 /* AppState.m */; };
 		4F3A10E92C5ED9E50054B89E /* SharedUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6653B25F2C7B000689B77 /* SharedUtility.m */; };
@@ -399,6 +399,13 @@
 			remoteInfo = MMFCore;
 		};
 		A1C0DE000000000000000041 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FCECD7821092354001F1078 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1C0DE000000000000000020;
+			remoteInfo = MMFCore;
+		};
+		A1C0DE000000000000000044 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4FCECD7821092354001F1078 /* Project object */;
 			proxyType = 1;
@@ -681,7 +688,7 @@
 		4F262D152C64E05A00773789 /* cmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cmark.h; sourceTree = "<group>"; };
 		4F262D222C64E05A00773789 /* libcmark.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcmark.a; sourceTree = "<group>"; };
 		4F262D242C64E05A00773789 /* Noah's Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Noah's Readme.md"; sourceTree = "<group>"; };
-		4F28B7F52D49141E006928A6 /* SkyLight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyLight.framework; path = ../../../../../../System/Library/PrivateFrameworks/SkyLight.framework; sourceTree = "<group>"; };
+		4F28B7F52D49141E006928A6 /* SkyLight.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyLight.framework; path = System/Library/PrivateFrameworks/SkyLight.framework; sourceTree = SDKROOT; };
 		4F2CC58627B8D2300084AACE /* HybridCurves.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HybridCurves.swift; sourceTree = "<group>"; };
 		4F2CC58827B8DA8B0084AACE /* Line.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
 		4F2E8FD12D52229100689058 /* NSCoderErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCoderErrors.h; sourceTree = "<group>"; };
@@ -695,12 +702,10 @@
 		4F319CBA26252A2D004E5F63 /* ButtonGroupRowView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonGroupRowView.m; sourceTree = "<group>"; };
 		4F33A5273055D6CC001F9EFE /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		4F37FAD725FDFDC4004C34C4 /* MFScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFScrollView.m; sourceTree = "<group>"; };
-		4F39BC24263AC2E800FDF692 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		4F39BC39263AF2B000FDF692 /* SparkleUpdaterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SparkleUpdaterController.h; sourceTree = "<group>"; };
 		4F39BC3A263AF2B000FDF692 /* SparkleUpdaterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SparkleUpdaterController.m; sourceTree = "<group>"; };
 		4F39BC48263B179200FDF692 /* AppState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppState.h; sourceTree = "<group>"; };
 		4F39BC49263B179200FDF692 /* AppState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppState.m; sourceTree = "<group>"; };
-		4F39BCE8263B7B1500FDF692 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4F3A40AA266BBB6200436821 /* AccelerationBezier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerationBezier.swift; sourceTree = "<group>"; };
 		4F3A40B0266BBC5000436821 /* Curve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curve.swift; sourceTree = "<group>"; };
 		4F3A40C9266C44D100436821 /* DisplayLink.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisplayLink.h; sourceTree = "<group>"; };
@@ -948,7 +953,7 @@
 		4FBC83342DAFB28B00354981 /* MFLoop.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFLoop.m; sourceTree = "<group>"; };
 		4FBC83352DAFB28B00354981 /* MFBenchmark.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFBenchmark.h; sourceTree = "<group>"; };
 		4FBC83362DAFB28B00354981 /* MFBenchmark.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFBenchmark.m; sourceTree = "<group>"; };
-		4FBD52612E47EFF400C39A44 /* TextInput.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextInput.framework; path = ../../../../../../System/Library/PrivateFrameworks/TextInput.framework; sourceTree = "<group>"; };
+		4FBD52612E47EFF400C39A44 /* TextInput.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = TextInput.framework; path = System/Library/PrivateFrameworks/TextInput.framework; sourceTree = SDKROOT; };
 		4FC4A2492EA45685003566D8 /* Localization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Localization.h; sourceTree = "<group>"; };
 		4FC4A24D2EA457EC003566D8 /* Localization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Localization.m; sourceTree = "<group>"; };
 		4FC4A2502EA4587F003566D8 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
@@ -958,7 +963,6 @@
 		4FC56DB22C625B9300CCB98C /* CoolSFSymbolsFont.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoolSFSymbolsFont.h; sourceTree = "<group>"; };
 		4FC56DB32C625B9300CCB98C /* CoolSFSymbolsFont.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoolSFSymbolsFont.m; sourceTree = "<group>"; };
 		4FC778302D66693E00488468 /* Localization Notes.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Localization Notes.md"; sourceTree = "<group>"; };
-		4FC7D5D82B455A60002AED77 /* update-state-of-localization.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = "update-state-of-localization.yml"; sourceTree = "<group>"; };
 		4FC8A7CC28AAF1BC007DB982 /* MarkdownParser_old.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarkdownParser_old.swift; sourceTree = "<group>"; };
 		4FC8A7D428ABDEFD007DB982 /* MFClipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MFClipView.swift; sourceTree = "<group>"; };
 		4FCA07D425F3129B00BFE209 /* RemapTableController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RemapTableController.h; sourceTree = "<group>"; };
@@ -1418,15 +1422,6 @@
 			path = XCStringsDummyApp;
 			sourceTree = "<group>";
 		};
-		4F1793A725EEC8E500E8309B /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4F39BC24263AC2E800FDF692 /* Sparkle.framework */,
-				4F39BCE8263B7B1500FDF692 /* README.md */,
-			);
-			path = Vendor;
-			sourceTree = "<group>";
-		};
 		4F17D2DF292A61DE00EB07CA /* Unused */ = {
 			isa = PBXGroup;
 			children = (
@@ -1456,7 +1451,6 @@
 		4F2153232B2E145500DD3957 /* workflows */ = {
 			isa = PBXGroup;
 			children = (
-				4FC7D5D82B455A60002AED77 /* update-state-of-localization.yml */,
 				4F2153282B2E155300DD3957 /* update-acknowledgements.yml */,
 			);
 			path = workflows;
@@ -1542,7 +1536,6 @@
 				4F0C00162C525AC000C5D843 /* .env */,
 				4F0C003A2C525AC000C5D843 /* run */,
 				4F23379C2E36523200F4948C /* mac-mouse-fix-scripts */,
-				4F1793A725EEC8E500E8309B /* Frameworks */,
 				4F2153222B2E145500DD3957 /* .github */,
 				4F4C73A92C4FB28C001D97C3 /* .gitmodules */,
 				4F214C212B2E140A00DD3957 /* .gitignore */,
@@ -3010,6 +3003,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A1C0DE000000000000000045 /* PBXTargetDependency */,
 			);
 			name = "Localization Screenshot Taker";
 			productName = AppUITests;
@@ -3876,6 +3870,11 @@
 			isa = PBXTargetDependency;
 			target = A1C0DE000000000000000020 /* MMFCore */;
 			targetProxy = A1C0DE000000000000000041 /* PBXContainerItemProxy */;
+		};
+		A1C0DE000000000000000045 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1C0DE000000000000000020 /* MMFCore */;
+			targetProxy = A1C0DE000000000000000044 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

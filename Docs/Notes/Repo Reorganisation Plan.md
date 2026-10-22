@@ -8,6 +8,15 @@ Scope: (a) root & docs, (b) source folders `App/` `Helper/` `Shared/`, (c) extra
 - Phase 0–1 done (commit 0c0e32e72): notes and archives moved into `Docs/`, `xcconfig/` deleted.
 - Phase 2 done (commits 8f8a5ee70..19c6c7865): `Sources/`, `Resources/`, `Vendor/`, `Targets/` created, 22 orphan files deleted, hard-coded Xcode.app search path removed.
 - Phase 3 in progress.
+- Phase 4 merged into `reorg` (static framework target, see below).
+- Phase 5 done (commit "Reorg phase 5"):
+  - Removed the dangling reference to `.github/workflows/update-state-of-localization.yml` (file ref and group entry).
+  - Removed the duplicate Vendor group (Sparkle + README) from the virtual "Other" group; its Sparkle file ref was merged into the real Vendor group's (the link and embed build files now point there).
+  - `SkyLight.framework` and `TextInput.framework` now use `sourceTree = SDKROOT` with `System/Library/PrivateFrameworks/...` instead of `../../../../../../`.
+  - Deleted the unused `Sources/Helper/MessagePort/MessagePort_HelperApp.h`.
+  - Fixed a Phase 4 regression: the Localization Screenshot Taker now depends on MMFCore (it imports MMFCore headers, so `MMFCore-Swift.h` has to be generated first).
+  - Scanned every PBXFileReference/group path through its group chain: none missing.
+  - Validated: clean Debug and Release builds of App, Localization Screenshot Taker `build-for-testing`, `Tests`, XCStringsDummyApp, and the Debug bundle listing matches the baseline.
 - Phase 4 done as a **static framework target, not a Swift package** (commits "Reorg phase 4.1".."4.5" on `reorg-phase4`).
   - Spike result: Xcode 27 clamps Swift-package targets to macOS 12.0, and the project-level `__DIAGNOSE_INVALID_DEPLOYMENT_TARGET_AS_ERROR = NO` doesn't reach packages. The apps must stay at 10.15, so SPM is out (4.1/4.3 below are obsolete).
   - Instead: an `MMFCore` PBXNativeTarget in `Mouse Fix.xcodeproj` (framework, `MACH_O_TYPE = staticlib`, `DEFINES_MODULE = YES`, 10.15, inherits the project settings). Linked into App and Helper (Link Binary + target dependency), not embedded, so the bundle listing is unchanged.
@@ -17,6 +26,25 @@ Scope: (a) root & docs, (b) source folders `App/` `Helper/` `Shared/`, (c) extra
   - App and Helper link with `OTHER_LDFLAGS = -ObjC`. Without it, ld drops every MMFCore object file that isn't referenced statically, which loses ObjC categories and classes that are only looked up dynamically.
   - The Swift class runtime names changed from `_TtC20Mac_Mouse_Fix_Helper…` / `_TtC13Mac_Mouse_Fix…` to `_TtC7MMFCore…`. Nothing archives or persists these classes, so it should be harmless.
   - Not in MMFCore, because they have per-target code: HelperServices, Locator, License, Config, MessagePort, IOKit, Strings (except NSString+Additions), UI, Animation, MFObserver, SwiftConcurrency. `Logging.m`, `MFGate.m`, `SharedUtility.m` and other files are also still compiled directly by the Localization Screenshot Taker (`IS_XC_TEST`). Some MMFCore files call into Shared at link time or run time: `threads_stateRunLoop()`, `Locator` (Logging.m, SharedUtility.m), `NSAttributedString+Additions` (NSString+Additions.m).
+
+Final layout:
+```
+Acknowledgements.md  License  Markdown/  Readme.md  Mouse Fix.xcodeproj
+Docs/  Resources/  Support/  Targets/  Vendor/  mac-mouse-fix-scripts/ (submodule)  run
+Sources/
+  App/           Mac Mouse Fix app
+  Helper/        Mac Mouse Fix Helper
+  Shared/        code with per-target halves (HelperServices, Locator, License, Config, MessagePort, ...)
+  Localization/  string tooling and screenshot-taker code
+  MMFCore/       static framework: Math, Logging, Extensions, Utility, DisableSwiftBridging, Threads, Constants
+```
+
+Known remaining items:
+- `Resources/v2.icon` and `Resources/v3.icon` are on disk but not in the Xcode project.
+- `mac-mouse-fix-scripts/_archive_github_discussions.py` still writes `DiscussionsArchive/` (now `Docs/Archive/DiscussionsArchive/`). The submodule is upstream-owned.
+- The Localization Readme mentions a nonexistent `Localization/Code/UpdateStrings`.
+- HelperServices, Locator, License, Config and MessagePort remain in Shared with per-target code.
+- Runtime smoke test is pending (Helper starts, menu bar item appears, remap/scroll/license sheet).
 
 Deviations from the plan:
 - `Support/` stays at the repo root (the scripts write `Support/Support.md`).

@@ -14,7 +14,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
          <TestPlanReference
-            reference = "container:LocalizationScreenshotTaker/LocalizationScreenshotTakerTestPlan.xctestplan"
+            reference = "container:Targets/LocalizationScreenshotTaker/LocalizationScreenshotTakerTestPlan.xctestplan"
             default = "YES">
          </TestPlanReference>
       </TestPlans>

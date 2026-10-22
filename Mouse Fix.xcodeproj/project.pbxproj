@@ -608,7 +608,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4F0028012C58303B00CDB9D0 /* LocalizationScreenshotTakerTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = LocalizationScreenshotTakerTestPlan.xctestplan; path = LocalizationScreenshotTaker/LocalizationScreenshotTakerTestPlan.xctestplan; sourceTree = SOURCE_ROOT; };
+		4F0028012C58303B00CDB9D0 /* LocalizationScreenshotTakerTestPlan.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; name = LocalizationScreenshotTakerTestPlan.xctestplan; path = Targets/LocalizationScreenshotTaker/LocalizationScreenshotTakerTestPlan.xctestplan; sourceTree = SOURCE_ROOT; };
 		4F02C71C2899448900ED0AA8 /* OutputCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputCoordinator.swift; sourceTree = "<group>"; };
 		4F02C7202899453200ED0AA8 /* OutputCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OutputCoordinator.h; sourceTree = "<group>"; };
 		4F0438142E59F08200368E60 /* Old MFDisplayLinkWorkType stuff.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Old MFDisplayLinkWorkType stuff.md"; sourceTree = "<group>"; };
@@ -2138,11 +2138,19 @@
 				4F7F47D528A6EFCF00290BBD /* Resources */,
 				4FDECCD528A3A37800DDEE91 /* Vendor */,
 				4F422EF023469B2B00AA6E22 /* Other */,
+				FD1198D329CE86D97FBA53CD /* Targets */,
+				4FCECD8121092354001F1078 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FD1198D329CE86D97FBA53CD /* Targets */ = {
+			isa = PBXGroup;
+			children = (
 				4FA1ACE025E85904007DB95B /* LocalizationScreenshotTaker */,
 				4F1667E32C6A6782009E4924 /* XCStringsDummyApp */,
 				4FDB94372FE75270001E05CB /* Tests */,
-				4FCECD8121092354001F1078 /* Products */,
 			);
+			path = Targets;
 			sourceTree = "<group>";
 		};
 		4FCECD8121092354001F1078 /* Products */ = {
@@ -3863,7 +3871,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = XCStringsDummyApp/xcstrings_dummy_app.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Targets/XCStringsDummyApp/xcstrings_dummy_app.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -3876,7 +3884,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "${SRCROOT}/XCStringsDummyApp/XCStringsDummyApp-Info.plist";
+				INFOPLIST_FILE = "${SRCROOT}/Targets/XCStringsDummyApp/XCStringsDummyApp-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Noah Nuebling. All rights reserved.";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -3904,7 +3912,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = XCStringsDummyApp/xcstrings_dummy_app.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Targets/XCStringsDummyApp/xcstrings_dummy_app.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -3912,7 +3920,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
-				INFOPLIST_FILE = "${SRCROOT}/XCStringsDummyApp/XCStringsDummyApp-Info.plist";
+				INFOPLIST_FILE = "${SRCROOT}/Targets/XCStringsDummyApp/XCStringsDummyApp-Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2024 Noah Nuebling. All rights reserved.";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -3937,7 +3945,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = LocalizationScreenshotTaker/LocalizationScreenshotTaker.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Targets/LocalizationScreenshotTaker/LocalizationScreenshotTaker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -3963,7 +3971,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) IS_XC_TEST REPLACE_COCOALUMBERJACK";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "LocalizationScreenshotTaker/LocalizationScreenshotTaker-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Targets/LocalizationScreenshotTaker/LocalizationScreenshotTaker-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "Mac Mouse Fix";
 			};
@@ -3976,7 +3984,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CODE_SIGN_ENTITLEMENTS = LocalizationScreenshotTaker/LocalizationScreenshotTaker.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Targets/LocalizationScreenshotTaker/LocalizationScreenshotTaker.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -3998,7 +4006,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) IS_XC_TEST REPLACE_COCOALUMBERJACK";
 				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "LocalizationScreenshotTaker/LocalizationScreenshotTaker-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Targets/LocalizationScreenshotTaker/LocalizationScreenshotTaker-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = "Mac Mouse Fix";
 			};
@@ -4395,7 +4403,7 @@
 					"$(inherited)",
 				);
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "${SRCROOT}/Tests/Other/Info.plist";
+				INFOPLIST_FILE = "${SRCROOT}/Targets/Tests/Other/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Noah Nuebling. All rights reserved.";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -4439,7 +4447,7 @@
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GENERATE_INFOPLIST_FILE = NO;
-				INFOPLIST_FILE = "${SRCROOT}/Tests/Other/Info.plist";
+				INFOPLIST_FILE = "${SRCROOT}/Targets/Tests/Other/Info.plist";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2026 Noah Nuebling. All rights reserved.";
 				INFOPLIST_KEY_NSMainNibFile = MainMenu;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;

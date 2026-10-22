@@ -36,7 +36,7 @@ final class LocalizationScreenshotClass: XCTestCase {
         let bundleID: String
     }
     
-    func repoRoot() -> String { return (NSString(#file).deletingLastPathComponent as NSString).deletingLastPathComponent }
+    func repoRoot() -> String { return (((NSString(#file).deletingLastPathComponent as NSString).deletingLastPathComponent) as NSString).deletingLastPathComponent } /// This file lives at <repo>/Targets/LocalizationScreenshotTaker/
     
     ///
     /// Internal datatypes

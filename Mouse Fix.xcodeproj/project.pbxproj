@@ -2124,6 +2124,7 @@
 			isa = PBXGroup;
 			children = (
 				4FF6652B25F2C7B000689B77 /* Shared */,
+				4FF665BE25F2C92700689B77 /* App */,
 				4FF6660725F2C93A00689B77 /* Helper */,
 				4F4C737A2C4FB04B001D97C3 /* Localization */,
 			);
@@ -2133,7 +2134,6 @@
 		4FCECD7721092354001F1078 = {
 			isa = PBXGroup;
 			children = (
-				4FF665BE25F2C92700689B77 /* App */,
 				0E042815DAAADA3235B4B1D2 /* Sources */,
 				4F7F47D528A6EFCF00290BBD /* Resources */,
 				4FDECCD528A3A37800DDEE91 /* Vendor */,
@@ -4011,7 +4011,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = "$(inherited)";
-				CODE_SIGN_ENTITLEMENTS = App/SupportFiles/App.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Sources/App/SupportFiles/App.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -4025,7 +4025,7 @@
 					"$(inherited)",
 					"IS_MAIN_APP=1",
 				);
-				INFOPLIST_FILE = App/SupportFiles/Info.plist;
+				INFOPLIST_FILE = Sources/App/SupportFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4039,7 +4039,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) IS_MAIN_APP";
-				SWIFT_OBJC_BRIDGING_HEADER = "App/SupportFiles/Mac Mouse Fix-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/App/SupportFiles/Mac Mouse Fix-Bridging-Header.h";
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
@@ -4054,7 +4054,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = "$(inherited)";
-				CODE_SIGN_ENTITLEMENTS = App/SupportFiles/App.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Sources/App/SupportFiles/App.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -4068,7 +4068,7 @@
 					"$(inherited)",
 					"IS_MAIN_APP=1",
 				);
-				INFOPLIST_FILE = App/SupportFiles/Info.plist;
+				INFOPLIST_FILE = Sources/App/SupportFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4081,7 +4081,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) IS_MAIN_APP";
-				SWIFT_OBJC_BRIDGING_HEADER = "App/SupportFiles/Mac Mouse Fix-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/App/SupportFiles/Mac Mouse Fix-Bridging-Header.h";
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
@@ -4154,7 +4154,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE_HELPER = Sources/Helper/SupportFiles/Info.plist;
-				INFOPLIST_FILE_MAINAPP = App/SupportFiles/Info.plist;
+				INFOPLIST_FILE_MAINAPP = Sources/App/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				LOCALIZED_STRING_MACRO_NAMES = (
@@ -4250,7 +4250,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE_HELPER = Sources/Helper/SupportFiles/Info.plist;
-				INFOPLIST_FILE_MAINAPP = App/SupportFiles/Info.plist;
+				INFOPLIST_FILE_MAINAPP = Sources/App/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				LOCALIZED_STRING_MACRO_NAMES = (

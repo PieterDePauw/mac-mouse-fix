@@ -32,7 +32,7 @@ About ReactiveCocoa and ReactiveSwift (Vendored projects in this folder)
             Choose 'Do not embed' (Embedding unnecessary since it's a 'Static Library')
 
     Other notes:
-        Maybe ReactiveSwift and ReactiveCocoa projects should be in ./Frameworks with Sparkle?
+        Maybe ReactiveSwift and ReactiveCocoa projects should be in ./Frameworks (now Vendor/) with Sparkle?
             The 'External' folders are more for files we're using directly in our code but haven't written ourselves.
 
     On general size optimization:

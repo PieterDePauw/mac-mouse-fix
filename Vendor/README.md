@@ -19,4 +19,4 @@
     - Why fork Sparkle 1 and not upgrade to Sparkle 2?
         - We're customizing Sparkle 1 since that's currently less work than upgrading to Sparkle 2 and Sparkle 1 still works fine. I haven't really looked into how hard upgrading to Sparkle 2 would be.  
 
-[12 Sep 2026] Also see Shared/External/ - that currently contains vendored ReactiveSwift and ReactiveCocoa frameworks
+[12 Sep 2026] Also see ReactiveSwift-7.1.1/ and ReactiveCocoa-12.0.0/ in this folder (formerly Shared/External/) - these are the vendored ReactiveSwift and ReactiveCocoa frameworks

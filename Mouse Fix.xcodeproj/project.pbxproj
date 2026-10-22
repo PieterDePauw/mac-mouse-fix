@@ -1367,7 +1367,7 @@
 				4F39BC24263AC2E800FDF692 /* Sparkle.framework */,
 				4F39BCE8263B7B1500FDF692 /* README.md */,
 			);
-			path = Frameworks;
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		4F17D2DF292A61DE00EB07CA /* Unused */ = {
@@ -1943,17 +1943,6 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
-		4FA40D1128A0D9FB00499E53 /* External */ = {
-			isa = PBXGroup;
-			children = (
-				4FEAA96E3055D94200455F82 /* ReactiveCocoa-12.0.0 */,
-				4FF6665A25F2C93A00689B77 /* CGSInternal */,
-				4FEAA96C3055D91300455F82 /* SharedExternalNotes.txt */,
-				4FEAA96F3055D95900455F82 /* ReactiveSwift-7.1.1 */,
-			);
-			path = External;
-			sourceTree = "<group>";
-		};
 		4FA83A2026823EE000F3A31B /* Experiments */ = {
 			isa = PBXGroup;
 			children = (
@@ -2143,6 +2132,8 @@
 			isa = PBXGroup;
 			children = (
 				0E042815DAAADA3235B4B1D2 /* Sources */,
+				4F7F47D528A6EFCF00290BBD /* Resources */,
+				4FDECCD528A3A37800DDEE91 /* Vendor */,
 				4FF6652B25F2C7B000689B77 /* Shared */,
 				4FF665BE25F2C92700689B77 /* App */,
 				4FF6660725F2C93A00689B77 /* Helper */,
@@ -2151,7 +2142,6 @@
 				4F1667E32C6A6782009E4924 /* XCStringsDummyApp */,
 				4FDB94372FE75270001E05CB /* Tests */,
 				4FCECD8121092354001F1078 /* Products */,
-				4FDECCD528A3A37800DDEE91 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2281,16 +2271,20 @@
 			path = License;
 			sourceTree = "<group>";
 		};
-		4FDECCD528A3A37800DDEE91 /* Frameworks */ = {
+		4FDECCD528A3A37800DDEE91 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				4FDECCD828A3A37800DDEE91 /* README.md */,
+				4FEAA96C3055D91300455F82 /* SharedExternalNotes.txt */,
+				4FDECCD728A3A37800DDEE91 /* Sparkle.framework */,
 				4F262D252C64E05A00773789 /* cmark */,
+				4FF6665A25F2C93A00689B77 /* CGSInternal */,
+				4FEAA96F3055D95900455F82 /* ReactiveSwift-7.1.1 */,
+				4FEAA96E3055D94200455F82 /* ReactiveCocoa-12.0.0 */,
 				4FBD52612E47EFF400C39A44 /* TextInput.framework */,
 				4F28B7F52D49141E006928A6 /* SkyLight.framework */,
-				4FDECCD728A3A37800DDEE91 /* Sparkle.framework */,
-				4FDECCD828A3A37800DDEE91 /* README.md */,
 			);
-			path = Frameworks;
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		4FE78C412C5027A800C54103 /* DisableSwiftBridging */ = {
@@ -2425,11 +2419,9 @@
 				4F09284128B8C71000BDC2FF /* UI */,
 				4F9C14B527BAF202008A1479 /* IOKit */,
 				4FBC82942DAE93AD00354981 /* MFObserver */,
-				4FA40D1128A0D9FB00499E53 /* External */,
 				4FFA4E3928B79D8D0062A1FE /* Strings */,
 				4F909D4228A0C4C2009349A2 /* Extensions */,
 				4FF6653625F2C7B000689B77 /* Utility */,
-				4F7F47D528A6EFCF00290BBD /* Resources */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -4027,7 +4019,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Vendor",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -4037,7 +4029,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks/**",
+					"$(PROJECT_DIR)/Vendor/cmark/**",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15.0;
 				MARKETING_VERSION = 3.1.0;
@@ -4070,7 +4062,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Vendor",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -4080,7 +4072,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks/**",
+					"$(PROJECT_DIR)/Vendor/cmark/**",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15.0;
 				MARKETING_VERSION = 3.1.0;
@@ -4306,7 +4298,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks,
-					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Vendor",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -4317,7 +4309,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks/**",
+					"$(PROJECT_DIR)/Vendor/cmark/**",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nuebling.mac-mouse-fix.helper";
@@ -4351,7 +4343,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks,
-					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Vendor",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -4362,7 +4354,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks/**",
+					"$(PROJECT_DIR)/Vendor/cmark/**",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nuebling.mac-mouse-fix.helper";

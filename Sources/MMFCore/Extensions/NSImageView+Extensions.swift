@@ -11,7 +11,7 @@ import Cocoa
 
 @objc extension NSImageView {
 
-    @objc func enableAntiAliasing() {
+    @objc public func enableAntiAliasing() {
         
         /// The minification filter and rasterization turn on anti aliasing.
         /// Setting minificationFilterBias to -1 is placebo I'm pretty sure.

@@ -35,7 +35,12 @@ import Foundation
     
     @IBOutlet weak var appCompatHintItem: NSMenuItem!
     @IBOutlet var appCompatHintView: NSView!
-    
+
+    /// Master on/off switch. Built in code (instead of IB) because it's a custom view item like the ones in the system's Wi-Fi/Bluetooth menus.
+    ///     Its state is derived from the two killSwitches – it's on unless both buttons and scrolling are killed – so there's no extra config key.
+    var masterItem: NSMenuItem? = nil
+    var masterSwitch: NSSwitch? = nil
+
     // MARK: Init
     
     @objc static func load_Manual() {
@@ -72,9 +77,74 @@ import Foundation
         
         /// Turn off hint
         menu.removeItem(appCompatHintItem)
-        
+
+        /// Setup master switch item
+        setupMasterItem()
+
         /// Load state
         MenuBarItem.reload()
+    }
+
+    private func setupMasterItem() {
+
+        /// Label
+        let label = NSTextField(labelWithString: MFLocalizedString("menu-bar-item.master-toggle", comment: "Title next to the on/off switch at the top of the menu bar item's menu. Turning the switch off disables both buttons and scrolling features."))
+        label.font = NSFont.systemFont(ofSize: NSFont.systemFontSize, weight: .semibold)
+        label.translatesAutoresizingMaskIntoConstraints = false
+
+        /// Switch
+        let toggle = NSSwitch()
+        toggle.controlSize = .mini
+        toggle.target = self
+        toggle.action = #selector(toggleMaster(_:))
+        toggle.translatesAutoresizingMaskIntoConstraints = false
+        toggle.setAccessibilityLabel(label.stringValue)
+
+        /// Container
+        ///     Uses autoresizing (not constraints) for the container itself so NSMenu can stretch it to the menu's width
+        let container = NSView(frame: NSRect(x: 0, y: 0, width: 220, height: 30))
+        container.autoresizingMask = [.width]
+        container.addSubview(label)
+        container.addSubview(toggle)
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: container.leadingAnchor, constant: 14),
+            label.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+            toggle.leadingAnchor.constraint(greaterThanOrEqualTo: label.trailingAnchor, constant: 12),
+            toggle.trailingAnchor.constraint(equalTo: container.trailingAnchor, constant: -14),
+            toggle.centerYAnchor.constraint(equalTo: container.centerYAnchor),
+        ])
+
+        /// Clicking the label toggles, too – like in the system menus
+        container.addGestureRecognizer(NSClickGestureRecognizer(target: self, action: #selector(clickMasterRow(_:))))
+
+        /// Insert at the top, followed by a separator
+        let item = NSMenuItem()
+        item.view = container
+        menu.insertItem(item, at: 0)
+        menu.insertItem(NSMenuItem.separator(), at: 1)
+
+        masterItem = item
+        masterSwitch = toggle
+    }
+
+    /// Reflect killSwitch state in the UI. Call on main.
+    private func applyState(buttonsKilled: Bool, scrollKilled: Bool) {
+        assertRunLoop(CFRunLoopGetMain())
+        let isOn = !(buttonsKilled && scrollKilled)
+        buttonsEnabledItem.state = !buttonsKilled ? .on : .off
+        scrollEnabledItem.state = !scrollKilled ? .on : .off
+        masterSwitch?.state = isOn ? .on : .off
+        statusItem?.button?.appearsDisabled = !isOn /// Dim the menu bar icon while everything is off, so the state is visible without opening the menu
+    }
+
+    private func writeKillSwitches(buttonsKilled: Bool, scrollKilled: Bool) {
+        assertRunLoop(CFRunLoopGetMain())
+        applyState(buttonsKilled: buttonsKilled, scrollKilled: scrollKilled)
+        mfrun(IOThread.runLoop()) {
+            setConfig("General.buttonKillSwitch", buttonsKilled as NSObject)
+            setConfig("General.scrollKillSwitch", scrollKilled as NSObject)
+            commitConfig()
+        }
     }
     
     // MARK: SwitchMaster interface
@@ -115,8 +185,7 @@ import Foundation
         if shouldShow {
 
             mfrun(CFRunLoopGetMain()) {
-                instance?.buttonsEnabledItem.state = !buttonsKilled ? .on : .off
-                instance?.scrollEnabledItem.state = !scrollKilled ? .on : .off
+                instance?.applyState(buttonsKilled: buttonsKilled, scrollKilled: scrollKilled)
             }
             
         }
@@ -143,27 +212,32 @@ import Foundation
     @IBAction func disableScroll(_ sender: NSMenuItem) {
         assertRunLoop(CFRunLoopGetMain())
         // TODO: Fix bug where scrolling freezes after turning smooth scroll back on
-        
-        /// Toggle
-        sender.state = sender.state == .on ? .off : .on
-        /// Set to config
-        let killed = sender.state != .on
-        mfrun(IOThread.runLoop()) {
-            setConfig("General.scrollKillSwitch", killed as NSObject)
-            commitConfig()
-        }
+
+        /// Toggle & set to config
+        ///     Also writes the buttons killSwitch (unchanged), so the master switch stays in sync
+        let scrollKilled = sender.state == .on
+        writeKillSwitches(buttonsKilled: buttonsEnabledItem.state != .on, scrollKilled: scrollKilled)
     }
-    
+
     @IBAction func disableButtons(_ sender: NSMenuItem) {
         assertRunLoop(CFRunLoopGetMain())
-        /// Toggle
-        sender.state = sender.state == .on ? .off : .on
-        /// Set to config
+        /// Toggle & set to config
+        let buttonsKilled = sender.state == .on
+        writeKillSwitches(buttonsKilled: buttonsKilled, scrollKilled: scrollEnabledItem.state != .on)
+    }
+
+    @objc func toggleMaster(_ sender: NSSwitch) {
+        assertRunLoop(CFRunLoopGetMain())
+        /// Off kills both features, on revives both
         let killed = sender.state != .on
-        mfrun(IOThread.runLoop()) {
-            setConfig("General.buttonKillSwitch", killed as NSObject)
-            commitConfig()
-        }
+        writeKillSwitches(buttonsKilled: killed, scrollKilled: killed)
+    }
+
+    @objc func clickMasterRow(_ sender: NSClickGestureRecognizer) {
+        guard let toggle = masterSwitch, let row = sender.view else { return }
+        if toggle.frame.contains(sender.location(in: row)) { return } /// The switch handles its own clicks – don't toggle twice
+        toggle.state = toggle.state == .on ? .off : .on
+        toggleMaster(toggle)
     }
     
     @IBAction func checkUpdates(_ sender: Any) {

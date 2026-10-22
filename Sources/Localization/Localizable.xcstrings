@@ -11364,6 +11364,17 @@
         }
       }
     },
+    "menu-bar-item.master-toggle" : {
+      "comment" : "Title next to the on/off switch at the top of the menu bar item's menu. Turning the switch off disables both buttons and scrolling features.",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac Mouse Fix"
+          }
+        }
+      }
+    },
     "modifer-key.tool.command" : {
       "comment" : "",
       "localizations" : {

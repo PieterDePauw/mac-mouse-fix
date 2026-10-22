@@ -2124,6 +2124,7 @@
 			isa = PBXGroup;
 			children = (
 				4FF6652B25F2C7B000689B77 /* Shared */,
+				4FF6660725F2C93A00689B77 /* Helper */,
 				4F4C737A2C4FB04B001D97C3 /* Localization */,
 			);
 			path = Sources;
@@ -2132,11 +2133,10 @@
 		4FCECD7721092354001F1078 = {
 			isa = PBXGroup;
 			children = (
+				4FF665BE25F2C92700689B77 /* App */,
 				0E042815DAAADA3235B4B1D2 /* Sources */,
 				4F7F47D528A6EFCF00290BBD /* Resources */,
 				4FDECCD528A3A37800DDEE91 /* Vendor */,
-				4FF665BE25F2C92700689B77 /* App */,
-				4FF6660725F2C93A00689B77 /* Helper */,
 				4F422EF023469B2B00AA6E22 /* Other */,
 				4FA1ACE025E85904007DB95B /* LocalizationScreenshotTaker */,
 				4F1667E32C6A6782009E4924 /* XCStringsDummyApp */,
@@ -4153,7 +4153,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE_HELPER = Helper/SupportFiles/Info.plist;
+				INFOPLIST_FILE_HELPER = Sources/Helper/SupportFiles/Info.plist;
 				INFOPLIST_FILE_MAINAPP = App/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
@@ -4249,7 +4249,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE_HELPER = Helper/SupportFiles/Info.plist;
+				INFOPLIST_FILE_HELPER = Sources/Helper/SupportFiles/Info.plist;
 				INFOPLIST_FILE_MAINAPP = App/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
@@ -4288,7 +4288,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconRound;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = "$(inherited)";
-				CODE_SIGN_ENTITLEMENTS = Helper/SupportFiles/Helper.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Sources/Helper/SupportFiles/Helper.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -4305,7 +4305,7 @@
 					"IS_HELPER=1",
 					"NO_FILTER=1",
 				);
-				INFOPLIST_FILE = Helper/SupportFiles/Info.plist;
+				INFOPLIST_FILE = Sources/Helper/SupportFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4317,13 +4317,13 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) IS_HELPER";
-				SWIFT_OBJC_BRIDGING_HEADER = "Helper/SupportFiles/Mac Mouse Fix Helper-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Helper/SupportFiles/Mac Mouse Fix Helper-Bridging-Header.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Helper/SupportFiles/External\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Sources/Helper/SupportFiles/External\"";
 			};
 			name = Debug;
 		};
@@ -4333,7 +4333,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconRound;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = "$(inherited)";
-				CODE_SIGN_ENTITLEMENTS = Helper/SupportFiles/Helper.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Sources/Helper/SupportFiles/Helper.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -4350,7 +4350,7 @@
 					"IS_HELPER=1",
 					"NO_FILTER=1",
 				);
-				INFOPLIST_FILE = Helper/SupportFiles/Info.plist;
+				INFOPLIST_FILE = Sources/Helper/SupportFiles/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4362,13 +4362,13 @@
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) IS_HELPER";
-				SWIFT_OBJC_BRIDGING_HEADER = "Helper/SupportFiles/Mac Mouse Fix Helper-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sources/Helper/SupportFiles/Mac Mouse Fix Helper-Bridging-Header.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SYSTEM_FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
-				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Helper/SupportFiles/External\"";
+				USER_HEADER_SEARCH_PATHS = "\"$(SRCROOT)/Sources/Helper/SupportFiles/External\"";
 			};
 			name = Release;
 		};

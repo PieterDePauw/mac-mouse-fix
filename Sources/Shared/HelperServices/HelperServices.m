@@ -68,13 +68,9 @@
 
 #import "NSString+Additions.h"
 #import "NSTimer+Additions.h"
+#import "Logging.h" /// [Oct 2026] Used to come in through the target's `-Swift.h` header
+#import "Threads.h" /// ^
 
-#if IS_MAIN_APP
-#import "Mac_Mouse_Fix-Swift.h"
-#endif
-#if IS_HELPER
-#import "Mac_Mouse_Fix_Helper-Swift.h"
-#endif
 
 @implementation HelperServices
 

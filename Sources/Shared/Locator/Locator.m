@@ -80,7 +80,7 @@ static NSURL *_configURL;
 
     #if IS_MAIN_APP
         return NSUserDefaults.standardUserDefaults;
-    #elif IS_HELPER_APP
+    #elif IS_HELPER /// [Oct 2026] Was `IS_HELPER_APP` (undefined) – typo. (`+defaults` is uncalled.)
         return [[NSUserDefaults alloc] initWithSuiteName:kMFBundleIDApp];
     #else
         assert(false);

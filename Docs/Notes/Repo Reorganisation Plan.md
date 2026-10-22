@@ -1,6 +1,6 @@
 # Repo Reorganisation Plan
 
-Status: Phases 0–2 executed, Phase 3 in progress (see Progress). Paths below use the OLD layout unless marked "was". [Oct 2026]
+Status: Phases 0–2 executed, Phase 3 in progress, Phase 4 done as a static framework target (see Progress). Paths below use the OLD layout unless marked "was". [Oct 2026]
 Scope: (a) root & docs, (b) source folders `App/` `Helper/` `Shared/`, (c) extracting `Shared/` into a local Swift package.
 
 ## Progress
@@ -8,6 +8,15 @@ Scope: (a) root & docs, (b) source folders `App/` `Helper/` `Shared/`, (c) extra
 - Phase 0–1 done (commit 0c0e32e72): notes and archives moved into `Docs/`, `xcconfig/` deleted.
 - Phase 2 done (commits 8f8a5ee70..19c6c7865): `Sources/`, `Resources/`, `Vendor/`, `Targets/` created, 22 orphan files deleted, hard-coded Xcode.app search path removed.
 - Phase 3 in progress.
+- Phase 4 done as a **static framework target, not a Swift package** (commits "Reorg phase 4.1".."4.5" on `reorg-phase4`).
+  - Spike result: Xcode 27 clamps Swift-package targets to macOS 12.0, and the project-level `__DIAGNOSE_INVALID_DEPLOYMENT_TARGET_AS_ERROR = NO` doesn't reach packages. The apps must stay at 10.15, so SPM is out (4.1/4.3 below are obsolete).
+  - Instead: an `MMFCore` PBXNativeTarget in `Mouse Fix.xcodeproj` (framework, `MACH_O_TYPE = staticlib`, `DEFINES_MODULE = YES`, 10.15, inherits the project settings). Linked into App and Helper (Link Binary + target dependency), not embedded, so the bundle listing is unchanged.
+  - Sources live in `Sources/MMFCore/`: `Math/`, `Logging/`, `Extensions/` (incl. `NSString+Additions`), `Utility/` (all of the old `Shared/Utility`), `DisableSwiftBridging/`, `Threads.*`, `Constants.*`.
+  - One mixed ObjC+Swift target. The umbrella header `MMFCore.h` lists the ObjC headers that MMFCore's Swift needs (they're Public). ObjC code everywhere still finds MMFCore headers through the header map. App/Helper Swift see MMFCore through `@_exported import MMFCore` in `ImportMMFCore_App.swift` / `ImportMMFCore_Helper.swift`, and their ObjC sees MMFCore's Swift through the targets' `-Swift.h`.
+  - Swift API used outside MMFCore is `public` (`open` for `Curve` and `Curve.evaluate(at:)`, which the Helper subclasses). Only what the compiler asked for.
+  - App and Helper link with `OTHER_LDFLAGS = -ObjC`. Without it, ld drops every MMFCore object file that isn't referenced statically, which loses ObjC categories and classes that are only looked up dynamically.
+  - The Swift class runtime names changed from `_TtC20Mac_Mouse_Fix_Helper…` / `_TtC13Mac_Mouse_Fix…` to `_TtC7MMFCore…`. Nothing archives or persists these classes, so it should be harmless.
+  - Not in MMFCore, because they have per-target code: HelperServices, Locator, License, Config, MessagePort, IOKit, Strings (except NSString+Additions), UI, Animation, MFObserver, SwiftConcurrency. `Logging.m`, `MFGate.m`, `SharedUtility.m` and other files are also still compiled directly by the Localization Screenshot Taker (`IS_XC_TEST`). Some MMFCore files call into Shared at link time or run time: `threads_stateRunLoop()`, `Locator` (Logging.m, SharedUtility.m), `NSAttributedString+Additions` (NSString+Additions.m).
 
 Deviations from the plan:
 - `Support/` stays at the repo root (the scripts write `Support/Support.md`).
@@ -97,6 +106,8 @@ Each phase is one commit (or a short series) on its own branch and leaves the pr
 - [ ] Verify: `rg -n "IS_HELPER|IS_MAIN_APP|_Helper-Swift.h|Mac_Mouse_Fix-Swift.h" Sources/Shared/<module>` is empty for each module being extracted; both schemes build; a manual smoke test (remap a button, scroll, toggle the menu bar switch, license sheet).
 
 ### Phase 4: `MMFCore` local Swift package (only the leaves)
+> [Oct 2026] Superseded: SPM can't target 10.15 under Xcode 27. Done as a static framework target instead (see Progress). The steps below are the original SPM plan.
+
 - [ ] 4.1 Spike first. Create `Packages/MMFCore` with `platforms: [.macOS(.v10_15)]`, add it to the project, and confirm the macOS 27 SDK accepts 10.15 for a local package. If it doesn't, **stop here**; this is the blocker noted in `SharedExternalNotes.txt`.
 - [ ] 4.2 Candidates (pure, no App/Helper symbols): `Math/` (Bezier, curves, `VectorUtility` once its `ModificationUtility.h` import is gone), `Extensions/` (Foundation categories), `Utility/` pure helpers, `Threads`, `Logging`, `MFCoding`/`MFDataClass`/Plist coders.
 - [ ] 4.3 SPM can't mix languages in one target: split into `MMFCoreObjC` (public headers in `include/`) and `MMFCore` (Swift, depends on the ObjC target). Replace bridging-header imports with `import MMFCore` / `@import MMFCoreObjC`.

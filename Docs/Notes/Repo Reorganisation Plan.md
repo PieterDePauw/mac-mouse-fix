@@ -1,0 +1,169 @@
+# Repo Reorganisation Plan
+
+Status: Phases 0–2 executed, Phase 3 in progress, Phase 4 done as a static framework target (see Progress). Paths below use the OLD layout unless marked "was". [Oct 2026]
+Scope: (a) root & docs, (b) source folders `App/` `Helper/` `Shared/`, (c) extracting `Shared/` into a local Swift package.
+
+## Progress
+
+- Phase 0–1 done (commit 0c0e32e72): notes and archives moved into `Docs/`, `xcconfig/` deleted.
+- Phase 2 done (commits 8f8a5ee70..19c6c7865): `Sources/`, `Resources/`, `Vendor/`, `Targets/` created, 22 orphan files deleted, hard-coded Xcode.app search path removed.
+- Phase 3 in progress.
+- Phase 4 merged into `reorg` (static framework target, see below).
+- Phase 5 done (commit "Reorg phase 5"):
+  - Removed the dangling reference to `.github/workflows/update-state-of-localization.yml` (file ref and group entry).
+  - Removed the duplicate Vendor group (Sparkle + README) from the virtual "Other" group; its Sparkle file ref was merged into the real Vendor group's (the link and embed build files now point there).
+  - `SkyLight.framework` and `TextInput.framework` now use `sourceTree = SDKROOT` with `System/Library/PrivateFrameworks/...` instead of `../../../../../../`.
+  - Deleted the unused `Sources/Helper/MessagePort/MessagePort_HelperApp.h`.
+  - Fixed a Phase 4 regression: the Localization Screenshot Taker now depends on MMFCore (it imports MMFCore headers, so `MMFCore-Swift.h` has to be generated first).
+  - Scanned every PBXFileReference/group path through its group chain: none missing.
+  - Validated: clean Debug and Release builds of App, Localization Screenshot Taker `build-for-testing`, `Tests`, XCStringsDummyApp, and the Debug bundle listing matches the baseline.
+- Phase 4 done as a **static framework target, not a Swift package** (commits "Reorg phase 4.1".."4.5" on `reorg-phase4`).
+  - Spike result: Xcode 27 clamps Swift-package targets to macOS 12.0, and the project-level `__DIAGNOSE_INVALID_DEPLOYMENT_TARGET_AS_ERROR = NO` doesn't reach packages. The apps must stay at 10.15, so SPM is out (4.1/4.3 below are obsolete).
+  - Instead: an `MMFCore` PBXNativeTarget in `Mouse Fix.xcodeproj` (framework, `MACH_O_TYPE = staticlib`, `DEFINES_MODULE = YES`, 10.15, inherits the project settings). Linked into App and Helper (Link Binary + target dependency), not embedded, so the bundle listing is unchanged.
+  - Sources live in `Sources/MMFCore/`: `Math/`, `Logging/`, `Extensions/` (incl. `NSString+Additions`), `Utility/` (all of the old `Shared/Utility`), `DisableSwiftBridging/`, `Threads.*`, `Constants.*`.
+  - One mixed ObjC+Swift target. The umbrella header `MMFCore.h` lists the ObjC headers that MMFCore's Swift needs (they're Public). ObjC code everywhere still finds MMFCore headers through the header map. App/Helper Swift see MMFCore through `@_exported import MMFCore` in `ImportMMFCore_App.swift` / `ImportMMFCore_Helper.swift`, and their ObjC sees MMFCore's Swift through the targets' `-Swift.h`.
+  - Swift API used outside MMFCore is `public` (`open` for `Curve` and `Curve.evaluate(at:)`, which the Helper subclasses). Only what the compiler asked for.
+  - App and Helper link with `OTHER_LDFLAGS = -ObjC`. Without it, ld drops every MMFCore object file that isn't referenced statically, which loses ObjC categories and classes that are only looked up dynamically.
+  - The Swift class runtime names changed from `_TtC20Mac_Mouse_Fix_Helper…` / `_TtC13Mac_Mouse_Fix…` to `_TtC7MMFCore…`. Nothing archives or persists these classes, so it should be harmless.
+  - Not in MMFCore, because they have per-target code: HelperServices, Locator, License, Config, MessagePort, IOKit, Strings (except NSString+Additions), UI, Animation, MFObserver, SwiftConcurrency. `Logging.m`, `MFGate.m`, `SharedUtility.m` and other files are also still compiled directly by the Localization Screenshot Taker (`IS_XC_TEST`). Some MMFCore files call into Shared at link time or run time: `threads_stateRunLoop()`, `Locator` (Logging.m, SharedUtility.m), `NSAttributedString+Additions` (NSString+Additions.m).
+
+Final layout:
+```
+Acknowledgements.md  License  Markdown/  Readme.md  Mouse Fix.xcodeproj
+Docs/  Resources/  Support/  Targets/  Vendor/  mac-mouse-fix-scripts/ (submodule)  run
+Sources/
+  App/           Mac Mouse Fix app
+  Helper/        Mac Mouse Fix Helper
+  Shared/        code with per-target halves (HelperServices, Locator, License, Config, MessagePort, ...)
+  Localization/  string tooling and screenshot-taker code
+  MMFCore/       static framework: Math, Logging, Extensions, Utility, DisableSwiftBridging, Threads, Constants
+```
+
+Known remaining items:
+- `Resources/v2.icon` and `Resources/v3.icon` are on disk but not in the Xcode project.
+- `mac-mouse-fix-scripts/_archive_github_discussions.py` still writes `DiscussionsArchive/` (now `Docs/Archive/DiscussionsArchive/`). The submodule is upstream-owned.
+- The Localization Readme mentions a nonexistent `Localization/Code/UpdateStrings`.
+- HelperServices, Locator, License, Config and MessagePort remain in Shared with per-target code.
+- Runtime smoke test is pending (Helper starts, menu bar item appears, remap/scroll/license sheet).
+
+Deviations from the plan:
+- `Support/` stays at the repo root (the scripts write `Support/Support.md`).
+- The state-of-localization workflow was deleted (its script is obsolete).
+- `Vendor/` is flat (Reactive* folders and `SharedExternalNotes.txt` sit directly in it).
+
+Gotcha: the App group must stay before Helper in the Xcode group order, because both define `AppDelegate.h` (header-map resolution).
+
+## Current State
+
+- **Root** mixes build inputs with notes and archives: `App/`, `Helper/`, `Shared/`, `Localization/`, `Frameworks/`, `Tests/`, `LocalizationScreenshotTaker/`, `XCStringsDummyApp/`, `Markdown/` next to `Various Notes/`, `Localization Notes/`, `Crash Reports/`, `DiscussionsArchive/`, `Support/`, and an empty `xcconfig/` (only a README since Sep 2022).
+- **Xcode project** (`Mouse Fix.xcodeproj`, 5 native targets): 124 of 129 groups use group-relative `path =`, so the groups mirror the folders on disk. All build settings are inline (no xcconfig). Seven synchronized folders, all under the virtual "Other" group (Markdown/*, Support, Crash Reports, scripts submodule).
+- **Shared code is compiled into both apps**: 100 `Shared/` files are in both App and Helper Sources phases, 2 are App-only and 7 Helper-only, and about 22 are in no target (dead code or tests). `Localization/*.{m,swift}` is effectively a second Shared.
+- **Shared is not standalone.** 71 `#if IS_HELPER`/`IS_MAIN_APP` lines across 16 files, at least 10 files calling App or Helper code (e.g. `Config.m` → `[Remap reload]`, `[MenuBarItem reload]`; `MFMessagePort.m` → `Alerts`, `KeyCaptureMode`; `DeviceManager.m` → `SwitchMaster`; `License.swift` → `SwitchMaster.shared.lockDown()`), and 6 `.m` files importing the host's generated `-Swift.h`.
+- **Dependencies**: no SPM, by design (`Vendor/SharedExternalNotes.txt` (was `Shared/External/`): the macOS 27 SDK forces a 12.0 deployment target unless `__DIAGNOSE_INVALID_DEPLOYMENT_TARGET_AS_ERROR = NO`, which the author couldn't apply to packages). ReactiveSwift/ReactiveCocoa are vendored subprojects; Sparkle is a binary framework; cmark is a vendored `.a`.
+- **Path-coupled tooling** outside the project: CI `update-acknowledgements.yml` (`Markdown/`, `Acknowledgements.md`, scripts submodule; pushes to master), the `mac-mouse-fix-scripts` submodule (`_buildmd.py`, `run.py`), `LocalizationScreenshots.swift:504` (`Markdown/Media/Autogenerated/…`), the redirection service → `blob/master/Acknowledgements.md`, and 376 file headers linking `blob/master/License`.
+
+## Target State
+
+```
+mac-mouse-fix/
+├── Readme.md, Acknowledgements.md, License     # stay at root (external links + CI)
+├── Markdown/                                   # stays (submodule + CI + screenshot taker)
+├── Sources/
+│   ├── App/            (was App/)
+│   ├── Helper/         (was Helper/)
+│   ├── Shared/         (was Shared/, minus Resources/External)
+│   └── Localization/   (was Localization/)
+├── Resources/          (was Shared/Resources – xcassets, symbols, fonts)
+├── Vendor/             (was Frameworks/ + Shared/External)
+├── Targets/
+│   ├── LocalizationScreenshotTaker/
+│   ├── XCStringsDummyApp/
+│   └── Tests/
+├── Docs/
+│   ├── Notes/          (Various Notes/, Localization Notes/)
+│   └── Archive/        (Crash Reports/, DiscussionsArchive/)
+├── Mouse Fix.xcodeproj
+└── mac-mouse-fix-scripts/  (submodule, unchanged)
+```
+
+For (c), the realistic end state is **not** "all of Shared as one package". It is a small **`MMFCore` local package** holding only the leaf modules with no App/Helper dependencies and no `IS_*` conditions. Everything else stays target-compiled. See Phase 4 for why.
+
+## Affected Files
+
+| Path | Change | Dependencies |
+|---|---|---|
+| `Various Notes/`, `Localization Notes/`, `Crash Reports/`, `DiscussionsArchive/` | move → `Docs/…` (`Support/` stays at root) | none in build; update "Other" group + synchronized-group paths |
+| `xcconfig/` | delete | none (unused since 2022) |
+| `App/`, `Helper/`, `Shared/`, `Localization/` | move → `Sources/…` | blocks Phase 3; touches pbxproj group paths and build settings below |
+| `project.pbxproj` – `INFOPLIST_FILE`, `INFOPLIST_FILE_MAINAPP/HELPER`, `CODE_SIGN_ENTITLEMENTS`, `SWIFT_OBJC_BRIDGING_HEADER` ×3, `USER_HEADER_SEARCH_PATHS`, `FRAMEWORK_SEARCH_PATHS`, `LIBRARY_SEARCH_PATHS` | modify | blocked by the folder moves |
+| `Helper - Launchd start.xcscheme` | modify (`Shared/HelperServices/default_launchd.plist`) | blocked by the Shared move |
+| `Frameworks/`, `Shared/External/` | move → `Vendor/` | subproject refs for Reactive*.xcodeproj, search paths |
+| `Shared/Resources/` | move → `Resources/` | asset catalog refs in both targets |
+| `Shared/Config/Config.m`, `MFMessagePort.m`, `DeviceManager.m`, `Device.m`, `License.swift`, `Hyperlink.m`, `MarkdownParser.m`, `NSScreen+Additions.m`, `VectorUtility.h`, `DisableSwiftBridging.swift` | modify (dependency inversion) | blocks Phase 4 |
+| ~22 dead `Shared/` files (not in any target) | delete or move to `Docs/Archive/code` | none |
+| `Shared/Locator/Locator.m:83` | fix `IS_HELPER_APP` → `IS_HELPER` (latent bug; dead code path) | none |
+| `.github/workflows/update-state-of-localization.yml` | fix or delete (references the nonexistent `Localization/Code/StateOfLocalization/`) | none |
+| `Readme.md`, `Markdown/`, `Acknowledgements.md`, `License` | **unchanged** | submodule, CI, redirection service, 376 headers |
+
+## Execution Plan
+
+Each phase is one commit (or a short series) on its own branch and leaves the project building.
+
+### Phase 0: Baseline
+- [ ] 0.1 Record the baseline. Clean-build App, Helper and Localization Screenshot Taker (`xcodebuild -scheme App`, `-scheme Helper`), and save each built app's file list (`find "Mac Mouse Fix.app" | sort > baseline.txt`).
+- [ ] 0.2 Initialise the submodule (`git submodule update --init`) and grep `_buildmd.py`/`run.py` for hard-coded repo paths. This determines whether `Markdown/` and `Localization/` can ever move.
+- [ ] Verify: both schemes build; the baseline bundle listing is saved.
+
+### Phase 1: Root & docs (no build impact)
+- [ ] 1.1 `git mv` notes and archives into `Docs/{Notes,Archive}`. Delete `xcconfig/`.
+- [ ] 1.2 In the project, update the "Other" group and the synchronized groups (`Support`, `Crash Reports`) to the new paths. Keep the XCStringsDummyApp exception set on `Markdown/Strings` intact.
+- [ ] 1.3 Fix or delete `update-state-of-localization.yml`.
+- [ ] Verify: the project opens without red (missing) file references; both schemes build; `git diff --stat` shows only renames plus pbxproj changes.
+
+### Phase 2: Source folders → `Sources/`, `Vendor/`, `Resources/`, `Targets/`
+- [ ] 2.1 `git mv` each top-level folder (one at a time: `Localization` → `Shared` → `Helper` → `App`), then edit only that group's `path =` in the pbxproj. Group-relative paths mean children follow automatically.
+- [ ] 2.2 After each move, update the literal build settings listed in Affected Files (prefer `$(SRCROOT)/Sources/...`) and the launchd scheme.
+- [ ] 2.3 Move `Frameworks/` + `Shared/External/` → `Vendor/`, and re-point the Reactive* subproject references and the search paths. Remove the hard-coded `/Applications/Xcode.app/...` entry from the Helper's `FRAMEWORK_SEARCH_PATHS`, or replace it with `$(SDKROOT)`-relative.
+- [ ] 2.4 Delete the ~22 orphan files (keep them in git history).
+- [ ] Verify after **each** folder: both schemes build, and `find … | sort | diff - baseline.txt` is empty (same bundle contents: Helper in LoginItems, `sm_launchd.plist` in LaunchAgents, Sparkle in Frameworks). Run the app once: the Helper starts and the menu bar item appears.
+
+### Phase 3: Make Shared one-directional (prerequisite for any package)
+- [ ] 3.1 Replace the reverse calls with injection points. Config gets a `configDidReload` callback list that the App and Helper register into at launch; MFMessagePort gets per-target message handlers registered from the App or Helper; DeviceManager and License post notifications or call a delegate instead of `SwitchMaster` directly.
+- [ ] 3.2 Move target-specific halves out of the `#if IS_HELPER`/`#elif IS_MAIN_APP` blocks into `Sources/App` or `Sources/Helper` (category or extension files). Goal: zero `IS_*` in the files destined for the package.
+- [ ] 3.3 Drop `-Swift.h` imports from those files.
+- [ ] Verify: `rg -n "IS_HELPER|IS_MAIN_APP|_Helper-Swift.h|Mac_Mouse_Fix-Swift.h" Sources/Shared/<module>` is empty for each module being extracted; both schemes build; a manual smoke test (remap a button, scroll, toggle the menu bar switch, license sheet).
+
+### Phase 4: `MMFCore` local Swift package (only the leaves)
+> [Oct 2026] Superseded: SPM can't target 10.15 under Xcode 27. Done as a static framework target instead (see Progress). The steps below are the original SPM plan.
+
+- [ ] 4.1 Spike first. Create `Packages/MMFCore` with `platforms: [.macOS(.v10_15)]`, add it to the project, and confirm the macOS 27 SDK accepts 10.15 for a local package. If it doesn't, **stop here**; this is the blocker noted in `SharedExternalNotes.txt`.
+- [ ] 4.2 Candidates (pure, no App/Helper symbols): `Math/` (Bezier, curves, `VectorUtility` once its `ModificationUtility.h` import is gone), `Extensions/` (Foundation categories), `Utility/` pure helpers, `Threads`, `Logging`, `MFCoding`/`MFDataClass`/Plist coders.
+- [ ] 4.3 SPM can't mix languages in one target: split into `MMFCoreObjC` (public headers in `include/`) and `MMFCore` (Swift, depends on the ObjC target). Replace bridging-header imports with `import MMFCore` / `@import MMFCoreObjC`.
+- [ ] 4.4 Keep resources (xcassets, `default_config.plist`, launchd plists, license JSON) in the app targets, not `Bundle.module`. `sm_launchd.plist` must still land in `Contents/Library/LaunchAgents`.
+- [ ] Verify: both schemes build; the bundle listing still matches the baseline (plus no stray `MMFCore_MMFCore.bundle`); the Localization Screenshot Taker still compiles its Shared subset.
+
+### Phase 5: Cleanup
+- [ ] Remove now-empty groups. Update `Readme.md` developer notes, and the `Vendor/SharedExternalNotes.txt` (was `Shared/External/`) location.
+- [ ] Final validation: `xcodebuild -project "Mouse Fix.xcodeproj" -scheme App -configuration Release build` and `-scheme Helper`, then a manual run through `Support/mmf-switch.sh debug` (local dev script).
+
+## Rollback Plan
+
+1. Every phase lives on its own branch off `reorg-plan`; roll back with `git reset --hard <phase-start>` or by dropping the branch. All moves are `git mv`, so history is preserved and `git log --follow` works.
+2. Phase 2 (riskiest for the pbxproj): commit after **each** folder move. If Xcode shows red references, revert just that commit instead of hand-repairing a large pbxproj diff.
+3. Phase 4: the package is additive until the last step removes files from the target Sources phases. If the 10.15 spike fails, delete `Packages/` and the package reference; nothing else changes.
+
+## Risks
+
+- **Upstream merges** (high): any move under `App/`, `Helper/`, `Shared/` conflicts with nearly every upstream commit. Git rename detection helps for pure moves, but not when moves are mixed with edits. *Mitigation:* do Phase 1 alone if staying mergeable matters; batch Phases 2–4 into one rebase-friendly series done right after a fresh upstream merge.
+- **Submodule and CI paths** (high): `_buildmd.py` and CI assume `Markdown/`, `Acknowledgements.md` and `Localization/`. CI pushes to master every few minutes. *Mitigation:* those paths stay put; Phase 0.2 confirms what else is assumed.
+- **SPM deployment target** (high): the macOS 27 SDK and 10.15 may not work for packages, as the author already hit. *Mitigation:* the Phase 4.1 spike before any extraction.
+- **Header-map resolution** (medium): bare `#import "AppDelegate.h"` resolves per target because both apps define one. Moving files into a package removes header-map access. *Mitigation:* rename to `AppDelegate_App.h`/`AppDelegate_Helper.h` or import via the module in Phase 3.
+- **Bundle layout regressions** (medium): copy phases put the Helper, `sm_launchd.plist` and Sparkle in specific places, and launchd/SMAppService breaks quietly if they move. *Mitigation:* the bundle-listing diff after every step.
+- **Screenshot taker and XCStringsDummyApp** pick individual Shared/Localization files and the `Markdown/Strings` exception set. *Mitigation:* build both schemes in every verify step.
+
+## Open Questions
+
+- Submodule access: is `noah-nuebling/mac-mouse-fix-scripts` public, so Phase 0.2 can inspect it?
+- Is staying mergeable with upstream still a goal? It decides whether Phase 2+ happens at all.
+- Is a 10.15 deployment target still required, or is 12.0 acceptable? Raising it removes the SPM blocker.
+- Delete the ~22 orphan files, or archive them?

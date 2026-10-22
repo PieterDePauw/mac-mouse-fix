@@ -1,0 +1,55 @@
+//
+// --------------------------------------------------------------------------
+// DisableSwiftBridging.swift
+// Created for Mac Mouse Fix (https://github.com/noah-nuebling/mac-mouse-fix)
+// Created by Noah Nuebling in 2024
+// Licensed under Licensed under the MMF License (https://github.com/noah-nuebling/mac-mouse-fix/blob/master/License)
+// --------------------------------------------------------------------------
+//
+
+import Foundation
+
+/// On Swift Autobridging
+/// Swift automatically bridges Foundation-type args (like NSDictionary) to native Swift types which is super slow. At least for Dictionaries. We've found a way to prevent this:
+///
+/// 1. In your objc header file, wrap all autobridging argument/return types with the `(MF_SWIFT_UNBRIDGED(<the type>))` macro. The macro will replace the type with `id` when swift is looking at it - which disables the autobridiging.
+/// 2. When importing the method in Swift, the type will now appear as `Any`. To make the type show up as the proper foundation type, mark the objc implementation with the `NS_REFINED_FOR_SWIFT` flag, then create a Swift extension and implement a method that calls the original, type-erased implementation, and itself takes Foundation types like NSDictionary as arguments.
+///  -> Now you can call the ObjC method from Swift using foundation types as arguments directly, instead of being forced to use native Swift types which are then autobridged.
+///
+/// Note:
+/// - There was an older, more convoluted approach using the `MF_SWIFT_HIDDEN` macro and the `__SWIFT_UNBRIDGED_` method name prefix. We removed that in commit `83b93ad3f828764fa4d0e915857adf4623b4b155`.
+/// - **TODO:** Test if the new approach actually prevents bridging (Check performance against the old approach)
+///
+
+extension NSString {
+    
+    /// NSString+Additions.h
+    
+    func substring(withRegex regex: NSString) -> NSString? {
+        return __substring(withRegex: regex) as! NSString?
+    }
+    public func attributed() -> NSAttributedString {
+        return __attributed() as! NSAttributedString
+    }
+    func firstCaptialized() -> NSString {
+        return __firstCapitalized() as! NSString
+    }
+    public func stringByRemovingAllWhiteSpace() -> NSString {
+        return __stringByRemovingAllWhiteSpace() as! NSString
+    }
+    public func stringByTrimmingWhiteSpace() -> NSString {
+        return __stringByTrimmingWhiteSpace() as! NSString
+    }
+    func string(byAddingIndent indent: NSInteger) -> NSString {
+        return __string(byAddingIndent: indent) as! NSString
+    }
+    func string(byAddingIndent indent: Int, withCharacter character: NSString) -> NSString {
+        return __string(byAddingIndent: indent, withCharacter: character) as! NSString
+    }
+    func string(byPrependingCharacter character: NSString, count: Int) -> NSString {
+        return __string(byPrependingCharacter: character, count: count) as! NSString
+    }
+}
+
+/// Target-specific extensions live in `Localization/Screenshots/DisableSwiftBridging+Localization.swift` (mainApp + LocalizationScreenshotTaker) and `Helper/Utility/DisableSwiftBridging+Helper.swift` [Oct 2026]
+

@@ -701,7 +701,6 @@
 		4F39BC3A263AF2B000FDF692 /* SparkleUpdaterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SparkleUpdaterController.m; sourceTree = "<group>"; };
 		4F39BC48263B179200FDF692 /* AppState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppState.h; sourceTree = "<group>"; };
 		4F39BC49263B179200FDF692 /* AppState.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppState.m; sourceTree = "<group>"; };
-		4F39BCD3263B713400FDF692 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4F39BCE8263B7B1500FDF692 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4F3A40AA266BBB6200436821 /* AccelerationBezier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerationBezier.swift; sourceTree = "<group>"; };
 		4F3A40B0266BBC5000436821 /* Curve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Curve.swift; sourceTree = "<group>"; };
@@ -1227,7 +1226,7 @@
 		4F1668042C6AA96A009E4924 /* LocalizedDocuments */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = LocalizedDocuments; sourceTree = "<group>"; };
 		4F1708BD2E51BA9300945CF3 /* Support */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Support; sourceTree = "<group>"; };
 		4F23379C2E36523200F4948C /* mac-mouse-fix-scripts */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "mac-mouse-fix-scripts"; sourceTree = "<group>"; };
-		4FD98B302DE86F100039B102 /* Crash Reports */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Crash Reports"; sourceTree = "<group>"; };
+		4FD98B302DE86F100039B102 /* Crash Reports */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "Docs/Archive/Crash Reports"; sourceTree = "<group>"; };
 		4FF6B93F2E3BC047000F925D /* Templates */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Templates; sourceTree = "<group>"; };
 		4FF6B9422E3BC07C000F925D /* Media */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Media; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -1335,7 +1334,7 @@
 				4F18466A2C53AD6D00D5E835 /* Automatic Localization Screenshots.md */,
 				4F0C003C2C525F8500C5D843 /* Misappropriating XCStrings.md */,
 			);
-			path = "Localization Notes";
+			path = "Docs/Notes/Localization";
 			sourceTree = "<group>";
 		};
 		4F0D906D2E8A770B005859A0 /* Xcode Project Settings */ = {
@@ -1462,14 +1461,6 @@
 			path = TrialNotifications;
 			sourceTree = "<group>";
 		};
-		4F39BC88263B68F400FDF692 /* xcconfig */ = {
-			isa = PBXGroup;
-			children = (
-				4F39BCD3263B713400FDF692 /* README.md */,
-			);
-			path = xcconfig;
-			sourceTree = "<group>";
-		};
 		4F3A40C8266C448500436821 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
@@ -1492,7 +1483,6 @@
 				4F1708BD2E51BA9300945CF3 /* Support */,
 				4F42304628CE6C1C003A41D3 /* License */,
 				4F0BDC722B446A3C00AE65C1 /* Markdown */,
-				4F39BC88263B68F400FDF692 /* xcconfig */,
 				4F0C00162C525AC000C5D843 /* .env */,
 				4F0C003A2C525AC000C5D843 /* run */,
 				4F23379C2E36523200F4948C /* mac-mouse-fix-scripts */,
@@ -2366,7 +2356,7 @@
 				4FE8FC792929D8AC0002583B /* On Bundle Size & Deployment Target.md */,
 				4F1B41A72D4C06AC00026C94 /* CodeStyle.md */,
 			);
-			path = "Various Notes";
+			path = "Docs/Notes";
 			sourceTree = "<group>";
 		};
 		4FF0255827B00F9700923107 /* ThreeFingerSwipe */ = {

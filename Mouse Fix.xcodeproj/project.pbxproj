@@ -1266,6 +1266,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D9E1246D0EA7B7EA478DD4C4 /* MessagePort */ = {
+			isa = PBXGroup;
+			children = (
+				4F2F0B2A28E6258B00246D59 /* MessagePortUtility.swift */,
+			);
+			path = MessagePort;
+			sourceTree = "<group>";
+		};
+		844024353F99045978F8AB83 /* Curves */ = {
+			isa = PBXGroup;
+			children = (
+				4FA3ACC02DED4AE600A460FD /* CurveVisualizer.swift */,
+				4FA9733A293F7643002B5C24 /* ScrollSpeedupCurve.swift */,
+				4FBDA14A27B225210030E4EA /* Unused */,
+			);
+			path = Curves;
+			sourceTree = "<group>";
+		};
+		BDE51699562236BD06D61C34 /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				844024353F99045978F8AB83 /* Curves */,
+			);
+			path = Math;
+			sourceTree = "<group>";
+		};
+		097ED07D7A67ECF96FAC7672 /* IOKit */ = {
+			isa = PBXGroup;
+			children = (
+				4F9C14B627BAF21E008A1479 /* MFHIDEventImports.h */,
+				4FD66E0627BB553800F67559 /* CGEventHIDEventBridge.h */,
+				4FD66E0727BB553800F67559 /* CGEventHIDEventBridge.m */,
+				4F70ECB5267E810900325A76 /* IOUtility.h */,
+				4F70ECB6267E810900325A76 /* IOUtility.m */,
+				4F18A85727BF6E0200A5703B /* IOHIDEvent-Reconstructed.h */,
+				4FD66E0C27BBB55200F67559 /* External */,
+			);
+			path = IOKit;
+			sourceTree = "<group>";
+		};
 		4F09284128B8C71000BDC2FF /* UI */ = {
 			isa = PBXGroup;
 			children = (
@@ -1487,7 +1527,6 @@
 			children = (
 				4F44FF022606D73D00926A5E /* MFMessagePort.h */,
 				4F44FF032606D73D00926A5E /* MFMessagePort.m */,
-				4F2F0B2A28E6258B00246D59 /* MessagePortUtility.swift */,
 			);
 			path = MessagePort;
 			sourceTree = "<group>";
@@ -1850,15 +1889,8 @@
 		4F9C14B527BAF202008A1479 /* IOKit */ = {
 			isa = PBXGroup;
 			children = (
-				4F9C14B627BAF21E008A1479 /* MFHIDEventImports.h */,
-				4FD66E0627BB553800F67559 /* CGEventHIDEventBridge.h */,
-				4FD66E0727BB553800F67559 /* CGEventHIDEventBridge.m */,
-				4F70ECB5267E810900325A76 /* IOUtility.h */,
-				4F70ECB6267E810900325A76 /* IOUtility.m */,
 				4F428CE82CD3D627006322AB /* DeviceUID.h */,
 				4F428CE52CD3D608006322AB /* DeviceUID.m */,
-				4F18A85727BF6E0200A5703B /* IOHIDEvent-Reconstructed.h */,
-				4FD66E0C27BBB55200F67559 /* External */,
 			);
 			path = IOKit;
 			sourceTree = "<group>";
@@ -2383,7 +2415,6 @@
 				4FDE757C28B0E35E00662314 /* License */,
 				4FF6653025F2C7B000689B77 /* Locator */,
 				4F9E78BD26855B9B002C2309 /* SwiftConcurrency */,
-				4FF6667925F2C93A00689B77 /* Devices */,
 				4F7F47C828A5A01C00290BBD /* Config */,
 				4F3A40C8266C448500436821 /* Animation */,
 				4FF9305C28805FC40007CCA7 /* Math */,
@@ -2463,6 +2494,7 @@
 				4FF665E525F2C92700689B77 /* Utility */,
 				4F909D3F28A0C411009349A2 /* Experiments */,
 				4FF665E125F2C92700689B77 /* SupportFiles */,
+				D9E1246D0EA7B7EA478DD4C4 /* MessagePort */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -2536,6 +2568,9 @@
 				4F78CEF22904414B0030086C /* UI */,
 				4FF6663F25F2C93A00689B77 /* Utility */,
 				4FF6664D25F2C93A00689B77 /* SupportFiles */,
+				4FF6667925F2C93A00689B77 /* Devices */,
+				097ED07D7A67ECF96FAC7672 /* IOKit */,
+				BDE51699562236BD06D61C34 /* Math */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -2824,7 +2859,6 @@
 			isa = PBXGroup;
 			children = (
 				4F3A40B0266BBC5000436821 /* Curve.swift */,
-				4FA9733A293F7643002B5C24 /* ScrollSpeedupCurve.swift */,
 				4F8A8DC1287F967000786BCC /* TestAccelerationCurve.swift */,
 				4F8A8DBE287F7BBA00786BCC /* NaturalAccelerationCurve.swift */,
 				4FF93058288026FC0007CCA7 /* PolynomialCappedAccelerationCurve.swift */,
@@ -2835,10 +2869,8 @@
 				4F2CC58627B8D2300084AACE /* HybridCurves.swift */,
 				4F2CC58827B8DA8B0084AACE /* Line.swift */,
 				4F1D58182881D880002EB119 /* CombinedLinearCurve.swift */,
-				4FA3ACC02DED4AE600A460FD /* CurveVisualizer.swift */,
 				4FEBE6602E456DA2005FF70E /* CAAnimationCurveUtility.h */,
 				4FEBE6612E456DA2005FF70E /* CAAnimationCurveUtility.m */,
-				4FBDA14A27B225210030E4EA /* Unused */,
 			);
 			path = Curves;
 			sourceTree = "<group>";

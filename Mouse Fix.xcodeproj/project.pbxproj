@@ -4267,7 +4267,6 @@
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks,
 					"$(PROJECT_DIR)/Vendor",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -4312,7 +4311,6 @@
 				ENABLE_ON_DEMAND_RESOURCES = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks/ApplicationServices.framework/Frameworks,
 					"$(PROJECT_DIR)/Vendor",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (

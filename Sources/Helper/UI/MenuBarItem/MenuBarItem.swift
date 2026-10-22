@@ -58,6 +58,18 @@ import Foundation
         statusItem?.button?.title = ""
         let image = NSImage(named: "CoolMenuBarIcon")
         statusItem?.button?.image = image
+        #if DEBUG
+        /// Tell local debug builds apart from the installed app (matches the orange AppIconDebug)
+        ///     `contentTintColor` is ignored for template images in the status bar (macOS 27), so draw a non-template orange copy instead.
+        if let image {
+            statusItem?.button?.image = NSImage(size: image.size, flipped: false) { rect in
+                image.draw(in: rect)
+                NSColor.systemOrange.set()
+                rect.fill(using: .sourceAtop)
+                return true
+            }
+        }
+        #endif
         statusItem?.menu = menu
         //statusItem?.isVisible = false /// This makes the item forget its position when restarting the computer
 

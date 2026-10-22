@@ -13,7 +13,7 @@ import Cocoa
 /// With this class you can create a BezierCurve which is then linearly extrapolated after the last control point, and set to the minimum value before the first controlPoint
 /// https://en.wikipedia.org/wiki/Extrapolation#Linear
 /// We use this to define acceleration curves
-class AccelerationBezier: Bezier {
+public class AccelerationBezier: Bezier {
 
     var preLine: Line
     var postLine: Line

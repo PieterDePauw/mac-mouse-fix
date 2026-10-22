@@ -7,6 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A1C0DE010000000000000122 /* DoublesMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F8CF93C28686C0100BF5E55 /* DoublesMatrix.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1C0DE010000000000000121 /* PolynomialRegression.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F8CF93A28686C0100BF5E55 /* PolynomialRegression.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1C0DE010000000000000120 /* MathObjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FF0BD5D266ADFE5003935EA /* MathObjc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1C0DE01000000000000011F /* AnimatorDeclarations.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FD86058266DBF96004F76C8 /* AnimatorDeclarations.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1C0DE01000000000000011E /* VectorUtility.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FF0BD56266ACE32003935EA /* VectorUtility.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1C0DE01000000000000011D /* Shorthands.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F8A8DC0287F885D00786BCC /* Shorthands.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1C0DE01000000000000011C /* Constants.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FF6653325F2C7B000689B77 /* Constants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1C0DE01000000000000011B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEDC91292D765600E7DA2A /* Constants.swift */; };
+		A1C0DE01000000000000011A /* Shorthands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF27DD62B95B108004744E1 /* Shorthands.swift */; };
+		A1C0DE010000000000000119 /* Shorthands.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA06818291B2C4C00949B5F /* Shorthands.m */; };
+		A1C0DE010000000000000118 /* SharedMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC83302DAFB28B00354981 /* SharedMacros.m */; };
+		A1C0DE000000000000000063 /* ImportMMFCore_Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0DE000000000000000062 /* ImportMMFCore_Helper.swift */; };
+		A1C0DE000000000000000061 /* ImportMMFCore_App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C0DE000000000000000060 /* ImportMMFCore_App.swift */; };
+		A1C0DE010000000000000117 /* SharedMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FBC832F2DAFB28B00354981 /* SharedMacros.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1C0DE010000000000000116 /* Logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 4FE1A1B72C56A50100CE3347 /* Logging.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1C0DE010000000000000115 /* SharedUtilitySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE40B95283A49DD00880BEF /* SharedUtilitySwift.swift */; };
+		A1C0DE010000000000000114 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F58FDFF2C56DE9B00926A00 /* Logging.swift */; };
+		A1C0DE010000000000000113 /* Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE1A1B82C56A50100CE3347 /* Logging.m */; };
+		A1C0DE010000000000000112 /* DoublesMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8CF94528686C0100BF5E55 /* DoublesMatrix.m */; };
+		A1C0DE010000000000000111 /* PolynomialRegression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8CF94328686C0100BF5E55 /* PolynomialRegression.m */; };
+		A1C0DE010000000000000110 /* BezierCappedAccelerationCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAA5600293A41AF00BA782C /* BezierCappedAccelerationCurve.swift */; };
+		A1C0DE01000000000000010F /* PolynomialCappedAccelerationCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF93058288026FC0007CCA7 /* PolynomialCappedAccelerationCurve.swift */; };
+		A1C0DE01000000000000010E /* DragCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AFE962670EBA900ECA424 /* DragCurve.swift */; };
+		A1C0DE01000000000000010D /* Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF0BD4A266A8B7E003935EA /* Bezier.swift */; };
+		A1C0DE01000000000000010C /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CC58827B8DA8B0084AACE /* Line.swift */; };
+		A1C0DE01000000000000010B /* NaturalAccelerationCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A8DBE287F7BBA00786BCC /* NaturalAccelerationCurve.swift */; };
+		A1C0DE01000000000000010A /* CombinedLinearCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1D58182881D880002EB119 /* CombinedLinearCurve.swift */; };
+		A1C0DE010000000000000109 /* HybridCurves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CC58627B8D2300084AACE /* HybridCurves.swift */; };
+		A1C0DE010000000000000108 /* AccelerationBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A40AA266BBB6200436821 /* AccelerationBezier.swift */; };
+		A1C0DE010000000000000107 /* TestAccelerationCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A8DC1287F967000786BCC /* TestAccelerationCurve.swift */; };
+		A1C0DE010000000000000106 /* CAAnimationCurveUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEBE6612E456DA2005FF70E /* CAAnimationCurveUtility.m */; };
+		A1C0DE010000000000000105 /* Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A40B0266BBC5000436821 /* Curve.swift */; };
+		A1C0DE010000000000000104 /* VectorUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF0BD57266ACE32003935EA /* VectorUtility.m */; };
+		A1C0DE010000000000000103 /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE75A828B269AE00662314 /* Randomizer.swift */; };
+		A1C0DE010000000000000102 /* MathObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5971E42901763D00A32656 /* MathObjc.m */; };
+		A1C0DE010000000000000101 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF0BD50266AC10C003935EA /* Math.swift */; };
+		A1C0DE000000000000000003 /* MMFCore.h in Headers */ = {isa = PBXBuildFile; fileRef = A1C0DE000000000000000002 /* MMFCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1C0DE000000000000000030 /* MMFCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C0DE000000000000000001 /* MMFCore.framework */; };
+		A1C0DE000000000000000031 /* MMFCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1C0DE000000000000000001 /* MMFCore.framework */; };
 		8D35D8D86B10EBA01BE3F8B7 /* License+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A84D9EE079B366E04CEAD28 /* License+Helper.swift */; };
 		12E851237D6E67B32CF12F9C /* Threads_ScreenshotTaker.m in Sources */ = {isa = PBXBuildFile; fileRef = 409CD0EEDCCF1E526E4D1A3F /* Threads_ScreenshotTaker.m */; };
 		A658F974B823939FA546D255 /* MFMessagePort+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = A4669FA084C3F42075CE3AF1 /* MFMessagePort+Helper.m */; };
@@ -39,7 +78,6 @@
 		4F1708BE2E51D60400945CF3 /* MFGate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1B418E2D49960E00026C94 /* MFGate.m */; };
 		4F17D2E1292A635200EB07CA /* SwitchMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F17D2E0292A635200EB07CA /* SwitchMaster.swift */; };
 		4F1873D8307C234F00209BB2 /* vblphase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1873D7307C234F00209BB2 /* vblphase.m */; };
-		4F1AFE972670EBA900ECA424 /* DragCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AFE962670EBA900ECA424 /* DragCurve.swift */; };
 		4F1B418F2D49960E00026C94 /* MFGate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1B418E2D49960E00026C94 /* MFGate.m */; };
 		4F1B41902D49960E00026C94 /* MFGate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1B418E2D49960E00026C94 /* MFGate.m */; };
 		4F1B41A52D4BACBA00026C94 /* NSData+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1B41A42D4BACBA00026C94 /* NSData+Additions.m */; };
@@ -47,7 +85,6 @@
 		4F1B83062606E68300AEAF37 /* RemapsAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1B83052606E68300AEAF37 /* RemapsAnalyzer.m */; };
 		4F1B832D26081A5500AEAF37 /* CaptureToasts.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1B832C26081A5500AEAF37 /* CaptureToasts.m */; };
 		4F1C51DA260543DD007F4930 /* NSTextField+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1C51D9260543DD007F4930 /* NSTextField+Additions.m */; };
-		4F1D58192881D880002EB119 /* CombinedLinearCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1D58182881D880002EB119 /* CombinedLinearCurve.swift */; };
 		4F1D7F4728A4639800253407 /* MenuBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1D7F4628A4639800253407 /* MenuBarItem.swift */; };
 		4F2281112C62A36300B9FFEC /* SFSymbolStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A44512925311B00361EFF /* SFSymbolStrings.m */; };
 		4F25078E30658CF4007B537E /* Threads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F25078D30658CF2007B537E /* Threads.swift */; };
@@ -60,8 +97,6 @@
 		4F262D272C64E06500773789 /* libcmark.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F262D222C64E05A00773789 /* libcmark.a */; };
 		4F28B7F62D49141F006928A6 /* SkyLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F28B7F52D49141E006928A6 /* SkyLight.framework */; };
 		4F28B7F82D49144E006928A6 /* SkyLight.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F28B7F52D49141E006928A6 /* SkyLight.framework */; };
-		4F2CC58727B8D2300084AACE /* HybridCurves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CC58627B8D2300084AACE /* HybridCurves.swift */; };
-		4F2CC58927B8DA8B0084AACE /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CC58827B8DA8B0084AACE /* Line.swift */; };
 		4F2E8FD32D52229100689058 /* NSCoderErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2E8FD22D52229100689058 /* NSCoderErrors.m */; };
 		4F2E8FD42D52229100689058 /* NSCoderErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2E8FD22D52229100689058 /* NSCoderErrors.m */; };
 		4F2E8FD72D52877F00689058 /* MFPlistEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2E8FD62D52877F00689058 /* MFPlistEncoder.m */; };
@@ -75,8 +110,6 @@
 		4F39BC3B263AF2B000FDF692 /* SparkleUpdaterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F39BC3A263AF2B000FDF692 /* SparkleUpdaterController.m */; };
 		4F39BC4A263B179200FDF692 /* AppState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F39BC49263B179200FDF692 /* AppState.m */; };
 		4F3A10E92C5ED9E50054B89E /* SharedUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6653B25F2C7B000689B77 /* SharedUtility.m */; };
-		4F3A40AB266BBB6200436821 /* AccelerationBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A40AA266BBB6200436821 /* AccelerationBezier.swift */; };
-		4F3A40B1266BBC5000436821 /* Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A40B0266BBC5000436821 /* Curve.swift */; };
 		4F3A40CB266C44D100436821 /* DisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A40CA266C44D100436821 /* DisplayLink.m */; };
 		4F3A40DA266C5BDF00436821 /* NSScreen+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A40D9266C5BDF00436821 /* NSScreen+Additions.m */; };
 		4F3E067E26A2F97D000C9E06 /* URLMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3E067D26A2F97D000C9E06 /* URLMenuItem.m */; };
@@ -104,13 +137,9 @@
 		4F4C73FF2C4FB5D2001D97C3 /* AnnotationUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C73FD2C4FB5D2001D97C3 /* AnnotationUtility.m */; };
 		4F5170152CBFD75C0018D388 /* MFDataClassImpls.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5170142CBFD75C0018D388 /* MFDataClassImpls.m */; };
 		4F5170162CBFD75C0018D388 /* MFDataClassImpls.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5170142CBFD75C0018D388 /* MFDataClassImpls.m */; };
-		4F58FE002C56DE9B00926A00 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F58FDFF2C56DE9B00926A00 /* Logging.swift */; };
-		4F58FE022C56DE9B00926A00 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F58FDFF2C56DE9B00926A00 /* Logging.swift */; };
 		4F58FE032C56E65900926A00 /* AnnotationUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C73FD2C4FB5D2001D97C3 /* AnnotationUtility.m */; };
 		4F58FE132C57297400926A00 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F58FDFF2C56DE9B00926A00 /* Logging.swift */; };
 		4F58FE142C57BAFA00926A00 /* NSTextField+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F12951F28D2D5E1009A49AB /* NSTextField+Extentions.swift */; };
-		4F5971E52901763D00A32656 /* MathObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5971E42901763D00A32656 /* MathObjc.m */; };
-		4F5971E62901763D00A32656 /* MathObjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5971E42901763D00A32656 /* MathObjc.m */; };
 		4F5C2F802885C5D0001B9B8A /* HelperState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5C2F7F2885C5D0001B9B8A /* HelperState.swift */; };
 		4F5F3EF12756EC0400C350C0 /* RemapSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F3EF02756EC0400C350C0 /* RemapSwizzler.m */; };
 		4F5F3EF32756F1DB00C350C0 /* ScrollModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F3EF22756F1DB00C350C0 /* ScrollModifiers.swift */; };
@@ -140,13 +169,9 @@
 		4F8A44522925311B00361EFF /* SFSymbolStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A44512925311B00361EFF /* SFSymbolStrings.m */; };
 		4F8A8DAD287EEF6200786BCC /* IOHIDAccelerationTableBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A8DAC287EEF6200786BCC /* IOHIDAccelerationTableBridge.mm */; };
 		4F8A8DBD287F203D00786BCC /* IOHIDAccelerationTable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A8DBC287F203D00786BCC /* IOHIDAccelerationTable.cpp */; };
-		4F8A8DBF287F7BBA00786BCC /* NaturalAccelerationCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A8DBE287F7BBA00786BCC /* NaturalAccelerationCurve.swift */; };
-		4F8A8DC2287F967000786BCC /* TestAccelerationCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A8DC1287F967000786BCC /* TestAccelerationCurve.swift */; };
 		4F8B01AC2C348A3A00F3AF8D /* LocalizationScreenshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B01AB2C348A3A00F3AF8D /* LocalizationScreenshots.swift */; };
 		4F8B7E6727B4E32600598B65 /* TouchAnimatorBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8B7E6627B4E32600598B65 /* TouchAnimatorBase.swift */; };
 		4F8CE7012617738A00D70A76 /* AppTranslocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8CE6FF2617738A00D70A76 /* AppTranslocationManager.m */; };
-		4F8CF95728686C0100BF5E55 /* PolynomialRegression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8CF94328686C0100BF5E55 /* PolynomialRegression.m */; };
-		4F8CF95B28686EA200BF5E55 /* DoublesMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8CF94528686C0100BF5E55 /* DoublesMatrix.m */; };
 		4F8D2C5928A035EA0060F76F /* Mac Mouse Fix Helper.app in Copy MMF Helper */ = {isa = PBXBuildFile; fileRef = 4FCECD8021092354001F1078 /* Mac Mouse Fix Helper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4F909CF028A0C3B7009349A2 /* MainAppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F909CEF28A0C3B6009349A2 /* MainAppState.swift */; };
 		4F909D2128A0C3D2009349A2 /* GeneralTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F909CF628A0C3D2009349A2 /* GeneralTabController.swift */; };
@@ -195,8 +220,6 @@
 		4F9E78C026855BCF002C2309 /* Concurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E78BE26855BCF002C2309 /* Concurrency.swift */; };
 		4F9E78D02685E30C002C2309 /* GestureScrollSimulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E78CE2685E30B002C2309 /* GestureScrollSimulator.m */; };
 		4F9E78E3268663B1002C2309 /* ExponentialSmoother.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9E78E2268663B1002C2309 /* ExponentialSmoother.swift */; };
-		4FA06819291B2C4C00949B5F /* Shorthands.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA06818291B2C4C00949B5F /* Shorthands.m */; };
-		4FA0681A291B2C4C00949B5F /* Shorthands.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA06818291B2C4C00949B5F /* Shorthands.m */; };
 		4FA13FC228B3A2D3005C68FC /* TrialNotificationWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA13FC028B3A2D3005C68FC /* TrialNotificationWindow.swift */; };
 		4FA13FC328B3A2DB005C68FC /* TrialNotificationController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FA13FBC28B39423005C68FC /* TrialNotificationController.xib */; };
 		4FA13FC428B3A2E0005C68FC /* TrialNotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA13FBB28B39423005C68FC /* TrialNotificationController.swift */; };
@@ -212,20 +235,6 @@
 		4FA2F13E2C2B0932000C5535 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 4FA2F13C2C2B0932000C5535 /* Localizable.xcstrings */; };
 		4FA356BE2EE7839F00CAB015 /* XCUITest_Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA356BD2EE7839F00CAB015 /* XCUITest_Utils.m */; };
 		4FA3ACC62DED91E100A460FD /* CurveVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA3ACC02DED4AE600A460FD /* CurveVisualizer.swift */; };
-		4FA40CF628A0CCC600499E53 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF0BD50266AC10C003935EA /* Math.swift */; };
-		4FA40CF728A0CCCA00499E53 /* Curve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A40B0266BBC5000436821 /* Curve.swift */; };
-		4FA40CF828A0CCCA00499E53 /* TestAccelerationCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A8DC1287F967000786BCC /* TestAccelerationCurve.swift */; };
-		4FA40CF928A0CCCA00499E53 /* Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF0BD4A266A8B7E003935EA /* Bezier.swift */; };
-		4FA40CFA28A0CCCA00499E53 /* PolynomialCappedAccelerationCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF93058288026FC0007CCA7 /* PolynomialCappedAccelerationCurve.swift */; };
-		4FA40CFB28A0CCCB00499E53 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CC58827B8DA8B0084AACE /* Line.swift */; };
-		4FA40CFC28A0CCCB00499E53 /* NaturalAccelerationCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F8A8DBE287F7BBA00786BCC /* NaturalAccelerationCurve.swift */; };
-		4FA40CFD28A0CCCB00499E53 /* AccelerationBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A40AA266BBB6200436821 /* AccelerationBezier.swift */; };
-		4FA40CFE28A0CCCB00499E53 /* HybridCurves.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F2CC58627B8D2300084AACE /* HybridCurves.swift */; };
-		4FA40CFF28A0CCCB00499E53 /* DragCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1AFE962670EBA900ECA424 /* DragCurve.swift */; };
-		4FA40D0028A0CCCB00499E53 /* CombinedLinearCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F1D58182881D880002EB119 /* CombinedLinearCurve.swift */; };
-		4FA40D0228A0CE5B00499E53 /* VectorUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF0BD57266ACE32003935EA /* VectorUtility.m */; };
-		4FA40D0328A0D0BB00499E53 /* PolynomialRegression.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8CF94328686C0100BF5E55 /* PolynomialRegression.m */; };
-		4FA40D0428A0D0C000499E53 /* DoublesMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F8CF94528686C0100BF5E55 /* DoublesMatrix.m */; };
 		4FA40D0B28A0D87200499E53 /* DisplayLink.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F3A40CA266C44D100436821 /* DisplayLink.m */; };
 		4FA40D0E28A0D87200499E53 /* DynamicSystemAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE6CBC328987E8A00B3E829 /* DynamicSystemAnimator.swift */; };
 		4FA40D0F28A0D8EF00499E53 /* SubPixelator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6664025F2C93A00689B77 /* SubPixelator.m */; };
@@ -250,8 +259,6 @@
 		4FAA3DAC2C55E94600CBA413 /* IBUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAA3DAB2C55E94600CBA413 /* IBUtility.m */; };
 		4FAA3DAD2C55E94600CBA413 /* IBUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAA3DAB2C55E94600CBA413 /* IBUtility.m */; };
 		4FAA3DBC2C56802E00CBA413 /* XCUIElement+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FAA3DBB2C56802E00CBA413 /* XCUIElement+Additions.m */; };
-		4FAA5601293A41AF00BA782C /* BezierCappedAccelerationCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAA5600293A41AF00BA782C /* BezierCappedAccelerationCurve.swift */; };
-		4FAA5602293A41AF00BA782C /* BezierCappedAccelerationCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FAA5600293A41AF00BA782C /* BezierCappedAccelerationCurve.swift */; };
 		4FB4F9FE260FDBC800806DDD /* RemapTableUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB4F9FD260FDBC800806DDD /* RemapTableUtility.m */; };
 		4FB4FA202611DD6000806DDD /* KeyCaptureScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB4FA1F2611DD6000806DDD /* KeyCaptureScrollView.m */; };
 		4FB8B2952CCDB94F00A5A580 /* MFPlistDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FB8B2942CCDB94F00A5A580 /* MFPlistDecoder.m */; };
@@ -270,12 +277,10 @@
 		4FBC833E2DAFB28B00354981 /* MFLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC83342DAFB28B00354981 /* MFLoop.m */; };
 		4FBC833F2DAFB28B00354981 /* PrivateFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC832D2DAFB28B00354981 /* PrivateFunctions.m */; };
 		4FBC83412DAFB28B00354981 /* ListOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC83322DAFB28B00354981 /* ListOperations.m */; };
-		4FBC83422DAFB28B00354981 /* SharedMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC83302DAFB28B00354981 /* SharedMacros.m */; };
 		4FBC83432DAFB28B00354981 /* MFBenchmark.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC83362DAFB28B00354981 /* MFBenchmark.m */; };
 		4FBC83452DAFB28B00354981 /* MFLoop.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC83342DAFB28B00354981 /* MFLoop.m */; };
 		4FBC83462DAFB28B00354981 /* PrivateFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC832D2DAFB28B00354981 /* PrivateFunctions.m */; };
 		4FBC83482DAFB28B00354981 /* ListOperations.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC83322DAFB28B00354981 /* ListOperations.m */; };
-		4FBC83492DAFB28B00354981 /* SharedMacros.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBC83302DAFB28B00354981 /* SharedMacros.m */; };
 		4FBC834B2DAFD7DB00354981 /* HashablePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEDC87292D6A8F00E7DA2A /* HashablePair.swift */; };
 		4FBC834C2DAFD7DB00354981 /* HashablePair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEDC87292D6A8F00E7DA2A /* HashablePair.swift */; };
 		4FBD52622E47EFF400C39A44 /* TextInput.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FBD52612E47EFF400C39A44 /* TextInput.framework */; };
@@ -291,8 +296,6 @@
 		4FCC03352757B181002E5A57 /* ScreenDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCC03322757A50C002E5A57 /* ScreenDrawer.swift */; };
 		4FCC354D2C6296FF009E1908 /* CoolSFSymbolsFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FC56DB32C625B9300CCB98C /* CoolSFSymbolsFont.m */; };
 		4FCC354F2C629F0F009E1908 /* CoolSFSymbols.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4FCC354E2C629F0F009E1908 /* CoolSFSymbols.otf */; };
-		4FCEDC92292D765600E7DA2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEDC91292D765600E7DA2A /* Constants.swift */; };
-		4FCEDC93292D765600E7DA2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCEDC91292D765600E7DA2A /* Constants.swift */; };
 		4FD0A71127B295F600FFCD12 /* GeneralConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD0A71027B295F600FFCD12 /* GeneralConfig.swift */; };
 		4FD148C728AA416700FE688C /* MenuBarItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD148C928AA416700FE688C /* MenuBarItem.xib */; };
 		4FD148CC28AA423F00FE688C /* AuthorizeAccessibilityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD148CE28AA423F00FE688C /* AuthorizeAccessibilityView.xib */; };
@@ -316,15 +319,9 @@
 		4FDE75A228B2397600662314 /* PayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE75A028B2397600662314 /* PayButton.swift */; };
 		4FDE75A428B25E1A00662314 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE75A328B25E1A00662314 /* String+Extensions.swift */; };
 		4FDE75A728B25FB300662314 /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE75A628B25FB300662314 /* NSAttributedString+Extensions.swift */; };
-		4FDE75A928B269AE00662314 /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE75A828B269AE00662314 /* Randomizer.swift */; };
-		4FDE75AA28B269AE00662314 /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FDE75A828B269AE00662314 /* Randomizer.swift */; };
 		4FE03A602BFF5F0600708454 /* CoolSUComparator.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03A5D2BFF5F0500708454 /* CoolSUComparator.m */; };
 		4FE03A612BFF5F0600708454 /* CoolSUUpdater.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE03A5F2BFF5F0600708454 /* CoolSUUpdater.m */; };
-		4FE1A1B92C56A50100CE3347 /* Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE1A1B82C56A50100CE3347 /* Logging.m */; };
-		4FE1A1BA2C56A50100CE3347 /* Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE1A1B82C56A50100CE3347 /* Logging.m */; };
 		4FE1A1BB2C56A50100CE3347 /* Logging.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE1A1B82C56A50100CE3347 /* Logging.m */; };
-		4FE40B96283A49DD00880BEF /* SharedUtilitySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE40B95283A49DD00880BEF /* SharedUtilitySwift.swift */; };
-		4FE40B97283A49DD00880BEF /* SharedUtilitySwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE40B95283A49DD00880BEF /* SharedUtilitySwift.swift */; };
 		4FE479E12933C87A00B75E9B /* ButtonModifiers.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE479E02933C87A00B75E9B /* ButtonModifiers.m */; };
 		4FE6CBC428987E8B00B3E829 /* DynamicSystemAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE6CBC328987E8A00B3E829 /* DynamicSystemAnimator.swift */; };
 		4FE78C342C4FFA2F00C54103 /* TreeNode.h in Sources */ = {isa = PBXBuildFile; fileRef = 4F4C73F62C4FB4C2001D97C3 /* TreeNode.h */; };
@@ -341,21 +338,14 @@
 		4FEAA9B43055D9C600455F82 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEAA9A53055D9A600455F82 /* ReactiveSwift.framework */; };
 		4FEAA9B63055D9D200455F82 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEAA9813055D99300455F82 /* ReactiveCocoa.framework */; };
 		4FEAA9B93055D9D900455F82 /* ReactiveSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FEAA9A53055D9A600455F82 /* ReactiveSwift.framework */; };
-		4FEBE6622E456DA2005FF70E /* CAAnimationCurveUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEBE6612E456DA2005FF70E /* CAAnimationCurveUtility.m */; };
-		4FEBE6632E456DA2005FF70E /* CAAnimationCurveUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEBE6612E456DA2005FF70E /* CAAnimationCurveUtility.m */; };
 		4FEC9668278BBDC600548604 /* NSColor+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FEC9667278BBDC600548604 /* NSColor+Additions.m */; };
 		4FF0254E27AFF90800923107 /* ModifiedDragOutputThreeFingerSwipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF0254D27AFF90800923107 /* ModifiedDragOutputThreeFingerSwipe.m */; };
 		4FF0255127B0033000923107 /* ModifiedDragOutputTwoFingerSwipe.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF0255027B0033000923107 /* ModifiedDragOutputTwoFingerSwipe.m */; };
 		4FF0255427B007FC00923107 /* ModifiedDragOutputFakeDrag.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF0255327B007FC00923107 /* ModifiedDragOutputFakeDrag.m */; };
 		4FF0255727B0091700923107 /* ModifiedDragOutputAddMode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF0255627B0091700923107 /* ModifiedDragOutputAddMode.m */; };
 		4FF0255F27B013A100923107 /* PointerFreeze.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF0255E27B013A100923107 /* PointerFreeze.m */; };
-		4FF0BD4B266A8B7E003935EA /* Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF0BD4A266A8B7E003935EA /* Bezier.swift */; };
-		4FF0BD51266AC10C003935EA /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF0BD50266AC10C003935EA /* Math.swift */; };
-		4FF0BD58266ACE32003935EA /* VectorUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF0BD57266ACE32003935EA /* VectorUtility.m */; };
 		4FF1DC7A2CC1130700A839AB /* License.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1DC792CC1130700A839AB /* License.m */; };
 		4FF1DC7B2CC1130700A839AB /* License.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF1DC792CC1130700A839AB /* License.m */; };
-		4FF27DD72B95B108004744E1 /* Shorthands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF27DD62B95B108004744E1 /* Shorthands.swift */; };
-		4FF27DD82B95B108004744E1 /* Shorthands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF27DD62B95B108004744E1 /* Shorthands.swift */; };
 		4FF6654125F2C7B000689B77 /* default_launchd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FF6652E25F2C7B000689B77 /* default_launchd.plist */; };
 		4FF6654225F2C7B000689B77 /* default_launchd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4FF6652E25F2C7B000689B77 /* default_launchd.plist */; };
 		4FF6654325F2C7B000689B77 /* HelperServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF6652F25F2C7B000689B77 /* HelperServices.m */; };
@@ -404,7 +394,6 @@
 		4FF7973B2C8245D700C18001 /* Links.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF797392C8245D700C18001 /* Links.m */; };
 		4FF8C89A28955491007EC31F /* ClickCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C89928955490007EC31F /* ClickCycle.swift */; };
 		4FF8C8A32895AACB007EC31F /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF8C8A22895AACB007EC31F /* Buttons.swift */; };
-		4FF93059288026FC0007CCA7 /* PolynomialCappedAccelerationCurve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF93058288026FC0007CCA7 /* PolynomialCappedAccelerationCurve.swift */; };
 		4FFA4E3528B795F30062A1FE /* LicenseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA4E3428B795F30062A1FE /* LicenseUtility.swift */; };
 		4FFA4E3628B795F30062A1FE /* LicenseUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFA4E3428B795F30062A1FE /* LicenseUtility.swift */; };
 		4FFA4E3828B79D410062A1FE /* NSAttributedString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F79A82A2605074000076A7E /* NSAttributedString+Additions.m */; };
@@ -432,6 +421,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		A1C0DE000000000000000040 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FCECD7821092354001F1078 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1C0DE000000000000000020;
+			remoteInfo = MMFCore;
+		};
+		A1C0DE000000000000000041 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4FCECD7821092354001F1078 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A1C0DE000000000000000020;
+			remoteInfo = MMFCore;
+		};
 		4F94F73525E6138800D9F24A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4FCECD7821092354001F1078 /* Project object */;
@@ -618,6 +621,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		A1C0DE000000000000000062 /* ImportMMFCore_Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMMFCore_Helper.swift; sourceTree = "<group>"; };
+		A1C0DE000000000000000060 /* ImportMMFCore_App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportMMFCore_App.swift; sourceTree = "<group>"; };
 		1A84D9EE079B366E04CEAD28 /* License+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "License+Helper.swift"; sourceTree = "<group>"; };
 		409CD0EEDCCF1E526E4D1A3F /* Threads_ScreenshotTaker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Threads_ScreenshotTaker.m; sourceTree = "<group>"; };
 		A4669FA084C3F42075CE3AF1 /* MFMessagePort+Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "MFMessagePort+Helper.m"; sourceTree = "<group>"; };
@@ -994,6 +999,8 @@
 		4FCB260C29312A020066EE56 /* ButtonInputReceiver_old.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ButtonInputReceiver_old.m; sourceTree = "<group>"; };
 		4FCC03322757A50C002E5A57 /* ScreenDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenDrawer.swift; sourceTree = "<group>"; };
 		4FCC354E2C629F0F009E1908 /* CoolSFSymbols.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CoolSFSymbols.otf; sourceTree = "<group>"; };
+		A1C0DE000000000000000001 /* MMFCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MMFCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A1C0DE000000000000000002 /* MMFCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMFCore.h; sourceTree = "<group>"; };
 		4FCECD8021092354001F1078 /* Mac Mouse Fix Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mac Mouse Fix Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FCEDC87292D6A8F00E7DA2A /* HashablePair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HashablePair.swift; sourceTree = "<group>"; };
 		4FCEDC91292D765600E7DA2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -1266,6 +1273,7 @@
 				4FEAA9B43055D9C600455F82 /* ReactiveSwift.framework in Frameworks */,
 				4F28B7F62D49141F006928A6 /* SkyLight.framework in Frameworks */,
 				4FEAA9B23055D9C000455F82 /* ReactiveCocoa.framework in Frameworks */,
+				A1C0DE000000000000000030 /* MMFCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1278,6 +1286,14 @@
 				4FEAA9B93055D9D900455F82 /* ReactiveSwift.framework in Frameworks */,
 				4F28B7F82D49144E006928A6 /* SkyLight.framework in Frameworks */,
 				4FEAA9B63055D9D200455F82 /* ReactiveCocoa.framework in Frameworks */,
+				A1C0DE000000000000000031 /* MMFCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A1C0DE000000000000000011 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1292,6 +1308,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A1C0DE000000000000000051 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				4F8A8DC0287F885D00786BCC /* Shorthands.h */,
+				4FA06818291B2C4C00949B5F /* Shorthands.m */,
+				4FF27DD62B95B108004744E1 /* Shorthands.swift */,
+				4FE40B95283A49DD00880BEF /* SharedUtilitySwift.swift */,
+				4FBC832F2DAFB28B00354981 /* SharedMacros.h */,
+				4FBC83302DAFB28B00354981 /* SharedMacros.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
 		3B6D71BE0351679089F5F1C9 /* License */ = {
 			isa = PBXGroup;
 			children = (
@@ -1540,7 +1569,6 @@
 				4F0438142E59F08200368E60 /* Old MFDisplayLinkWorkType stuff.md */,
 				4FE6CBC328987E8A00B3E829 /* DynamicSystemAnimator.swift */,
 				4F909D0C28A0C3D2009349A2 /* CAAnimation+Extensions.swift */,
-				4FD86058266DBF96004F76C8 /* AnimatorDeclarations.h */,
 				4FFF9F36307B8FD400211519 /* External */,
 			);
 			path = Animation;
@@ -2105,8 +2133,6 @@
 		4FBC83392DAFB28B00354981 /* Macros */ = {
 			isa = PBXGroup;
 			children = (
-				4FBC832F2DAFB28B00354981 /* SharedMacros.h */,
-				4FBC83302DAFB28B00354981 /* SharedMacros.m */,
 				4FBC83352DAFB28B00354981 /* MFBenchmark.h */,
 				4FBC83362DAFB28B00354981 /* MFBenchmark.m */,
 				4FBC83312DAFB28B00354981 /* ListOperations.h */,
@@ -2179,8 +2205,22 @@
 				4FF665BE25F2C92700689B77 /* App */,
 				4FF6660725F2C93A00689B77 /* Helper */,
 				4F4C737A2C4FB04B001D97C3 /* Localization */,
+				A1C0DE000000000000000050 /* MMFCore */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		A1C0DE000000000000000050 /* MMFCore */ = {
+			isa = PBXGroup;
+			children = (
+				A1C0DE000000000000000002 /* MMFCore.h */,
+				4FF9305C28805FC40007CCA7 /* Math */,
+				4FFBC56E2667DC76001D389B /* Logging */,
+				A1C0DE000000000000000051 /* Utility */,
+				4FF6653325F2C7B000689B77 /* Constants.h */,
+				4FCEDC91292D765600E7DA2A /* Constants.swift */,
+			);
+			path = MMFCore;
 			sourceTree = "<group>";
 		};
 		4FCECD7721092354001F1078 = {
@@ -2213,6 +2253,7 @@
 				4F8B01A92C348A3A00F3AF8D /* Localization Screenshot Taker.xctest */,
 				4F1667C92C6A6717009E4924 /* XCStringsDummyApp.app */,
 				4FDB941A2FE743AA001E05CB /* Tests.app */,
+				A1C0DE000000000000000001 /* MMFCore.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2450,12 +2491,9 @@
 		4FF6652B25F2C7B000689B77 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				4FF6653325F2C7B000689B77 /* Constants.h */,
-				4FCEDC91292D765600E7DA2A /* Constants.swift */,
 				4F2507893064712D007B537E /* Threads.h */,
 				4F25079130693260007B537E /* Threads.m */,
 				4F25078D30658CF2007B537E /* Threads.swift */,
-				4FFBC56E2667DC76001D389B /* Logging */,
 				4FE78C412C5027A800C54103 /* DisableSwiftBridging */,
 				4F44FF012606D6FD00926A5E /* MessagePort */,
 				4FF6652C25F2C7B000689B77 /* HelperServices */,
@@ -2464,7 +2502,6 @@
 				4F9E78BD26855B9B002C2309 /* SwiftConcurrency */,
 				4F7F47C828A5A01C00290BBD /* Config */,
 				4F3A40C8266C448500436821 /* Animation */,
-				4FF9305C28805FC40007CCA7 /* Math */,
 				4F09284128B8C71000BDC2FF /* UI */,
 				4F9C14B527BAF202008A1479 /* IOKit */,
 				4FBC82942DAE93AD00354981 /* MFObserver */,
@@ -2500,7 +2537,6 @@
 			children = (
 				4FF6653E25F2C7B000689B77 /* SharedUtility.h */,
 				4FF6653B25F2C7B000689B77 /* SharedUtility.m */,
-				4FE40B95283A49DD00880BEF /* SharedUtilitySwift.swift */,
 				4FF797382C8245D700C18001 /* Links.h */,
 				4FF797392C8245D700C18001 /* Links.m */,
 				4F0CFFE62C51878500C5D843 /* MFDataClass.h */,
@@ -2512,9 +2548,6 @@
 				4F4C73F62C4FB4C2001D97C3 /* TreeNode.h */,
 				4F4C73F72C4FB4C2001D97C3 /* TreeNode.m */,
 				4FD031CB2D5EAAA7000EA331 /* MFCoding */,
-				4F8A8DC0287F885D00786BCC /* Shorthands.h */,
-				4FA06818291B2C4C00949B5F /* Shorthands.m */,
-				4FF27DD62B95B108004744E1 /* Shorthands.swift */,
 				4F1B418D2D49960E00026C94 /* MFGate.h */,
 				4F1B418E2D49960E00026C94 /* MFGate.m */,
 				4FCEDC87292D6A8F00E7DA2A /* HashablePair.swift */,
@@ -2583,6 +2616,7 @@
 			isa = PBXGroup;
 			children = (
 				4FA40CF528A0CBA600499E53 /* Mac Mouse Fix-Bridging-Header.h */,
+				A1C0DE000000000000000060 /* ImportMMFCore_App.swift */,
 				4FF665E225F2C92700689B77 /* App.entitlements */,
 				4FF665E425F2C92700689B77 /* Info.plist */,
 				4F4B5FF92C67D1BF004051D3 /* InfoPlist.xcstrings */,
@@ -2827,6 +2861,7 @@
 			isa = PBXGroup;
 			children = (
 				4FFBC5A6266977CA001D389B /* Mac Mouse Fix Helper-Bridging-Header.h */,
+				A1C0DE000000000000000062 /* ImportMMFCore_Helper.swift */,
 				4FD148D528AA43E900FE688C /* MainMenu.xib */,
 				4FF6664E25F2C93A00689B77 /* Helper.entitlements */,
 				4FF6665225F2C93A00689B77 /* External */,
@@ -2929,6 +2964,7 @@
 				4F1D58182881D880002EB119 /* CombinedLinearCurve.swift */,
 				4FEBE6602E456DA2005FF70E /* CAAnimationCurveUtility.h */,
 				4FEBE6612E456DA2005FF70E /* CAAnimationCurveUtility.m */,
+				4FD86058266DBF96004F76C8 /* AnimatorDeclarations.h */,
 			);
 			path = Curves;
 			sourceTree = "<group>";
@@ -3034,6 +3070,7 @@
 			);
 			dependencies = (
 				4F94F73625E6138800D9F24A /* PBXTargetDependency */,
+				A1C0DE000000000000000042 /* PBXTargetDependency */,
 			);
 			name = "Mac Mouse Fix";
 			packageProductDependencies = (
@@ -3055,6 +3092,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				A1C0DE000000000000000043 /* PBXTargetDependency */,
 			);
 			name = "Mac Mouse Fix Helper";
 			packageProductDependencies = (
@@ -3082,7 +3120,46 @@
 			productReference = 4FDB941A2FE743AA001E05CB /* Tests.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A1C0DE000000000000000020 /* MMFCore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A1C0DE000000000000000021 /* Build configuration list for PBXNativeTarget "MMFCore" */;
+			buildPhases = (
+				A1C0DE000000000000000012 /* Headers */,
+				A1C0DE000000000000000010 /* Sources */,
+				A1C0DE000000000000000011 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MMFCore;
+			packageProductDependencies = (
+			);
+			productName = MMFCore;
+			productReference = A1C0DE000000000000000001 /* MMFCore.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A1C0DE000000000000000012 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1C0DE000000000000000003 /* MMFCore.h in Headers */,
+				A1C0DE010000000000000116 /* Logging.h in Headers */,
+				A1C0DE010000000000000117 /* SharedMacros.h in Headers */,
+				A1C0DE01000000000000011C /* Constants.h in Headers */,
+				A1C0DE01000000000000011D /* Shorthands.h in Headers */,
+				A1C0DE01000000000000011E /* VectorUtility.h in Headers */,
+				A1C0DE01000000000000011F /* AnimatorDeclarations.h in Headers */,
+				A1C0DE010000000000000120 /* MathObjc.h in Headers */,
+				A1C0DE010000000000000121 /* PolynomialRegression.h in Headers */,
+				A1C0DE010000000000000122 /* DoublesMatrix.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXProject section */
 		4FCECD7821092354001F1078 /* Project object */ = {
@@ -3176,6 +3253,7 @@
 				4F8B01A82C348A3A00F3AF8D /* Localization Screenshot Taker */,
 				4F1667C82C6A6717009E4924 /* XCStringsDummyApp */,
 				4FDB94192FE743AA001E05CB /* Tests */,
+				A1C0DE000000000000000020 /* MMFCore */,
 			);
 		};
 /* End PBXProject section */
@@ -3497,8 +3575,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1C0DE000000000000000061 /* ImportMMFCore_App.swift in Sources */,
 				4F909D2828A0C3D2009349A2 /* ResizingTabWindow.swift in Sources */,
-				4FA40CF728A0CCCA00499E53 /* Curve.swift in Sources */,
 				4F1B41A52D4BACBA00026C94 /* NSData+Additions.m in Sources */,
 				4FF6655225F2C7B000689B77 /* NSDictionary+Additions.m in Sources */,
 				4FAA3DAC2C55E94600CBA413 /* IBUtility.m in Sources */,
@@ -3508,15 +3586,11 @@
 				4F97E001298732E500012BAC /* LocalizationUtility.m in Sources */,
 				4FA625572DA97CCE004F46DA /* MFDataClass.m in Sources */,
 				4F4C73FE2C4FB5D2001D97C3 /* AnnotationUtility.m in Sources */,
-				4F58FE002C56DE9B00926A00 /* Logging.swift in Sources */,
 				4F39BC4A263B179200FDF692 /* AppState.m in Sources */,
 				4F909D3B28A0C3D2009349A2 /* ModCaptureDeleteButton.swift in Sources */,
-				4FA40D0428A0D0C000499E53 /* DoublesMatrix.m in Sources */,
-				4FA40CFC28A0CCCB00499E53 /* NaturalAccelerationCurve.swift in Sources */,
 				4FE78C3A2C50177800C54103 /* DisableSwiftBridging.swift in Sources */,
 				4FF6654625F2C7B000689B77 /* Locator.m in Sources */,
 				4F909D2A28A0C3D2009349A2 /* ResizingTabWindowController.swift in Sources */,
-				4FA06819291B2C4C00949B5F /* Shorthands.m in Sources */,
 				4F909D2228A0C3D2009349A2 /* ScrollTabController.swift in Sources */,
 				4F6F67A028A8141800C6C40F /* ButtonTabController.swift in Sources */,
 				4FF6654E25F2C7B000689B77 /* SharedUtility.m in Sources */,
@@ -3534,13 +3608,11 @@
 				4F909D2C28A0C3D2009349A2 /* NSView+Extensions.swift in Sources */,
 				4FDE759A28B1401400662314 /* License.swift in Sources */,
 				4FA1FD8328A916B600D1C8EE /* NSShadow+Extensions.swift in Sources */,
-				4F5971E52901763D00A32656 /* MathObjc.m in Sources */,
 				4FF665FA25F2C92700689B77 /* AppDelegate.m in Sources */,
 				4F909CF028A0C3B7009349A2 /* MainAppState.swift in Sources */,
 				4F0D906C2E89731D005859A0 /* TabControllerUtility.swift in Sources */,
 				4FEC9668278BBDC600548604 /* NSColor+Additions.m in Sources */,
 				4FF1DC7B2CC1130700A839AB /* License.m in Sources */,
-				4FA40CF628A0CCC600499E53 /* Math.swift in Sources */,
 				4FBC82962DAE93AD00354981 /* MFObserver.m in Sources */,
 				4FF6660025F2C92700689B77 /* Hyperlink.m in Sources */,
 				4F909D2428A0C3D2009349A2 /* TabItemControllerProtocol.swift in Sources */,
@@ -3550,10 +3622,8 @@
 				4FDB5F4A2D4F85A900164F97 /* NSCharacterSet+Additions.m in Sources */,
 				4F909D3428A0C3D2009349A2 /* Replace.swift in Sources */,
 				4FF665ED25F2C92700689B77 /* MFSegmentedControl.m in Sources */,
-				4FA40CFF28A0CCCB00499E53 /* DragCurve.swift in Sources */,
 				4FE03A602BFF5F0600708454 /* CoolSUComparator.m in Sources */,
 				4FF7973A2C8245D700C18001 /* Links.m in Sources */,
-				4FA40CFA28A0CCCA00499E53 /* PolynomialCappedAccelerationCurve.swift in Sources */,
 				4FCC354D2C6296FF009E1908 /* CoolSFSymbolsFont.m in Sources */,
 				4F7F47CB28A5A03100290BBD /* ReactiveConfig.swift in Sources */,
 				4FE78C452C502A5F00C54103 /* NSString+Additions.m in Sources */,
@@ -3569,21 +3639,17 @@
 				4F79A81C2604317200076A7E /* ToastController.m in Sources */,
 				4F909D2E28A0C3D2009349A2 /* NSControl+Extensions.swift in Sources */,
 				4F39BC3B263AF2B000FDF692 /* SparkleUpdaterController.m in Sources */,
-				4FA40D0028A0CCCB00499E53 /* CombinedLinearCurve.swift in Sources */,
 				4F85C05428BBE6FA00E96E9C /* TrialSectionManager.swift in Sources */,
 				4FBC833C2DAFB28B00354981 /* MFBenchmark.m in Sources */,
 				4FBC833E2DAFB28B00354981 /* MFLoop.m in Sources */,
 				4FBC833F2DAFB28B00354981 /* PrivateFunctions.m in Sources */,
 				4FBC83412DAFB28B00354981 /* ListOperations.m in Sources */,
-				4FBC83422DAFB28B00354981 /* SharedMacros.m in Sources */,
 				4FCABCF72933A7090018E538 /* Toasts.swift in Sources */,
 				4FA2F1262C29A125000C5535 /* NotificationLabel.m in Sources */,
 				4F1C51DA260543DD007F4930 /* NSTextField+Additions.m in Sources */,
 				4F09283F28B8101600BDC2FF /* TrialSection.swift in Sources */,
 				4F909D3128A0C3D2009349A2 /* CAAnimation+Extensions.swift in Sources */,
 				4F25079330693264007B537E /* Threads.m in Sources */,
-				4FA40CFB28A0CCCB00499E53 /* Line.swift in Sources */,
-				4FE40B96283A49DD00880BEF /* SharedUtilitySwift.swift in Sources */,
 				4F909D3828A0C3D2009349A2 /* ReactiveFlags.swift in Sources */,
 				4F909D2B28A0C3D2009349A2 /* NSPopUpButton+Extensions.swift in Sources */,
 				4F7F47D128A5B86900290BBD /* Config.m in Sources */,
@@ -3597,7 +3663,6 @@
 				4FA40D0B28A0D87200499E53 /* DisplayLink.m in Sources */,
 				4FC55B982915652C00663B24 /* Alerts.m in Sources */,
 				4F909D2928A0C3D2009349A2 /* TabViewControllerDisabling.swift in Sources */,
-				4FCEDC92292D765600E7DA2A /* Constants.swift in Sources */,
 				4FA40D0E28A0D87200499E53 /* DynamicSystemAnimator.swift in Sources */,
 				4FB4FA202611DD6000806DDD /* KeyCaptureScrollView.m in Sources */,
 				4F909D4728A0C4C2009349A2 /* Collection+Extensions.swift in Sources */,
@@ -3607,11 +3672,9 @@
 				4FC8A7D528ABDEFE007DB982 /* MFClipView.swift in Sources */,
 				4F909D2628A0C3D2009349A2 /* ViewController.m in Sources */,
 				4F909D3D28A0C3D2009349A2 /* ModCaptureTextField.swift in Sources */,
-				4FEBE6622E456DA2005FF70E /* CAAnimationCurveUtility.m in Sources */,
 				4F9E78BF26855BCF002C2309 /* Concurrency.swift in Sources */,
 				4F92A708260F4BF000529D1F /* RemapTableView.m in Sources */,
 				4F4C737E2C4FB06E001D97C3 /* NSString+Steganography.m in Sources */,
-				4FA40CF928A0CCCA00499E53 /* Bezier.swift in Sources */,
 				4FA625562DA97CC9004F46DA /* TreeNode.m in Sources */,
 				4F12952028D2D5E1009A49AB /* NSTextField+Extentions.swift in Sources */,
 				4FB8B2992CCEBADA00A5A580 /* GetLicenseState.swift in Sources */,
@@ -3627,27 +3690,20 @@
 				4F37FAD825FDFDC5004C34C4 /* MFScrollView.m in Sources */,
 				4F428D082CD8C688006322AB /* MFCoding.swift in Sources */,
 				4F1B418F2D49960E00026C94 /* MFGate.m in Sources */,
-				4FAA5601293A41AF00BA782C /* BezierCappedAccelerationCurve.swift in Sources */,
 				4FA40D1028A0D8F100499E53 /* VectorSubPixelator.m in Sources */,
-				4FA40D0228A0CE5B00499E53 /* VectorUtility.m in Sources */,
 				4FBC834B2DAFD7DB00354981 /* HashablePair.swift in Sources */,
-				4FF27DD72B95B108004744E1 /* Shorthands.swift in Sources */,
 				4F319CBB26252A2D004E5F63 /* ButtonGroupRowView.m in Sources */,
 				4F79A82B2605074000076A7E /* NSAttributedString+Additions.m in Sources */,
 				4FAA3DA92C55DF4F00CBA413 /* InvisibleKeyResponder.m in Sources */,
 				4FA2ADAD308287A000925D0C /* NSTimer+Additions.m in Sources */,
 				4F2E8FD72D52877F00689058 /* MFPlistEncoder.m in Sources */,
-				4FA40CFD28A0CCCB00499E53 /* AccelerationBezier.swift in Sources */,
 				4F909D3228A0C3D2009349A2 /* FadeAnimations.swift in Sources */,
 				4FA1FD8128A85FD100D1C8EE /* RemapTableElements.swift in Sources */,
 				4F7AB0552606698A0008055E /* UIStrings.m in Sources */,
-				4FE1A1BA2C56A50100CE3347 /* Logging.m in Sources */,
 				4F909D3028A0C3D2009349A2 /* ReactiveAnimatorProxy.swift in Sources */,
-				4FA40CF828A0CCCA00499E53 /* TestAccelerationCurve.swift in Sources */,
 				4F909D3728A0C3D2009349A2 /* ConstraintUtility.swift in Sources */,
 				4FF6660125F2C92700689B77 /* Utility_App.m in Sources */,
 				4F79A83626051E4A00076A7E /* Toast.m in Sources */,
-				4FDE75A928B269AE00662314 /* Randomizer.swift in Sources */,
 				4F909D2D28A0C3D2009349A2 /* CoolNSTextField.swift in Sources */,
 				4FA2AF833083F38C00925D0C /* SecureStorage.m in Sources */,
 				4F79C2EA260976950067B381 /* RemapTableTranslator.m in Sources */,
@@ -3663,8 +3719,6 @@
 				4F92A73A260F73C600529D1F /* KeyCaptureView.m in Sources */,
 				4FF6654425F2C7B000689B77 /* HelperServices.m in Sources */,
 				4F909D3528A0C3D2009349A2 /* Animate.swift in Sources */,
-				4FA40D0328A0D0BB00499E53 /* PolynomialRegression.m in Sources */,
-				4FA40CFE28A0CCCB00499E53 /* HybridCurves.swift in Sources */,
 				F5C774FB74C11DDB16559164 /* DisableSwiftBridging+Localization.swift in Sources */,
 				BE56A428A540538B7532FE9A /* Config+App.m in Sources */,
 				63AF78928C6B1EB48D52170D /* MFMessagePort+App.m in Sources */,
@@ -3675,6 +3729,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1C0DE000000000000000063 /* ImportMMFCore_Helper.swift in Sources */,
 				4FB8B29F2CCEBB1700A5A580 /* GetTrialState.swift in Sources */,
 				4F9C9B58268A29B70083DED0 /* RollingAverage.swift in Sources */,
 				4FFA4E4428B7D28E0062A1FE /* ConstraintUtility.swift in Sources */,
@@ -3689,32 +3744,26 @@
 				4FA625582DA97CCE004F46DA /* MFDataClass.m in Sources */,
 				4FA9733B293F7643002B5C24 /* ScrollSpeedupCurve.swift in Sources */,
 				4FF0254E27AFF90800923107 /* ModifiedDragOutputThreeFingerSwipe.m in Sources */,
-				4F58FE022C56DE9B00926A00 /* Logging.swift in Sources */,
 				4F428CE62CD3D608006322AB /* DeviceUID.m in Sources */,
 				4F44FF042606D73D00926A5E /* MFMessagePort.m in Sources */,
 				4F1D7F4728A4639800253407 /* MenuBarItem.swift in Sources */,
-				4F8CF95728686C0100BF5E55 /* PolynomialRegression.m in Sources */,
 				4F67978C2DCFB76100516167 /* DevToggles.m in Sources */,
 				4FFA4E3628B795F30062A1FE /* LicenseUtility.swift in Sources */,
 				4F8B7E6727B4E32600598B65 /* TouchAnimatorBase.swift in Sources */,
-				4FA0681A291B2C4C00949B5F /* Shorthands.m in Sources */,
 				4FF6669325F2C93A00689B77 /* TouchSimulator.m in Sources */,
 				4FB8B2952CCDB94F00A5A580 /* MFPlistDecoder.m in Sources */,
 				4FFA4E4A28B7D3750062A1FE /* NSView+Extensions.swift in Sources */,
 				4F9E78E3268663B1002C2309 /* ExponentialSmoother.swift in Sources */,
 				4F4C73D82C4FB3FA001D97C3 /* LocalizedStringAnnotation.m in Sources */,
-				4F3A40AB266BBB6200436821 /* AccelerationBezier.swift in Sources */,
 				4F2E8FD82D52877F00689058 /* MFPlistEncoder.m in Sources */,
 				4FE6CBC428987E8B00B3E829 /* DynamicSystemAnimator.swift in Sources */,
 				4FF6669725F2C93A00689B77 /* Remap.m in Sources */,
 				4F1B83062606E68300AEAF37 /* RemapsAnalyzer.m in Sources */,
-				4F8A8DBF287F7BBA00786BCC /* NaturalAccelerationCurve.swift in Sources */,
 				4FF6668F25F2C93A00689B77 /* SmoothScroll_old_.m in Sources */,
 				4F70ECB7267E810900325A76 /* IOUtility.m in Sources */,
 				4FA2ADAC308287A000925D0C /* NSTimer+Additions.m in Sources */,
 				4F17D2E1292A635200EB07CA /* SwitchMaster.swift in Sources */,
 				4FD0A71127B295F600FFCD12 /* GeneralConfig.swift in Sources */,
-				4F1D58192881D880002EB119 /* CombinedLinearCurve.swift in Sources */,
 				4F97E002298732E500012BAC /* LocalizationUtility.m in Sources */,
 				4F428D092CD8C688006322AB /* MFCoding.swift in Sources */,
 				4FFA4E3E28B7AA250062A1FE /* NotificationLabel.m in Sources */,
@@ -3728,8 +3777,6 @@
 				4FF0255F27B013A100923107 /* PointerFreeze.m in Sources */,
 				4FBC829C2DAE93AD00354981 /* MFObserver.m in Sources */,
 				4FF666A725F2C93A00689B77 /* Device.m in Sources */,
-				4F3A40B1266BBC5000436821 /* Curve.swift in Sources */,
-				4FF27DD82B95B108004744E1 /* Shorthands.swift in Sources */,
 				4F09284028B8101600BDC2FF /* TrialSection.swift in Sources */,
 				4F4C73FF2C4FB5D2001D97C3 /* AnnotationUtility.m in Sources */,
 				4F41506429255F880040BA7D /* NSImage+Additions.m in Sources */,
@@ -3740,14 +3787,9 @@
 				4FA3ACC62DED91E100A460FD /* CurveVisualizer.swift in Sources */,
 				4F44794328B55F6300AD1979 /* CAAnimation+Extensions.swift in Sources */,
 				4FFA973A2EC2261600A52849 /* MFSimpleDataClass.m in Sources */,
-				4FE40B97283A49DD00880BEF /* SharedUtilitySwift.swift in Sources */,
-				4F8A8DC2287F967000786BCC /* TestAccelerationCurve.swift in Sources */,
 				4FC4A24F2EA457EC003566D8 /* Localization.m in Sources */,
-				4FF0BD51266AC10C003935EA /* Math.swift in Sources */,
-				4F8CF95B28686EA200BF5E55 /* DoublesMatrix.m in Sources */,
 				4FB8B2A22CCEBC4900A5A580 /* APIRequests.swift in Sources */,
 				4FFA4E4528B7D2940062A1FE /* Collapse.swift in Sources */,
-				4F2CC58927B8DA8B0084AACE /* Line.swift in Sources */,
 				4FF6669F25F2C93A00689B77 /* main.m in Sources */,
 				4FFA4E4928B7D3750062A1FE /* NSView+Additions.m in Sources */,
 				4FF6668925F2C93A00689B77 /* Scroll.m in Sources */,
@@ -3760,7 +3802,6 @@
 				4FBC83452DAFB28B00354981 /* MFLoop.m in Sources */,
 				4FBC83462DAFB28B00354981 /* PrivateFunctions.m in Sources */,
 				4FBC83482DAFB28B00354981 /* ListOperations.m in Sources */,
-				4FBC83492DAFB28B00354981 /* SharedMacros.m in Sources */,
 				4F2E8FD32D52229100689058 /* NSCoderErrors.m in Sources */,
 				4F25079230693264007B537E /* Threads.m in Sources */,
 				4FF6669025F2C93A00689B77 /* ScrollModifiers_old_.m in Sources */,
@@ -3768,28 +3809,22 @@
 				4FF6655125F2C7B000689B77 /* NSDictionary+Additions.m in Sources */,
 				4FF6668525F2C93A00689B77 /* Modifiers.m in Sources */,
 				4FD860CC266EF55A004F76C8 /* ScrollConfig.swift in Sources */,
-				4FE1A1B92C56A50100CE3347 /* Logging.m in Sources */,
 				4FDB5F4B2D4F85A900164F97 /* NSCharacterSet+Additions.m in Sources */,
 				4FFA4E4828B7D2E40062A1FE /* NSShadow+Extensions.swift in Sources */,
-				4F2CC58727B8D2300084AACE /* HybridCurves.swift in Sources */,
 				4F5C2F802885C5D0001B9B8A /* HelperState.swift in Sources */,
 				4F8A8DAD287EEF6200786BCC /* IOHIDAccelerationTableBridge.mm in Sources */,
 				4F3A40CB266C44D100436821 /* DisplayLink.m in Sources */,
 				4FF6669925F2C93A00689B77 /* VectorSubPixelator.m in Sources */,
-				4FEBE6632E456DA2005FF70E /* CAAnimationCurveUtility.m in Sources */,
-				4FDE75AA28B269AE00662314 /* Randomizer.swift in Sources */,
 				4F5170152CBFD75C0018D388 /* MFDataClassImpls.m in Sources */,
 				4F626E99292A842D00E6FFD5 /* KeyCaptureMode.m in Sources */,
 				4F12525C2CAA88A400A079BD /* UNIXSignals.m in Sources */,
 				4FFA4E3B28B79D980062A1FE /* String+Extensions.swift in Sources */,
-				4FF0BD4B266A8B7E003935EA /* Bezier.swift in Sources */,
 				4F25078E30658CF4007B537E /* Threads.swift in Sources */,
 				4F428D032CD80462006322AB /* MFCoding.m in Sources */,
 				4FA13FC228B3A2D3005C68FC /* TrialNotificationWindow.swift in Sources */,
 				4FAA3DA82C55DF4F00CBA413 /* InvisibleKeyResponder.m in Sources */,
 				4FC4A2522EA4587F003566D8 /* Localization.swift in Sources */,
 				4FF6668125F2C93A00689B77 /* FileMonitor.m in Sources */,
-				4F1AFE972670EBA900ECA424 /* DragCurve.swift in Sources */,
 				4FF6669125F2C93A00689B77 /* ScrollUtility.m in Sources */,
 				4FE78C442C502A5F00C54103 /* NSString+Additions.m in Sources */,
 				4F58FE142C57BAFA00926A00 /* NSTextField+Extentions.swift in Sources */,
@@ -3804,7 +3839,6 @@
 				4F09284228B8C71C00BDC2FF /* Hyperlink.m in Sources */,
 				4F9E78D02685E30C002C2309 /* GestureScrollSimulator.m in Sources */,
 				4FD66E0827BB553800F67559 /* CGEventHIDEventBridge.m in Sources */,
-				4FF0BD58266ACE32003935EA /* VectorUtility.m in Sources */,
 				4F96060F27B4F92F004D6F6D /* TouchAnimator.swift in Sources */,
 				4FF6654F25F2C7B000689B77 /* NSArray+Additions.m in Sources */,
 				4FFA4E4328B7D28C0062A1FE /* ReactiveAnimatorProxy.swift in Sources */,
@@ -3820,20 +3854,16 @@
 				4FF6668B25F2C93A00689B77 /* CubicUnitBezier.m in Sources */,
 				4F909D4628A0C4C2009349A2 /* NSArray+Extensions.swift in Sources */,
 				4F9E78C026855BCF002C2309 /* Concurrency.swift in Sources */,
-				4FF93059288026FC0007CCA7 /* PolynomialCappedAccelerationCurve.swift in Sources */,
 				4FFE2895291B35AA0058ABE0 /* (null) in Sources */,
 				4F3A40DA266C5BDF00436821 /* NSScreen+Additions.m in Sources */,
-				4FCEDC93292D765600E7DA2A /* Constants.swift in Sources */,
 				4FF6654325F2C7B000689B77 /* HelperServices.m in Sources */,
 				4FA994BE26678AC90007F003 /* ScrollAnalyzer.m in Sources */,
 				4F9C9B60268A29FE0083DED0 /* Smoother.swift in Sources */,
 				4FDE759F28B174E700662314 /* TrialCounter.swift in Sources */,
 				4FE479E12933C87A00B75E9B /* ButtonModifiers.m in Sources */,
 				4FA83A29268271E200F3A31B /* PointerSpeed.m in Sources */,
-				4F5971E62901763D00A32656 /* MathObjc.m in Sources */,
 				4FFA4E3828B79D410062A1FE /* NSAttributedString+Additions.m in Sources */,
 				4FFA4E4228B7D2890062A1FE /* FadeAnimations.swift in Sources */,
-				4FAA5602293A41AF00BA782C /* BezierCappedAccelerationCurve.swift in Sources */,
 				4F1B41A62D4BACBA00026C94 /* NSData+Additions.m in Sources */,
 				4F9C9B6B268A2D6F0083DED0 /* CircularBuffer.m in Sources */,
 				4FF8C8A32895AACB007EC31F /* Buttons.swift in Sources */,
@@ -3865,6 +3895,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A1C0DE000000000000000010 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A1C0DE010000000000000101 /* Math.swift in Sources */,
+				A1C0DE010000000000000102 /* MathObjc.m in Sources */,
+				A1C0DE010000000000000103 /* Randomizer.swift in Sources */,
+				A1C0DE010000000000000104 /* VectorUtility.m in Sources */,
+				A1C0DE010000000000000105 /* Curve.swift in Sources */,
+				A1C0DE010000000000000106 /* CAAnimationCurveUtility.m in Sources */,
+				A1C0DE010000000000000107 /* TestAccelerationCurve.swift in Sources */,
+				A1C0DE010000000000000108 /* AccelerationBezier.swift in Sources */,
+				A1C0DE010000000000000109 /* HybridCurves.swift in Sources */,
+				A1C0DE01000000000000010A /* CombinedLinearCurve.swift in Sources */,
+				A1C0DE01000000000000010B /* NaturalAccelerationCurve.swift in Sources */,
+				A1C0DE01000000000000010C /* Line.swift in Sources */,
+				A1C0DE01000000000000010D /* Bezier.swift in Sources */,
+				A1C0DE01000000000000010E /* DragCurve.swift in Sources */,
+				A1C0DE01000000000000010F /* PolynomialCappedAccelerationCurve.swift in Sources */,
+				A1C0DE010000000000000110 /* BezierCappedAccelerationCurve.swift in Sources */,
+				A1C0DE010000000000000111 /* PolynomialRegression.m in Sources */,
+				A1C0DE010000000000000112 /* DoublesMatrix.m in Sources */,
+				A1C0DE010000000000000113 /* Logging.m in Sources */,
+				A1C0DE010000000000000114 /* Logging.swift in Sources */,
+				A1C0DE010000000000000115 /* SharedUtilitySwift.swift in Sources */,
+				A1C0DE010000000000000118 /* SharedMacros.m in Sources */,
+				A1C0DE010000000000000119 /* Shorthands.m in Sources */,
+				A1C0DE01000000000000011A /* Shorthands.swift in Sources */,
+				A1C0DE01000000000000011B /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -3872,6 +3934,16 @@
 			isa = PBXTargetDependency;
 			target = 4FCECD7F21092354001F1078 /* Mac Mouse Fix Helper */;
 			targetProxy = 4F94F73525E6138800D9F24A /* PBXContainerItemProxy */;
+		};
+		A1C0DE000000000000000042 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1C0DE000000000000000020 /* MMFCore */;
+			targetProxy = A1C0DE000000000000000040 /* PBXContainerItemProxy */;
+		};
+		A1C0DE000000000000000043 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A1C0DE000000000000000020 /* MMFCore */;
+			targetProxy = A1C0DE000000000000000041 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -4105,6 +4177,10 @@
 				MARKETING_VERSION = 3.1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nuebling.mac-mouse-fix";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4147,6 +4223,10 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15.0;
 				MARKETING_VERSION = 3.1.0;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nuebling.mac-mouse-fix";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4381,6 +4461,10 @@
 					"$(PROJECT_DIR)/Vendor/cmark/**",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nuebling.mac-mouse-fix.helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4425,6 +4509,10 @@
 					"$(PROJECT_DIR)/Vendor/cmark/**",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nuebling.mac-mouse-fix.helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4531,6 +4619,42 @@
 			};
 			name = Release;
 		};
+		A1C0DE000000000000000022 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = LM5Z78756B;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nuebling.mac-mouse-fix.MMFCore";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		A1C0DE000000000000000023 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = LM5Z78756B;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACH_O_TYPE = staticlib;
+				MACOSX_DEPLOYMENT_TARGET = 10.15.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nuebling.mac-mouse-fix.MMFCore";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -4584,6 +4708,15 @@
 			buildConfigurations = (
 				4FDB94272FE743AD001E05CB /* Debug */,
 				4FDB94282FE743AD001E05CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A1C0DE000000000000000021 /* Build configuration list for PBXNativeTarget "MMFCore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A1C0DE000000000000000022 /* Debug */,
+				A1C0DE000000000000000023 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

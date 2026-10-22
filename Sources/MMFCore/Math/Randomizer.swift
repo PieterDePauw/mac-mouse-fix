@@ -9,9 +9,9 @@
 
 import Cocoa
 
-class Randomizer: NSObject {
+public class Randomizer: NSObject {
     
-    static func select<T>(from items: [(_: T, weight: Double)]) -> T {
+    public static func select<T>(from items: [(_: T, weight: Double)]) -> T {
         
         let weightSum = items.reduce(0) { partialResult, item in
             return partialResult + item.weight

@@ -11,16 +11,16 @@
 import Foundation
 import Cocoa
 
-struct CombinedLinearCurve {
+public struct CombinedLinearCurve {
 
     let points: [P]
     
     let minX: Double
     let maxX: Double
-    let minY: Double
-    let maxY: Double
+    public let minY: Double
+    public let maxY: Double
     
-    init(yValues: [Double]) {
+    public init(yValues: [Double]) {
         /// Create points automatically just from yValues. x values will be equidistant between 0 and 1. This should be useful for defining NSSliders.
         
         /// Create points
@@ -65,7 +65,7 @@ struct CombinedLinearCurve {
         self.points = points
     }
     
-    func evaluate(atX x: Double) -> Double {
+    public func evaluate(atX x: Double) -> Double {
         
         /// Validate
         
@@ -102,7 +102,7 @@ struct CombinedLinearCurve {
         return y
     }
     
-    func evaluate(atY y: Double) -> Double {
+    public func evaluate(atY y: Double) -> Double {
         
         /// Validate
         

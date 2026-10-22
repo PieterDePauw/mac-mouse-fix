@@ -9,17 +9,17 @@
 
 import Cocoa
 
-let _0 = false /// [May 2025] Make it easy to use 0 and 1 in if-statements to activate/deactivate code since I like doing that in C. || You can regex the codebase for these with`\W_1` / `\W_0` || ... Update: The Swift compiler won't understand which code branches are dead when using this which is super annoying – probably don't use this.
-let _1 = true
+public let _0 = false /// [May 2025] Make it easy to use 0 and 1 in if-statements to activate/deactivate code since I like doing that in C. || You can regex the codebase for these with`\W_1` / `\W_0` || ... Update: The Swift compiler won't understand which code branches are dead when using this which is super annoying – probably don't use this.
+public let _1 = true
 
 func mfsign(_ value: some (Numeric & Comparable)) -> Int {
     /// [Apr 2025] Swift reimplementation of `#define mfsign` C-macro
     return (value > 0) ? 1 : (value < 0) ? -1 : 0
 }
 
-@objc class SharedUtilitySwift: NSObject {
+@objc public class SharedUtilitySwift: NSObject {
     
-    static func eval<V>(@SingleValueBuilder<V> _ value: () -> V) -> V {
+    public static func eval<V>(@SingleValueBuilder<V> _ value: () -> V) -> V {
         
         /// Src: https://forums.swift.org/t/how-to-assign-the-value-of-a-switch-statement-to-a-variable/50991/6
         /// Under Xcode `16.0 beta 2 (16A5171r)` and macOS Sequoia Developer Beta 2, the Swift compiler started crashing unless we assigned a `: Type` to the variable we assign the result of this function to.
@@ -27,25 +27,25 @@ func mfsign(_ value: some (Numeric & Comparable)) -> Int {
         value()
     }
     @resultBuilder
-    enum SingleValueBuilder<V> {
-        static func buildEither(first component: V) -> V {
+    public enum SingleValueBuilder<V> {
+        public static func buildEither(first component: V) -> V {
             component
         }
-        static func buildEither(second component: V) -> V {
+        public static func buildEither(second component: V) -> V {
             component
         }
-        static func buildBlock(_ components: V) -> V {
+        public static func buildBlock(_ components: V) -> V {
             components
         }
     }
     
-    static func clip<T: Comparable>(_ value: T, betweenLow low: T, high: T) -> T { /// Might want to move this to Math.swift
+    public static func clip<T: Comparable>(_ value: T, betweenLow low: T, high: T) -> T { /// Might want to move this to Math.swift
         if value < low { return low }
         if value > high { return high }
         return value
     }
     
-    @objc static func interpolateRects(_ t: Double, _ rect1: NSRect, _ rect2: NSRect) -> NSRect {
+    @objc public static func interpolateRects(_ t: Double, _ rect1: NSRect, _ rect2: NSRect) -> NSRect {
         let x = Math.scale(value: t, from: .unitInterval, to: Interval(rect1.origin.x, rect2.origin.x), allowOutOfBounds: true)
         let y = Math.scale(value: t, from: .unitInterval, to: Interval(rect1.origin.y, rect2.origin.y), allowOutOfBounds: true)
         let width = Math.scale(value: t, from: .unitInterval, to: Interval(rect1.width, rect2.width), allowOutOfBounds: true)
@@ -65,7 +65,7 @@ func mfsign(_ value: some (Numeric & Comparable)) -> Int {
         return result;
     }
     
-    static func dumpSwiftIvars(_ instance: Any) -> String {
+    public static func dumpSwiftIvars(_ instance: Any) -> String {
         
         /// [Mar 2025] Creates a string describing all the 'children' of the instance using the Swift Mirror API.
         ///     I think this covers all the internal state held in native Swift properties.
@@ -104,7 +104,7 @@ func mfsign(_ value: some (Numeric & Comparable)) -> Int {
         return result;
     }
     
-    static func insecureDeepCopy<T: NSCoding>(of original: T) throws -> T {
+    public static func insecureDeepCopy<T: NSCoding>(of original: T) throws -> T {
     
         /// Approach 4
         /// It seems theres a solution after all!!
@@ -128,7 +128,7 @@ func mfsign(_ value: some (Numeric & Comparable)) -> Int {
         return result
     }
     
-    @objc static func shallowCopy(ofObject object: NSObject) -> NSObject {
+    @objc public static func shallowCopy(ofObject object: NSObject) -> NSObject {
         
         /// Why aren't we using the normal NSKeyedArchiver methods for deep copying? I assume this is faster?
         /// Why is there no default "shallowCopy" method for objects?? Is this bad?

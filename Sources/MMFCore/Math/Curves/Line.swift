@@ -10,16 +10,16 @@
 import Foundation
 
 
-@objc class Line: Curve {
+@objc public class Line: Curve {
     
     let a: Double
     let b: Double
     
-    typealias P = CGPoint
+    public typealias P = CGPoint
     
     var slope: Double { a }
     
-    @objc convenience init(p: P, slope a: Double) {
+    @objc public convenience init(p: P, slope a: Double) {
         let b = p.y - a*p.x
         self.init(a: a, b: b)
     }
@@ -37,7 +37,7 @@ import Foundation
         super.init()
     }
     
-    override func evaluate(at x: Double) -> Double {
+    public override func evaluate(at x: Double) -> Double {
         return a * x + b
     }
     

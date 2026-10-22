@@ -51,7 +51,7 @@ import simd /// Vector stuff
 /// Paper which containts info on how to differentiate the De Casteljau formula
 ///     https://www.clear.rice.edu/comp360/lectures/old/BezText.pdf
 
-@objc class Bezier: Curve, NSCopying {
+@objc public class Bezier: Curve, NSCopying {
 
     static let xAxis = kMFAxisHorizontal
     static let yAxis = kMFAxisVertical
@@ -90,7 +90,7 @@ import simd /// Vector stuff
     let maxDegreeForPolynomialApproach: Int = 20
     /// ^ Wikipedia says that "high order curves may lack numeric stability" in polynomial form, and to use Casteljau instead if that happens. Not sure where exactly we should make the cutoff
     
-    static let defaultDefaultEpsilon = 0.08 /// Default value for `defaultEpsilon`
+    public static let defaultDefaultEpsilon = 0.08 /// Default value for `defaultEpsilon`
     var defaultEpsilon: Double /// Epsilon to be used when none is specified in evaluate(at:) call. This is only a var instead of let because of the debugging function `getMinEpsilon`. If we refactor we shouldn't need it for that either. Should change this.
     
     var degree: Int {
@@ -149,7 +149,7 @@ import simd /// Vector stuff
         let controlPoints: [P] = Bezier.convertPointArraysToPoints(controlPointsArr)
         self.init(controlPoints: controlPoints, defaultEpsilon: defaultEpsilon, xInterval: xInterval, yInterval: yInterval)
     }
-    @objc convenience init(controlPoints controlPointsArr: [[Double]], defaultEpsilon: Double = defaultDefaultEpsilon) {
+    @objc public convenience init(controlPoints controlPointsArr: [[Double]], defaultEpsilon: Double = defaultDefaultEpsilon) {
         let controlPoints: [P] = Bezier.convertPointArraysToPoints(controlPointsArr)
         self.init(controlPoints: controlPoints, defaultEpsilon: defaultEpsilon)
     }
@@ -184,7 +184,7 @@ import simd /// Vector stuff
         
     }
     
-    init(controlPoints controlPointsArg: [P], defaultEpsilon: Double = defaultDefaultEpsilon) {
+    public init(controlPoints controlPointsArg: [P], defaultEpsilon: Double = defaultDefaultEpsilon) {
         
         /**
          Core init
@@ -364,7 +364,7 @@ import simd /// Vector stuff
     
     /// Copying
     
-    func copy(with zone: NSZone? = nil) -> Any {
+    public func copy(with zone: NSZone? = nil) -> Any {
         return Bezier(copiedFrom: self, withZone: zone)
     }
     
@@ -557,7 +557,7 @@ import simd /// Vector stuff
     // MARK: Evaluate
     /// Get y(x)
     
-    override func evaluate(at x: Double) -> Double {
+    public override func evaluate(at x: Double) -> Double {
         self.evaluate(at: x, epsilon: self.defaultEpsilon)
     }
     

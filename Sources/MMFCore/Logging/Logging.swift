@@ -16,14 +16,14 @@
 ///             Doing the inefficient thing in Swift seems ok in practise. I suppose we don't use it much on hot paths.
 
 
-@inlinable func DDLogError(_ message: @autoclosure () -> String)   { if OSLog.default.isEnabled(type: .fault)     { os_log(.fault,   log: OSLog.default, "%{public}s", message()); } }
-@inlinable func DDLogWarn(_ message: @autoclosure () -> String)    { if OSLog.default.isEnabled(type: .error)     { os_log(.error,   log: OSLog.default, "%{public}s", message()); } }
-@inlinable func DDLogInfo(_ message: @autoclosure () -> String)    { if OSLog.default.isEnabled(type: .info)      { os_log(.info,    log: OSLog.default, "%{public}s", message()); } }
-@inlinable func DDLogDebug(_ message: @autoclosure () -> String)   { if OSLog.default.isEnabled(type: .debug)     { os_log(.debug,   log: OSLog.default, "%{public}s", message()); } }
+@inlinable public func DDLogError(_ message: @autoclosure () -> String)   { if OSLog.default.isEnabled(type: .fault)     { os_log(.fault,   log: OSLog.default, "%{public}s", message()); } }
+@inlinable public func DDLogWarn(_ message: @autoclosure () -> String)    { if OSLog.default.isEnabled(type: .error)     { os_log(.error,   log: OSLog.default, "%{public}s", message()); } }
+@inlinable public func DDLogInfo(_ message: @autoclosure () -> String)    { if OSLog.default.isEnabled(type: .info)      { os_log(.info,    log: OSLog.default, "%{public}s", message()); } }
+@inlinable public func DDLogDebug(_ message: @autoclosure () -> String)   { if OSLog.default.isEnabled(type: .debug)     { os_log(.debug,   log: OSLog.default, "%{public}s", message()); } }
 @inlinable func DDLogVerbose(_ message: @autoclosure () -> String) { if OSLog.default.isEnabled(type: .default)   { os_log(.default, log: OSLog.default, "%{public}s", message()); } }
 
 /// Wrap mfassert() and mfrequire() for Swift
-@inline(__always) func mfassert(_ condition: @autoclosure () -> Bool, _ reason: @autoclosure () -> String? = nil, file: String = #fileID, line: Int = #line, function: String = #function) {
+@inline(__always) public func mfassert(_ condition: @autoclosure () -> Bool, _ reason: @autoclosure () -> String? = nil, file: String = #fileID, line: Int = #line, function: String = #function) {
     if _slowPath(!condition()) { _mfassertrequire_failure(false, "<swift>", reason(), file, Int32(line), function) }
 }
 

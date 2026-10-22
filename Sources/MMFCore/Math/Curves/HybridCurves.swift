@@ -14,7 +14,7 @@ import Cocoa
 
 // MARK: - BezierHybrid
 
-@objc class BezierHybridCurve: HybridCurve {
+@objc public class BezierHybridCurve: HybridCurve {
     
     /// BezierHybrid is more powerful than LineHybrid and SimpleBezierHybrid has weird behaviour (can't control the distance)
     ///     You might want to use LineHybrid for performance, otherwise, use this.
@@ -27,7 +27,7 @@ import Cocoa
         set { fatalError() }
     }
     
-    @objc init(baseCurve: Bezier, minDuration: Double, distance targetDistance: Double, dragCoefficient: Double, dragExponent: Double, stopSpeed: Double, distanceEpsilon: Double) {
+    @objc public init(baseCurve: Bezier, minDuration: Double, distance targetDistance: Double, dragCoefficient: Double, dragExponent: Double, stopSpeed: Double, distanceEpsilon: Double) {
         
         /// Not sure what to choose as the transitionPointEpsilon
         ///     It's an epsilon for the targetDistance
@@ -296,7 +296,7 @@ import Cocoa
 
 // MARK: - SimpleBezierHybrid
 
-@objc class SimpleBezierHybridCurve: HybridCurve {
+@objc public class SimpleBezierHybridCurve: HybridCurve {
     /// This curve is intended to animate scrolling in a way that resembles the original MMF scrolling algorithm
     /// The first part of the curve  is driven by a BezierCurve, and the second half by a DragCurve.
     /// The drag curve is used to ensure physically accurate, natural-feeling deceleration.
@@ -313,7 +313,7 @@ import Cocoa
     
     /// Helper
     
-    @objc func baseDistanceLeft(distanceLeft: Double) -> Double {
+    @objc public func baseDistanceLeft(distanceLeft: Double) -> Double {
         var baseValueLeft = distanceLeft - dragValueRange
         if baseValueLeft < 0 { baseValueLeft = 0 }
         return baseValueLeft
@@ -354,7 +354,7 @@ import Cocoa
 
 // MARK: - Base class
 
-class HybridCurve: Curve {
+public class HybridCurve: Curve {
     /// This class is supposed to be subclassed, not used directly.
 
     /// Constants
@@ -393,8 +393,8 @@ class HybridCurve: Curve {
     fileprivate var timeInterval: Interval { Interval(start: 0, end: baseDuration + dragTimeRange) }
     fileprivate var distanceInterval: Interval { Interval(start: 0, end: baseDistance + dragValueRange) }
     
-    @objc var duration: Double { timeInterval.length }
-    @objc var distance: Double { distanceInterval.length }
+    @objc public var duration: Double { timeInterval.length }
+    @objc public var distance: Double { distanceInterval.length }
     
     /// Init
     
@@ -435,7 +435,7 @@ class HybridCurve: Curve {
     
     /// Evaluate
     
-    override func evaluate(at x: Double) -> Double {
+    public override func evaluate(at x: Double) -> Double {
         
         let result: Double
         
@@ -472,7 +472,7 @@ class HybridCurve: Curve {
     /// Other interface
     
     
-    @objc func subCurve(at x: Double) -> MFHybridSubCurve {
+    @objc public func subCurve(at x: Double) -> MFHybridSubCurve {
         
         if x <= baseDuration / duration {
             return kMFHybridSubCurveBase

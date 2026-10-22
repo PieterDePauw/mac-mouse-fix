@@ -38,7 +38,7 @@
 
 import Foundation
 
-@objc class PolynomialCappedAccelerationCurve: Curve {
+@objc public class PolynomialCappedAccelerationCurve: Curve {
     
     /// Constants
     let epsilon: Double = 10e-3
@@ -52,7 +52,7 @@ import Foundation
     let coeffs: [Double]
     
     /// Init
-    required init(lowSpeed v0: Double, lowSens s0: Double, highSpeed v1: Double, highSens s1: Double, curvature n: Int) {
+    public required init(lowSpeed v0: Double, lowSens s0: Double, highSpeed v1: Double, highSens s1: Double, curvature n: Int) {
         
         /// See top of this file for explanation of parameters
         
@@ -102,7 +102,7 @@ import Foundation
     }
     
     /// Evaluate
-    override func evaluate(at x: Double) -> Double {
+    public override func evaluate(at x: Double) -> Double {
         
         let xClipped = SharedUtilitySwift.clip(x, betweenLow: p0.x, high: p1.x)
         
@@ -117,7 +117,7 @@ import Foundation
     }
     
     /// Trace
-    func traceSpeed(nOfSamples: Int, allowSparseSampling: Bool = false) -> [[Double]] {
+    public func traceSpeed(nOfSamples: Int, allowSparseSampling: Bool = false) -> [[Double]] {
         /// Params
         let bias = 2.0
         let oversample = 2.0

@@ -136,7 +136,7 @@
 
 import Foundation
 
-@objc class DragCurve: Curve {
+@objc public class DragCurve: Curve {
 
     private var a: Double
     private var b: Double
@@ -145,9 +145,9 @@ import Foundation
     
     private var isNegative: Bool
     
-    @objc var timeInterval: Interval
+    @objc public var timeInterval: Interval
     private var _distanceInterval: Interval
-    @objc var distanceInterval: Interval {
+    @objc public var distanceInterval: Interval {
         get {
             if self.isNegative {
                 return Interval.init(start: -_distanceInterval.start, end: -_distanceInterval.end)
@@ -156,7 +156,7 @@ import Foundation
         }
     }
 
-    @objc init(coefficient: Double, exponent: Double, distance d: Double, stopSpeed vs: Double) {
+    @objc public init(coefficient: Double, exponent: Double, distance d: Double, stopSpeed vs: Double) {
         ///
         /// Distance-based init
         ///
@@ -226,7 +226,7 @@ import Foundation
         
     }
     
-    @objc init(coefficient: Double, exponent: Double, initialSpeed v0_arg: Double, stopSpeed vs_arg: Double) {
+    @objc public init(coefficient: Double, exponent: Double, initialSpeed v0_arg: Double, stopSpeed vs_arg: Double) {
         
         /// Initial-speed-based init
         
@@ -426,7 +426,7 @@ import Foundation
     
     /// Interface
     
-    override func evaluate(at tUnit: Double) -> Double {
+    public override func evaluate(at tUnit: Double) -> Double {
         /// Animator.swift expects its animation curves to pass through (0,0) and (1,1), so we'll scale our curve accordingly
         
         let t = Math.scale(value: tUnit, from: .unitInterval, to: timeInterval)

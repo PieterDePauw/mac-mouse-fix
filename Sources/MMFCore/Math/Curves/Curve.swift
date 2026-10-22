@@ -9,13 +9,13 @@
 
 import Cocoa
 
-typealias RawCurve = (Double) -> Double
+public typealias RawCurve = (Double) -> Double
 
-@objc class CurveTools: NSObject {
+@objc public class CurveTools: NSObject {
     
     /// This stuff is taken from MMF Nuxt Website > animationCurveTransform.ts
     
-    @objc class func transformCurve(_ curve: @escaping RawCurve, _ transform: @escaping (Double) -> Double) -> RawCurve {
+    @objc public class func transformCurve(_ curve: @escaping RawCurve, _ transform: @escaping (Double) -> Double) -> RawCurve {
         
         /// Returns a new curve which applies `transform` to the output of `curve`
         
@@ -42,13 +42,13 @@ typealias RawCurve = (Double) -> Double
     }
 }
 
-@objc class Curve: NSObject {
+@objc open class Curve: NSObject {
     
     ///
     /// Main
     ///
     
-    @objc func evaluate(at x: Double) -> Double {
+    @objc open func evaluate(at x: Double) -> Double {
         
         /// Notes:
         /// TouchAnimatorBase.swift expects this to pass through (0,0) and (1,1)
@@ -67,12 +67,12 @@ typealias RawCurve = (Double) -> Double
     /// Notes:
     /// - At the time of writing, we mostly use subclasses of Curve, but for more lightweight, one-time uses, it should be nice to just use the closure init instead of defining a class.
     
-    override init() {
+    public override init() {
         super.init()
     }
     
     var rawCurve: RawCurve? = nil
-    init(rawCurve: @escaping RawCurve) {
+    public init(rawCurve: @escaping RawCurve) {
         self.rawCurve = rawCurve
     }
     
@@ -80,7 +80,7 @@ typealias RawCurve = (Double) -> Double
     /// Debug
     ///
     
-    @objc func stringTrace(startX x0: Double, endX x1: Double, nOfSamples: Int, bias: Double = 1.0) -> String {
+    @objc public func stringTrace(startX x0: Double, endX x1: Double, nOfSamples: Int, bias: Double = 1.0) -> String {
         
         let trace = traceAsPoints(startX: x0, endX: x1, nOfSamples: nOfSamples, bias: 1.0)
         var traceStr: String = String()

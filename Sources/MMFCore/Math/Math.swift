@@ -9,13 +9,13 @@
 
 import Cocoa
 
-@objc class Math: NSObject {
+@objc public class Math: NSObject {
     
-    class func clamp(_ x: Double, _ range: (Double, Double)) -> Double {
+    public class func clamp(_ x: Double, _ range: (Double, Double)) -> Double {
         return min(max(x, range.0), range.1)
     }
     
-    @objc class func intCycle(x: Int, lower: Int, upper: Int) -> Int {
+    @objc public class func intCycle(x: Int, lower: Int, upper: Int) -> Int {
         return Int(cycle(x: Double(x), lower: Double(lower), upper: Double(upper)))
     }
     
@@ -146,13 +146,13 @@ import Cocoa
         }
     }
     
-    class func scale(_ value: Double, _ from: (Double, Double), _ to: (Double, Double), checkBounds: Bool = true) -> Double {
+    public class func scale(_ value: Double, _ from: (Double, Double), _ to: (Double, Double), checkBounds: Bool = true) -> Double {
         /// [May 2025] Shorthand
         ///     Commentary: Are these abstractions over something as simple as an 'interval' really worth it? This feels so heavy-handed. I don't think I would write it this way anymore.
         Math.scale(value: value, from: Interval(from.0, from.1), to: Interval(to.0, to.1), allowOutOfBounds: !checkBounds)
     }
     
-    @objc class func scale(value: Double, from originInterval: Interval, to targetInterval: Interval, allowOutOfBounds: Bool = false) -> Double {
+    @objc public class func scale(value: Double, from originInterval: Interval, to targetInterval: Interval, allowOutOfBounds: Bool = false) -> Double {
         
         /// Notes:
         /// - Should probably move this into Interval
@@ -213,7 +213,7 @@ import Cocoa
     }
 }
 
-@objc class Interval: NSObject, NSCopying {
+@objc public class Interval: NSObject, NSCopying {
     /// - Defines an Interval of real values
     /// - Defines only closed Intervals. We don't need open or half-open intervals
     /// - Also stores a direction, which Maths Intervals don't usually do, but it's real useful for us. If the caller want to ignore this they can use `lower` and `upper` instead of `start` and `end`
@@ -221,7 +221,7 @@ import Cocoa
     ///     - Edit: We made everything lazy for optimization. Don't know if it makes any difference.
     ///     - Edit 2: creating instances of this takes up a lot of CPU. I tried moving to a pure swift class that doesn't inherit from NSObject but somehow it became even slower. See message for commit 4b48286745730435dc2384ecdc8c43547aaec2e5.
     
-    @objc override var description: String { "(\(start), \(end))" }
+    @objc public override var description: String { "(\(start), \(end))" }
     
     @objc let start: Double
     @objc let end: Double
@@ -237,17 +237,17 @@ import Cocoa
     }()
     
     @objc lazy var location: Double = { lower }()
-    @objc lazy var length: Double = { upper - lower }()
+    @objc public lazy var length: Double = { upper - lower }()
     @objc lazy var directedLength: Double = { end - start }()
     
     @objc lazy var lower: Double = { direction == kMFIntervalDirectionAscending ? start : end }()
     @objc lazy var upper: Double = { direction == kMFIntervalDirectionAscending ? end : start }()
     
     @objc static let reversedUnitInterval = Interval.init(start: 1, end: 0)
-    @objc static let unitInterval = Interval.init(start: 0, end: 1)
+    @objc public static let unitInterval = Interval.init(start: 0, end: 1)
     /// ^ Scale to this interval to normalize a value
     
-    @objc required init(start: Double, end: Double) {
+    @objc public required init(start: Double, end: Double) {
         
         assert(!start.isNaN && !end.isNaN && start.isFinite && end.isFinite)
         
@@ -255,7 +255,7 @@ import Cocoa
         self.end = end
     }
     
-    @objc convenience init(location: Double, length: Double) {
+    @objc public convenience init(location: Double, length: Double) {
         self.init(lower: location, upper: location + length)
     }
     
@@ -267,7 +267,7 @@ import Cocoa
         self.init(start: a, end: b)
     }
     
-    @objc func copy(with zone: NSZone? = nil) -> Any {
+    @objc public func copy(with zone: NSZone? = nil) -> Any {
         return Interval(start: self.start, end: self.end)
     }
     
@@ -280,7 +280,7 @@ import Cocoa
 
 // MARK: nthroot
 
-func root(_ value: Double, _ n: Double) -> Double {
+public func root(_ value: Double, _ n: Double) -> Double {
     return Math.nthroot(value: value, n)
 }
 
@@ -288,7 +288,7 @@ func root(_ value: Double, _ n: Double) -> Double {
 /// This is just an alias for != so maybe we should remove this.
 
 extension Bool {
-    static func ^ (left: Bool, right: Bool) -> Bool {
+    public static func ^ (left: Bool, right: Bool) -> Bool {
         return left != right
     }
 }

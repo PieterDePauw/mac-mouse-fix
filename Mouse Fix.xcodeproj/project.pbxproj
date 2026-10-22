@@ -2123,6 +2123,7 @@
 		0E042815DAAADA3235B4B1D2 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				4FF6652B25F2C7B000689B77 /* Shared */,
 				4F4C737A2C4FB04B001D97C3 /* Localization */,
 			);
 			path = Sources;
@@ -2134,7 +2135,6 @@
 				0E042815DAAADA3235B4B1D2 /* Sources */,
 				4F7F47D528A6EFCF00290BBD /* Resources */,
 				4FDECCD528A3A37800DDEE91 /* Vendor */,
-				4FF6652B25F2C7B000689B77 /* Shared */,
 				4FF665BE25F2C92700689B77 /* App */,
 				4FF6660725F2C93A00689B77 /* Helper */,
 				4F422EF023469B2B00AA6E22 /* Other */,
